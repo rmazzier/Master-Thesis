@@ -1,0 +1,45 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass{Dissertate}
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{amsbsy}
+\usepackage[export]{adjustbox}
+\usepackage{amsthm}
+\usepackage{dirtytalk}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+% the front matter
+\input{frontmatter/personalize}
+\frontmatter
+\setstretch{\dnormalspacing}
+
+\tableofcontents
+
+% include each chapter...
+\setcounter{chapter}{0}  % start chapter numbering at 1
+\include{chapters/introduction}
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/conclusion}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\bibliography{references}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Acknowledgments}
+\acknowledgments
+
+\end{document}
