@@ -6,14 +6,24 @@
 \newlabel{chapt:2}{{3}{7}{Knowledge Enhanced Neural Networks}{chapter.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Theoretical Framework}{7}{section.3.1}\protected@file@percent }
 \newlabel{sec:theoretical_framework}{{3.1}{7}{Theoretical Framework}{section.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Prior Knowledge and the semantic of $\mathcal  {L}$}{7}{subsection.3.1.1}\protected@file@percent }
-\newlabel{example:clause}{{3.2}{8}{Prior Knowledge and the semantic of $\mathcal {L}$}{equation.3.1.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}T-Conorm Functions}{9}{subsection.3.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}T-Conorm Boost Functions}{12}{subsection.3.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}KENN Architecture}{13}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Prior Knowledge and language semantic}{7}{subsection.3.1.1}\protected@file@percent }
+\newlabel{example:clause}{{3.2}{8}{Prior Knowledge and language semantic}{equation.3.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}$t$-conorm Functions}{9}{subsection.3.1.2}\protected@file@percent }
+\newlabel{eq:lukasiewicz}{{3.4}{10}{Lukasiewicz Negation}{equation.3.1.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}$t$-conorm Boost Functions}{12}{subsection.3.1.3}\protected@file@percent }
+\newlabel{eq:proof1}{{3.8}{13}{$t$-conorm Boost Functions}{equation.3.1.8}{}}
+\newlabel{eq:proof2}{{3.9}{13}{$t$-conorm Boost Functions}{equation.3.1.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Applying TBFs to preactivations}{14}{subsection.3.1.4}\protected@file@percent }
+\newlabel{eq:soft_approx_delta}{{3.10}{15}{Applying TBFs to preactivations}{equation.3.1.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces This image illustrates the actual deltas produced by KENN, which are the $\delta ^f$, opposed to the actual delta produced on the activations, which is $\delta ^g$. As we said, $\delta ^g$ is not produced directly by the model but it is indirectly \textit  {induced} by the application of $\delta ^f$ on the preactivations. This also illustrates how, thanks to the shape of the sigmoid activation function, the same delta on the preactivation produces a different delta at the activations level: the closer the preactivations to zero, the highest the modification on the final predictions. \relax }}{16}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:preacs_deltas_example}{{3.1}{16}{This image illustrates the actual deltas produced by KENN, which are the $\delta ^f$, opposed to the actual delta produced on the activations, which is $\delta ^g$. As we said, $\delta ^g$ is not produced directly by the model but it is indirectly \textit {induced} by the application of $\delta ^f$ on the preactivations. This also illustrates how, thanks to the shape of the sigmoid activation function, the same delta on the preactivation produces a different delta at the activations level: the closer the preactivations to zero, the highest the modification on the final predictions. \relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Summary of all the steps needed to produce $\delta ^c$, the vector of deltas derived from a single clause. We refer to this process as \textit  {clause enhancement}.\relax }}{18}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:delta_single_clause}{{3.2}{18}{Summary of all the steps needed to produce $\delta ^c$, the vector of deltas derived from a single clause. We refer to this process as \textit {clause enhancement}.\relax }{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}Increasing the satisfaction of the Knowledge}{18}{subsection.3.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}KENN Architecture}{19}{section.3.2}\protected@file@percent }
 \@setckpt{chapters/chapter2}{
-\setcounter{page}{14}
-\setcounter{equation}{6}
+\setcounter{page}{20}
+\setcounter{equation}{11}
 \setcounter{enumi}{2}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -27,7 +37,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{0}
+\setcounter{figure}{2}
 \setcounter{table}{0}
 \setcounter{DefaultLines}{2}
 \setcounter{DefaultDepth}{0}
@@ -37,7 +47,7 @@
 \setcounter{Item}{6}
 \setcounter{Hfootnote}{1}
 \setcounter{Hy@AnnotLevel}{0}
-\setcounter{bookmark@seq@number}{17}
+\setcounter{bookmark@seq@number}{19}
 \setcounter{eu@}{0}
 \setcounter{eu@i}{0}
 \setcounter{mkern}{0}

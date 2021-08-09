@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  31 JUL 2021 00:31
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  9 AUG 2021 20:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1617,7 +1617,10 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/n' will be
 [8
 
 
-] (./dissertation.lof)
+] (./dissertation.lof
+LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
+(Font)              scaled to size 12.0pt on input line 5.
+)
 \tf@lof=\write6
 \openout6 = `dissertation.lof'.
 
@@ -1739,16 +1742,6 @@ Package natbib Warning: Citation `standard1' on page 6 undefined on input line
  (./chapters/chapter2.tex
 Chapter 3.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 9.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 9.
-
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
-(Font)              scaled to size 12.0pt on input line 12.
-
 Underfull \vbox (badness 1014) has occurred while \output is active []
 
  [7
@@ -1758,6 +1751,14 @@ Underfull \vbox (badness 1014) has occurred while \output is active []
 
 ]
 [8]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 56.
+
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
 (Font)              scaled to size 8.0pt on input line 62.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
@@ -1768,30 +1769,61 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
 (Font)              scaled to size 7.0pt on input line 62.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
 (Font)              scaled to size 9.10002pt on input line 62.
- [9]
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 100.
- [10]
-Underfull \vbox (badness 1496) has occurred while \output is active []
 
- [11])
-[12] [13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+[10]
+LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 102.
+ [11]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 120.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 120.
+
+[12] [13] [14]
+File: figures/preac_deltas_example.jpg Graphic file (type bmp)
+<figures/preac_deltas_example.jpg>
+File: figures/sigmoid_shape_example.png Graphic file (type bmp)
+<figures/sigmoid_shape_example.png>
+LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
+(Font)              scaled to size 8.09479pt on input line 214.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15] [16]
+File: figures/delta_single_clause.png Graphic file (type bmp)
+<figures/delta_single_clause.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17])
+[18] [19]
 \openout2 = `chapters/conclusion.aux'.
 
- (./chapters/conclusion.tex [14
+ (./chapters/conclusion.tex [20
 
 
 
 
 ]
 Chapter 4.
-) [15] [16
+) [21] [22
 
 
 
 ]
 No file dissertation.bbl.
-(./frontmatter/thanks.tex) [17
+(./frontmatter/thanks.tex) [23
 
 
 ]
@@ -1804,15 +1836,15 @@ Package natbib Warning: There were undefined citations.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 55F48A0E3EC17AEBDF6BE7D6C39A1A1F;3136.
+(rerunfilecheck)             Checksum: 125D363CEEE7661613101A65F28CBFC7;3653.
  ) 
 Here is how much of TeX's memory you used:
- 43656 strings out of 476476
- 1035009 string characters out of 5814301
- 1478811 words of memory out of 5000000
- 63240 multiletter control sequences out of 15000+600000
- 412991 words of font info for 111 fonts, out of 8000000 for 9000
+ 43698 strings out of 476476
+ 1036216 string characters out of 5814301
+ 1484002 words of memory out of 5000000
+ 63275 multiletter control sequences out of 15000+600000
+ 413926 words of font info for 115 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,11n,133p,944b,868s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 103i,11n,133p,1545b,871s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on dissertation.pdf (31 pages).
+Output written on dissertation.pdf (37 pages).
