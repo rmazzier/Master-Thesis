@@ -1,30 +1,41 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Knowledge Enhanced Neural Networks}{7}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Knowledge Enhanced Neural Networks}{9}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapt:2}{{3}{7}{Knowledge Enhanced Neural Networks}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Theoretical Framework}{7}{section.3.1}\protected@file@percent }
-\newlabel{sec:theoretical_framework}{{3.1}{7}{Theoretical Framework}{section.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Prior Knowledge and language semantic}{7}{subsection.3.1.1}\protected@file@percent }
-\newlabel{example:clause}{{3.2}{8}{Prior Knowledge and language semantic}{equation.3.1.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}$t$-conorm Functions}{9}{subsection.3.1.2}\protected@file@percent }
-\newlabel{eq:lukasiewicz}{{3.4}{10}{Lukasiewicz Negation}{equation.3.1.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}$t$-conorm Boost Functions}{12}{subsection.3.1.3}\protected@file@percent }
-\newlabel{eq:proof1}{{3.8}{13}{$t$-conorm Boost Functions}{equation.3.1.8}{}}
-\newlabel{eq:proof2}{{3.9}{13}{$t$-conorm Boost Functions}{equation.3.1.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Applying TBFs to preactivations}{14}{subsection.3.1.4}\protected@file@percent }
-\newlabel{eq:soft_approx_delta}{{3.10}{15}{Applying TBFs to preactivations}{equation.3.1.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces This image illustrates the actual deltas produced by KENN, which are the $\delta ^f$, opposed to the actual delta produced on the activations, which is $\delta ^g$. As we said, $\delta ^g$ is not produced directly by the model but it is indirectly \textit  {induced} by the application of $\delta ^f$ on the preactivations. This also illustrates how, thanks to the shape of the sigmoid activation function, the same delta on the preactivation produces a different delta at the activations level: the closer the preactivations to zero, the highest the modification on the final predictions. \relax }}{16}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:preacs_deltas_example}{{3.1}{16}{This image illustrates the actual deltas produced by KENN, which are the $\delta ^f$, opposed to the actual delta produced on the activations, which is $\delta ^g$. As we said, $\delta ^g$ is not produced directly by the model but it is indirectly \textit {induced} by the application of $\delta ^f$ on the preactivations. This also illustrates how, thanks to the shape of the sigmoid activation function, the same delta on the preactivation produces a different delta at the activations level: the closer the preactivations to zero, the highest the modification on the final predictions. \relax }{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Summary of all the steps needed to produce $\delta ^c$, the vector of deltas derived from a single clause. We refer to this process as \textit  {clause enhancement}.\relax }}{18}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:delta_single_clause}{{3.2}{18}{Summary of all the steps needed to produce $\delta ^c$, the vector of deltas derived from a single clause. We refer to this process as \textit {clause enhancement}.\relax }{figure.caption.17}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}Increasing the satisfaction of the Knowledge}{18}{subsection.3.1.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}KENN Architecture}{19}{section.3.2}\protected@file@percent }
+\newlabel{chapt:kenn}{{3}{9}{Knowledge Enhanced Neural Networks}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Theoretical Framework}{9}{section.3.1}\protected@file@percent }
+\newlabel{sec:theoretical_framework}{{3.1}{9}{Theoretical Framework}{section.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Prior Knowledge and language semantic}{9}{subsection.3.1.1}\protected@file@percent }
+\newlabel{example:clause}{{3.2}{10}{Prior Knowledge and language semantic}{equation.3.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}$t$-conorm Functions}{11}{subsection.3.1.2}\protected@file@percent }
+\newlabel{eq:lukasiewicz}{{3.4}{12}{Lukasiewicz Negation}{equation.3.1.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}$t$-conorm Boost Functions}{14}{subsection.3.1.3}\protected@file@percent }
+\newlabel{thm:min_tbf}{{3.1.2}{15}{}{theorem.3.1.2}{}}
+\newlabel{eq:proof1}{{3.8}{15}{$t$-conorm Boost Functions}{equation.3.1.8}{}}
+\newlabel{eq:proof2}{{3.9}{15}{$t$-conorm Boost Functions}{equation.3.1.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Applying TBFs to preactivations}{16}{subsection.3.1.4}\protected@file@percent }
+\newlabel{eq:delta_g}{{3.10}{16}{}{equation.3.1.10}{}}
+\newlabel{eq:soft_approx_delta}{{3.11}{18}{Applying TBFs to preactivations}{equation.3.1.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces This image illustrates the actual deltas produced by KENN, which are the $\delta ^f$, opposed to the actual delta produced on the activations, which is $\delta ^g$. As we said, $\delta ^g$ is not produced directly by the model but it is indirectly \textit  {induced} by the application of $\delta ^f$ on the preactivations. This also illustrates how, thanks to the shape of the sigmoid activation function, the same delta on the preactivation produces a different delta at the activations level: the closer the preactivations to zero, the highest the modification on the final predictions. \relax }}{19}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:preacs_deltas_example}{{3.1}{19}{This image illustrates the actual deltas produced by KENN, which are the $\delta ^f$, opposed to the actual delta produced on the activations, which is $\delta ^g$. As we said, $\delta ^g$ is not produced directly by the model but it is indirectly \textit {induced} by the application of $\delta ^f$ on the preactivations. This also illustrates how, thanks to the shape of the sigmoid activation function, the same delta on the preactivation produces a different delta at the activations level: the closer the preactivations to zero, the highest the modification on the final predictions. \relax }{figure.caption.14}{}}
+\newlabel{eq:delta_c}{{3.12}{20}{Applying TBFs to preactivations}{equation.3.1.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}Increasing the satisfaction of the Knowledge}{20}{subsection.3.1.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Summary of all the steps needed to produce $\delta ^c$, the vector of deltas derived from a single clause. We refer to this process as \textit  {clause enhancement}.\relax }}{21}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:delta_single_clause}{{3.2}{21}{Summary of all the steps needed to produce $\delta ^c$, the vector of deltas derived from a single clause. We refer to this process as \textit {clause enhancement}.\relax }{figure.caption.15}{}}
+\newlabel{eq:deltas_sum}{{3.13}{21}{Increasing the satisfaction of the Knowledge}{equation.3.1.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}KENN Architecture}{22}{section.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Detailed depiction of the Clause Enhancer for the clause.... todo\relax }}{23}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:CE}{{3.3}{23}{Detailed depiction of the Clause Enhancer for the clause.... todo\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces The KE architecture... todo\relax }}{24}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:KE}{{3.4}{24}{The KE architecture... todo\relax }{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}KENN for relational data}{25}{section.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Experiments}{25}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Explainability in KENN}{25}{section.3.5}\protected@file@percent }
 \@setckpt{chapters/chapter2}{
-\setcounter{page}{20}
-\setcounter{equation}{11}
-\setcounter{enumi}{2}
+\setcounter{page}{26}
+\setcounter{equation}{13}
+\setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -32,22 +43,22 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{3}
-\setcounter{section}{2}
+\setcounter{section}{5}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{2}
+\setcounter{figure}{4}
 \setcounter{table}{0}
 \setcounter{DefaultLines}{2}
 \setcounter{DefaultDepth}{0}
 \setcounter{L@lines}{0}
 \setcounter{L@depth}{0}
 \setcounter{parentequation}{0}
-\setcounter{Item}{6}
+\setcounter{Item}{20}
 \setcounter{Hfootnote}{1}
 \setcounter{Hy@AnnotLevel}{0}
-\setcounter{bookmark@seq@number}{19}
+\setcounter{bookmark@seq@number}{22}
 \setcounter{eu@}{0}
 \setcounter{eu@i}{0}
 \setcounter{mkern}{0}

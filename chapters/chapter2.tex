@@ -1,7 +1,8 @@
 %!TEX root = ../dissertation.tex
 
-\chapter{Knowledge Enhanced Neural Networks}\label{chapt:2}
-Knowledge Enhanced Neural Network (KENN) is a special type of model; more specifically, is a residual layer designed to by attached at the end of a standard Neural Network (NN), in order to boost its predictive performances via the addition of a Prior Knowledge, in the form of First Order Logic (FOL) clauses.
+\chapter{Knowledge Enhanced Neural Networks}\label{chapt:kenn}
+%TODO: rivedere la presentazione di kenn.... dire a che classe di NSI appartiene
+Knowledge Enhanced Neural Networks (KENN) is a special type of Neural Network (NN) layer, designed for injecting logical knowledge into a pre-existing base NN. More specifically, it is a residual layer designed to be stacked after the last layer of a standard NN, in order to boost its predictive performances via the addition of a Prior Knowledge in the form of first order logic clauses. In this chapter we will describe the theory behind KENN, its architecture, and experimental results.
 
 \section{Theoretical Framework}\label{sec:theoretical_framework}
  We present here the theoretical framework behind KENN. The first step will be to rigorously define the symbolic language and how to link it with the theoretical framework of NNs, which consists in defining a semantic for the language. Next, we will describe the process with which the truth value of a clause can be increased, and how to integrate this method inside NNs.
@@ -123,7 +124,7 @@ The next problem is to understand how to improve the truth value of a single cla
 \begin{definition}[$t$-conorm Boost Function (TBF)]
 	A function $\delta:[0,1]^{n} \rightarrow[0,1]^{n}$ is a $t$-conorm Boost Function (TBF) if:
 	$$
-	0 \leq t_{i}+\delta(t)_{i} \leq 1  \quad \forall n \in \mathbb{N} \quad \forall \mathbf{t} \in[0,1]^{n}.
+	0 \leq t_{i}+\delta(t)_{i} \leq 1  \quad \forall n \in \mathbb{N} \quad \forall t \in[0,1]^{n}.
 	$$
 	Let $\Delta$ denote the set of all TBFs.
 \end{definition}
@@ -151,6 +152,7 @@ As mentioned above, KENN works with the Gödel $t$-conorm function and the $L_p$
 The next step at this point is to find such a minimal TBF. In the following result, we present a possible form that a minimal TBF can assume.
 
 \begin{theorem}
+	\label{thm:min_tbf}
 	For any function $f: \mathbb{R}^{n} \rightarrow \mathbb{R}$ we define $\delta^{f}: \mathbb{R}^{n} \rightarrow \mathbb{R}^{n}$ as
 	$$
 	\delta^{f}(t)_{i}= \begin{cases}f(t) & \text { if } i=\arg\max_{j=1}^n t_{j} \\ 0 & \text { otherwise }\end{cases}
@@ -182,26 +184,52 @@ There is a problem with the definition of $\delta^f$: there is a specific constr
 \begin{equation*}
 y_i = \sigma(z_i) = \frac{1}{1+e^{-z_i}}, \forall i=1,\dots,m.	
 \end{equation*}
-For this reason, KENN exploits the fact that $\sigma:\mathbb{R}\rightarrow\left[0,1\right]$ by applying the TBF directly on the preactivations $z\in \mathbb{R}^m$. In fact, it is clear from an intuitive point of view that one can apply any delta to the preactivations vector, and at the same time always be sure that the final output $y$ will be in $\left[0,1\right]$. In this way, the constraint on $f$ is no longer needed. The next theorem proves formally that applying a minimal TBF on the preactivations is equivalent to applying a minimal TBF on the output of the NN.
+For this reason, KENN exploits the fact that $\sigma:\mathbb{R}\rightarrow\left[0,1\right]$ by applying the TBF directly on the preactivations $z\in \mathbb{R}^m$. In fact, it is clear from an intuitive point of view that one can apply any delta to the preactivations vector, and at the same time always be sure that the final output $y$ will be in $\left[0,1\right]$. In this way, the constraint on $f$ is no longer needed. The next theorem proves formally that applying a minimal TBF on the preactivations $z$ is equivalent to applying a minimal TBF on the output of the NN $y$.
 
 \begin{theorem}
 	For all $f:\mathbb{R}^n\rightarrow\mathbb{R}$, the function:
-	\begin{equation*}
-	\delta^g(t) = \sigma(z+\delta^f(z))-\sigma(z)
-	\end{equation*}
+	\begin{equation}
+	\delta^g(y) = \sigma(z+\delta^f(z))-\sigma(z)
+	\label{eq:delta_g}
+	\end{equation}
 	is a minimal TBF under the Gödel $t$-conorm and the $L_p$ norm.
 \end{theorem}
 \begin{proof}
 	%TODO
-	(Still to write)
+	By definition we know that $z = \sigma^{-1} (y)$, hence we can rewrite equation (\ref{eq:delta_g}) as:
+	$$ y + \delta^g(y) = \sigma(z + \delta^f(z)).$$
+	From the definition of sigmoid activation function it easily follows that $0 \leq y + \delta^g(y) \leq 1$, which implies that $\delta^g(y)$ is a TBF.
+	We now define the function $g(y) = \sigma(z_i + f(z)) - \sigma(z_i)$, where $i = \arg\max_i z_i$. It's easy to see that this $g$ is the function associated to our $\delta^g$. In fact:
+	\begin{align*}
+	\delta^g(y)_i &= \sigma(z + \delta^f(z))_i - \sigma(z)_i \\
+	&=\begin{cases}
+	g(y) &\text{if } i=\arg\max_j y_j\\
+	0 &\text{otherwise.}
+	\end{cases}
+	\end{align*}
+	Therefore, Theorem \ref{thm:min_tbf} guarantees that $\delta^g(y)$ is a minimal TBF under the Gödel $t$-conorm and the $L_p$ norm.
+	
 \end{proof}
-%TODO
-Note that $\delta^g(t)$ is not directly used in KENN but it's indirectly induced by using $\delta^f(z)$ on the preactivations. Applying the TBF directly on the preactivations has also another remarkable advantage. Indeed, it is known that it is  possible to interpret the value of the preactivation of the $i$-th output neuron as the \say{confidence} of the NN that the current feature vector is to be classified in the $i$-th class. This \say{confidence} is not yet a probability, but a generic scalar value $z \in \mathbb{R}$; it will become a probability when transformed with the sigmoid activation function: $\sigma(z) \in \left[0,1\right]$. More specifically we know that:
+
+%TODO: change a bit this part (raw mathpix)
+We note a few additional details: $\sigma$ is monotonic increasing, which means that the highest preactivation corresponds to the highest activation:
+$$
+\underset{j=1}{\operatorname{argmax}}{ }_{j=1}^{n} \sigma\left(z_{j}\right)=\underset{j=1}{\operatorname{argmax}} z_{j}.
+$$
+Another implication of the monotonicity of $\sigma$ is that increasing a preactivation produces also an increase of the corresponding activation:
+$$
+f(z) \geq 0 \Rightarrow \sigma\left(z_{i}+f(z)\right) \geq \sigma\left(z_{i}\right)
+$$
+Putting these two observations together we can see that increasing the highest preactivation does indeed imply an increase of the highest activation. Also, note that $\delta^g(y)$ is not directly used in KENN but it's indirectly induced by using $\delta^f(z)$ on the preactivations. 
+
+Applying the TBF directly on the preactivations has also another remarkable advantage. Indeed, it is known that it is  possible to interpret the value of the preactivation of the $i$-th output neuron as the \say{confidence} of the NN that the current feature vector is to be classified in the $i$-th class. This \say{confidence} is not yet a probability, but a generic scalar value $z \in \mathbb{R}$; it will become a probability when transformed with the sigmoid activation function: $\sigma(z) \in \left[0,1\right]$. More specifically we know that:
 \begin{itemize}
 	\item $z \gg 0$ means high confidence of being classified in the $i$-th class. This follows from the fact that $\lim_{z\rightarrow +\infty} \sigma(z) = 1$;
 	\item $z \ll 0$ means high confidence of \textit{not} being classified in the $i$-th class. This follows from the fact that $\lim_{z\rightarrow -\infty} \sigma(z) = 0$;
 	\item $z \approx 0$ corresponds to a highly uncertain decision. This follows from the fact that $\sigma(z) \approx 0.5$ if $z \approx 0$.
 \end{itemize}
+
+
 
 By observing the shape of the sigmoid activation function we can notice that when $|z| \gg 0$ (high confidence in the NN predictions), even large deltas on the preactivations produce very small changes. More rigorously, $\lim_{|z| \rightarrow \infty} \frac{d}{dz} \sigma(z) = 0$. On the contrary, when $z \approx 0$, even small deltas on the preactivations produce high modification at the activation level. 
 This will result in the following behavior: if the NN is highly confident of its decision, then logical rules will not modify too much the result of the NN predictions. On the contrary, in the cases where the NN is uncertain of its decision, our base knowledge will intervene and give higher modifications on the final predictions. This conforms to the intuition that KENN should produce minimal changes in the original predictions. These key concepts are further illustrated in Figure \ref{fig:preacs_deltas_example}.
@@ -249,7 +277,8 @@ Notice that we are not introducing any new concepts: instead we are just redefin
 We finally define $z_c = \left(z_{l_1}, \dots, z_{l_k}\right)$ for every clause $c := \bigvee_{i=1}^k l_i$ of the knowledge. We refer to the process of transforming from $z$ to $z_c$ as the \textit{selection} step. This new vector contains only the preactivations of literals present in $c$, and is the one that we actually want to use to produce the delta relative to clause $c$. Now, let $\mathcal{K}$ be the set of clauses in our knowledge, and $\{w_c\}_{c\in\mathcal{K}}$ their corresponding weights. For every clause $c\in \mathcal{K}$ we want to obtain a new delta, namely $\delta^c \in \mathbb{R}^m$, which contains one value for each predicate in the clause and is defined as follows:
 
 \begin{equation}
-\delta_{A}^{c}= \begin{cases}\delta_{s}^{w_{c}}\left(z_{c}\right)_{A} & \text { if } A \in c \\ -\delta_{s}^{w_{c}}\left(z_{c}\right)_{\neg A} & \text { if } \neg A \in c \\ 0 & \text { Otherwise }\end{cases}, \quad \forall A \in \mathcal{K}
+\delta_{A}^{c}= \begin{cases}\delta_{s}^{w_{c}}\left(z_{c}\right)_{A} & \text { if } A \in c \\ -\delta_{s}^{w_{c}}\left(z_{c}\right)_{\neg A} & \text { if } \neg A \in c \\ 0 & \text { otherwise }\end{cases}, \quad \forall A \in \mathcal{K}
+\label{eq:delta_c}
 \end{equation}
 
 This newly defined delta, $\delta^c$, will be the delta obtained from clause $c$ and will be summed to $z$ to obtain the updated prediction. More specifically:
@@ -258,20 +287,70 @@ $$y' = \sigma(z + \delta^c)$$
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/delta_single_clause.png}
+	\includegraphics[width=0.8\linewidth]{figures/delta_single_clause.png}
 	\caption{Summary of all the steps needed to produce $\delta^c$, the vector of deltas derived from a single clause. We refer to this process as \textit{clause enhancement}.}
 	\label{fig:delta_single_clause}
 \end{figure}
 
 
 \subsection{Increasing the satisfaction of the Knowledge}
-In the previous section we found out how KENN produces a vector of changes $\delta$ to be applied to the original NN predictions, but only considering a single clause. In the cases where the knowledge is constituted only by a single clause, we would already know how KENN works, but in real applications a higher number of logical rules will be desirable. Therefore, the next and final problem is to understand how KENN takes all the deltas from all the clauses and produces a single vector of changes. This particular step of aggregation is critical, as it constitutes one of the best features of KENN, but at the same time one of its bigger inaccuracies. This is because, to aggregate the contributions from all the clauses $c \in \mathcal{K}$, KENN just sums the contributions. Specifically, the final prediction is defined as follows:
+In the previous section we found out how KENN produces a vector of changes $\delta$ to be applied to the original NN predictions, but only considering a single clause. That would suffice in the cases where the knowledge is constituted only by a single clause, but in real applications a higher number of logical rules will be desirable. Therefore, the next and final problem is to understand how KENN takes all the deltas from all the clauses and produces a single vector of changes. This particular step of aggregation is critical, as it constitutes one of the best features of KENN, but at the same time one of its bigger inaccuracies. This is because, to aggregate the contributions from all the clauses $c \in \mathcal{K}$, KENN just sums the contributions. Specifically, the final prediction is defined as follows:
 
-\begin{equation*}
+\begin{equation}
+\label{eq:deltas_sum}
 y'=\sigma(z + \sum_{c\in\mathcal{K}}\delta^c).
-\end{equation*}
-This particular choice makes KENN really fast at inference and learning time, increasing scalability. At the same time, though, this makes the risk of inconsistencies higher. For example, the same predicate can appear negated in one clause, and not negated in another clause: in this way the delta for the first one will be negative while it will be positive for the second one. In this way, the two delta may cancel out rendering KENN less useful.
+\end{equation}
+This particular choice makes KENN really fast at inference and learning time, increasing scalability. At the same time, though, this makes the risk of inconsistencies higher. For example, the same predicate can appear negated in one clause, and not negated in another clause: in this way the delta for the first one will be negative while it will be positive for the second one. In this way, the two deltas may cancel out rendering the contributions of the two clauses less effective.
 
 
 \section{KENN Architecture}
+In this section we present the architecture of the KENN layer in details. To be more precise, the architecture we are about to describe is valid only for unary predicates, meaning that only unary clauses will work as base knowledge. In the next section (ref TODO) we will also see that KENN is capable of dealing with binary clauses, but that will require a modification of the architecture. 
+
+As described above, the core functionality of KENN is the \textit{clause enhancement}, i.e. the creation of a vector $\delta$ which, summed to the vector of predictions $y$, produces a modified vector of predictions $y'$ which increases the truth value of the relative clause. The architecture that takes care of this task is the Clause Enhancer (CE): this submodule takes in input the full vector of preactivations from the original NN and computes the vector of deltas $\delta^c$ described in equation (\ref{eq:delta_c}). For each clause in the base knowledge, a CE will be instantiated. The details of the architecture of the CE are described in Figure \ref{fig:CE}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/CE.png}
+	%TODO: fare bene la caption quando avrò l'immagine giusta
+	\caption{Detailed depiction of the Clause Enhancer for the clause.... todo}
+	\label{fig:CE}
+\end{figure}
+
+The CE performs the following operations:
+\begin{enumerate}
+	%TODO: refine the steps
+	\item takes the preactivations...
+	\item perform the select step..
+	\item creates delta according to eq...
+	\item transforms back from zof literals to z of predicates ...
+\end{enumerate}
+
+Once the delta for each clause ($\delta^c$) is produced by its corresponding CE, the next step is to aggregate all the deltas by summing them. The module that performs this operation is called the \textit{Knowledge Enhancer} (KE), which is shown in Figure \ref{fig:KE}. More specifically, the KE performs the following operations:
+\begin{enumerate}
+	\item Takes as inputs all the $\delta^c$ for each clause $c$ in the knowledge and sums them. 
+	\item It sums the obtained delta with the original preactivations 
+	\item Applies the sigmoid activation function.
+\end{enumerate}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/KE.png}
+	%TODO also refine here
+	\caption{The KE architecture... todo}
+	\label{fig:KE}
+\end{figure}
+
+ These steps produce the final vector of modified predictions $y'$. Notice that the KE is just the implementation of equation (\ref{eq:deltas_sum}).
+ 
+ \section{KENN for relational data}
+ \section{Experiments}
+ \section{Explainability in KENN}
+ In che modo KENN è un modello explainable/interpretable.
+ Prima fare qualche collegamento con quanto visto nel capitolo dell'explainability...
+ \begin{enumerate}
+ 	\item clause weights -> quanto le clausole influiscono sulle predizioni
+ 	\item ispezionare i delta permette di vedere direttamente come è stata modificata una predizione e perché;
+ 	\item possibilità di definire metriche (rank by improvement etc) che permettono di capire bene quali predizioni sono state migliorate, quali peggiorate, e a causa di quale clausola.
+ 	\item Interpretability: si può capire come KENN impari i clause weights e quanto è legato alla "verità di una clausola"-> correlazione tra clause compliance e clause weights.
+ \end{enumerate}
 

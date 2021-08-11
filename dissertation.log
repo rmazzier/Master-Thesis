@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  9 AUG 2021 20:07
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  11 AUG 2021 23:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -501,10 +501,6 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 \c@mkern=\count319
 )
 
-Package fontspec Info: Could not resolve font "EB Garamond/B" (it probably
-(fontspec)             doesn't exist).
-
-
 Package fontspec Info: Font family 'EBGaramond(0)' created for font 'EB
 (fontspec)             Garamond' with options
 (fontspec)             [Ligatures=TeX,Numbers=OldStyle,Ligatures={Common,
@@ -519,6 +515,13 @@ g=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->s*[1.0]"EB
 (fontspec)             Garamond/OT:script=latn;language=dflt;+onum;+liga;+smcp;
 mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->s*[1.0]"EB
+(fontspec)             Garamond/B/OT:script=latn;language=dflt;+onum;+liga;mapp
+ing=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1.0]"EB
+(fontspec)             Garamond/B/OT:script=latn;language=dflt;+onum;+liga;+smc
+p;mapping=tex-text;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.: <->s*[1.0]"EB
 (fontspec)             Garamond/I/OT:script=latn;language=dflt;+onum;+liga;mapp
 ing=tex-text;"
@@ -537,10 +540,6 @@ cp;mapping=tex-text;"
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
 (Font)              scaled to size 12.0pt on input line 91.
 
-Package fontspec Info: Could not resolve font "EB Garamond/B" (it probably
-(fontspec)             doesn't exist).
-
-
 Package fontspec Info: Font family 'EBGaramond(1)' created for font 'EB
 (fontspec)             Garamond' with options [RawFeature={+c2sc,+scmp}].
 (fontspec)              
@@ -552,6 +551,11 @@ Package fontspec Info: Font family 'EBGaramond(1)' created for font 'EB
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"EB
 (fontspec)             Garamond/OT:script=latn;language=dflt;+c2sc,+scmp;+smcp;
 "
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"EB
+(fontspec)             Garamond/B/OT:script=latn;language=dflt;+c2sc,+scmp;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: <->"EB
+(fontspec)             Garamond/B/OT:script=latn;language=dflt;+c2sc,+scmp;+smc
+p;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.: <->"EB
 (fontspec)             Garamond/I/OT:script=latn;language=dflt;+c2sc,+scmp;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: <->"EB
@@ -1529,12 +1533,7 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
 (Font)              scaled to size 12.0pt on input line 23.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
 (Font)              scaled to size 24.88pt on input line 23.
-
-
-LaTeX Font Warning: Font shape `TU/EBGaramond(0)/b/sc' undefined
-(Font)              using `TU/EBGaramond(0)/m/n' instead on input line 23.
-
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
+LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/sc' will be
 (Font)              scaled to size 24.88pt on input line 23.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
 (Font)              scaled to size 14.4pt on input line 23.
@@ -1546,18 +1545,16 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/sc' will be
 (Font)              scaled to size 20.74pt on input line 23.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/scit' will be
 (Font)              scaled to size 12.0pt on input line 23.
-[1
+ [1
 
 ] [2
 
-] (./frontmatter/dedication.tex
-Underfull \hbox (badness 10000) in paragraph at lines 23--3
-
- []
-
-) [3] [4
+]
+(./frontmatter/dedication.tex) [3] [4
 
 ]
+LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
+(Font)              scaled to size 24.88pt on input line 23.
 LaTeX Font Info:    Trying to load font information for TU+ppl on input line 23
 .
 LaTeX Font Info:    No file TUppl.fd. on input line 23.
@@ -1583,9 +1580,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 ] [6
 
 ] (./dissertation.toc
-
-LaTeX Font Warning: Font shape `TU/EBGaramond(0)/b/n' undefined
-(Font)              using `TU/EBGaramond(0)/m/n' instead on input line 1.
+LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 1.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
@@ -1606,10 +1602,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 1.
-)
+))
 \tf@toc=\write5
 \openout5 = `dissertation.toc'.
 
@@ -1639,212 +1632,153 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
 
 ] [14
 
-] (./dissertation.toc)
-\tf@toc=\write8
-\openout8 = `dissertation.toc'.
-
- [1
-
 ]
 \openout2 = `chapters/introduction.aux'.
 
-
-(./chapters/introduction.tex [2
+ (./chapters/introduction.tex
+Chapter 1.
+) [1
 
 
 ]
-Chapter 1.
-) [3]
 \openout2 = `chapters/chapter1.aux'.
 
- (./chapters/chapter1.tex [4
+ (./chapters/chapter1.tex [2
 
 
 
 
 ]
 Chapter 2.
+[3]
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
-(Font)              scaled to size 17.28pt on input line 7.
-File: figures/example.png Graphic file (type bmp)
-<figures/example.png>
+(Font)              scaled to size 17.28pt on input line 26.
+ [4]
+File: figures/example_explainability.png Graphic file (type bmp)
+<figures/example_explainability.png>
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/b/n' will be
-(Font)              scaled to size 9.5907pt on input line 15.
+(Font)              scaled to size 9.5907pt on input line 36.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LatoRegular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/b/n' will be
-(Font)              scaled to size 7.99225pt on input line 15.
+(Font)              scaled to size 7.99225pt on input line 36.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
-(Font)              scaled to size 9.71375pt on input line 15.
+(Font)              scaled to size 9.71375pt on input line 36.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
-(Font)              scaled to size 8.09479pt on input line 15.
-
-Package fontspec Info: Could not resolve font "EB Garamond/B" (it probably
-(fontspec)             doesn't exist).
-
-
-Package fontspec Info: Font family 'EBGaramond(2)' created for font 'EB
-(fontspec)             Garamond' with options
-(fontspec)             [Ligatures=TeX,Numbers=OldStyle,Ligatures={Common,
-(fontspec)             TeX},Scale=1.0,RawFeature=+tnum].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->s*[1.0]"EB
-(fontspec)             Garamond/OT:script=latn;language=dflt;+onum;+liga;+tnum;
-mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->s*[1.0]"EB
-(fontspec)             Garamond/OT:script=latn;language=dflt;+onum;+liga;+tnum;
-+smcp;mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.: <->s*[1.0]"EB
-(fontspec)             Garamond/I/OT:script=latn;language=dflt;+onum;+liga;+tnu
-m;mapping=tex-text;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1.0]"EB
-(fontspec)             Garamond/I/OT:script=latn;language=dflt;+onum;+liga;+tnu
-m;+smcp;mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->s*[1.0]"EB
-(fontspec)             Garamond/BI/OT:script=latn;language=dflt;+onum;+liga;+tn
-um;mapping=tex-text;"
-(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1.0]"EB
-(fontspec)             Garamond/BI/OT:script=latn;language=dflt;+onum;+liga;+tn
-um;+smcp;mapping=tex-text;"
-
-LaTeX Font Info:    Font shape `TU/EBGaramond(2)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 24.
-[5]
-
-Package natbib Warning: Citation `book1' on page 6 undefined on input line 43.
-
-
-Package natbib Warning: Citation `article1' on page 6 undefined on input line 4
-4.
-
-
-Package natbib Warning: Citation `conference1' on page 6 undefined on input lin
-e 45.
-
-
-Package natbib Warning: Citation `online1' on page 6 undefined on input line 46
-.
-
-
-Package natbib Warning: Citation `standard1' on page 6 undefined on input line 
-47.
-
-) [6]
+(Font)              scaled to size 8.09479pt on input line 36.
+ [5] [6] [7]) [8]
 \openout2 = `chapters/chapter2.aux'.
 
  (./chapters/chapter2.tex
 Chapter 3.
-
-Underfull \vbox (badness 1014) has occurred while \output is active []
-
- [7
+[9
 
 
 
 
-]
-[8]
+] [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 56.
+(hyperref)                removing `math shift' on input line 57.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 56.
+(hyperref)                removing `math shift' on input line 57.
 
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 62.
+(Font)              scaled to size 8.0pt on input line 63.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 10.40002pt on input line 62.
+(Font)              scaled to size 10.40002pt on input line 63.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 62.
+(Font)              scaled to size 10.0pt on input line 63.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 62.
+(Font)              scaled to size 7.0pt on input line 63.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 9.10002pt on input line 62.
+(Font)              scaled to size 9.10002pt on input line 63.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9]
-[10]
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 102.
  [11]
+[12]
+LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 103.
+ [13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 120.
+(hyperref)                removing `math shift' on input line 121.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 120.
+(hyperref)                removing `math shift' on input line 121.
 
-[12] [13] [14]
+[14] [15]
+Underfull \vbox (badness 7486) has occurred while \output is active []
+
+ [16]
+[17]
 File: figures/preac_deltas_example.jpg Graphic file (type bmp)
 <figures/preac_deltas_example.jpg>
 File: figures/sigmoid_shape_example.png Graphic file (type bmp)
 <figures/sigmoid_shape_example.png>
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
-(Font)              scaled to size 8.09479pt on input line 214.
+(Font)              scaled to size 8.09479pt on input line 242.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15] [16]
+[18] [19]
 File: figures/delta_single_clause.png Graphic file (type bmp)
 <figures/delta_single_clause.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
+[20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17])
-[18] [19]
+ [21]
+File: figures/CE.png Graphic file (type bmp)
+<figures/CE.png>
+File: figures/KE.png Graphic file (type bmp)
+<figures/KE.png>
+
+[22] [23] [24]) [25]
 \openout2 = `chapters/conclusion.aux'.
 
- (./chapters/conclusion.tex [20
+ (./chapters/conclusion.tex [26
 
 
 
 
 ]
 Chapter 4.
-) [21] [22
+) [27] [28
 
+
+
+] (./dissertation.bbl [29
+
+]) [30] (./frontmatter/thanks.tex) [31
 
 
 ]
-No file dissertation.bbl.
-(./frontmatter/thanks.tex) [23
-
-
-]
-
-Package natbib Warning: There were undefined citations.
-
 (./dissertation.aux (./chapters/introduction.aux) (./chapters/chapter1.aux)
 (./chapters/chapter2.aux) (./chapters/conclusion.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 125D363CEEE7661613101A65F28CBFC7;3653.
+(rerunfilecheck)             Checksum: 82057BD53EF9C6B1452337B805C1CB2B;4134.
  ) 
 Here is how much of TeX's memory you used:
- 43698 strings out of 476476
- 1036216 string characters out of 5814301
- 1484002 words of memory out of 5000000
- 63275 multiletter control sequences out of 15000+600000
- 413926 words of font info for 115 fonts, out of 8000000 for 9000
+ 43735 strings out of 476476
+ 1037310 string characters out of 5814301
+ 1484277 words of memory out of 5000000
+ 63314 multiletter control sequences out of 15000+600000
+ 412095 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,11n,133p,1545b,871s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 103i,17n,133p,2448b,934s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on dissertation.pdf (37 pages).
+Output written on dissertation.pdf (45 pages).
