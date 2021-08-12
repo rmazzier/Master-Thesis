@@ -20,47 +20,50 @@ Warning--empty journal in marcus2018appraisal
 Warning--empty journal in szegedy2013intriguing
 Warning--empty booktitle in nguyen2015fooled
 Warning--empty booktitle in jia2017adversarial
+Warning--empty booktitle in Kim2015InteractiveAI
+Warning--empty booktitle in ribeiro2016trust
+Warning--empty journal in mahendran2014understanding
 
 Done.
-You've used 14 entries,
+You've used 22 entries,
             4087 wiz_defined-function locations,
-            904 strings with 9890 characters,
-and the built_in function-call counts, 8943 in all, are:
-= -- 691
-> -- 205
-< -- 52
-+ -- 111
-- -- 39
-* -- 413
-:= -- 1364
-add.period$ -- 29
-call.type$ -- 14
-change.case$ -- 14
-chr.to.int$ -- 117
-cite$ -- 19
-duplicate$ -- 684
-empty$ -- 771
-format.name$ -- 49
-if$ -- 2076
+            948 strings with 11429 characters,
+and the built_in function-call counts, 14054 in all, are:
+= -- 1102
+> -- 320
+< -- 80
++ -- 172
+- -- 61
+* -- 650
+:= -- 2149
+add.period$ -- 46
+call.type$ -- 22
+change.case$ -- 22
+chr.to.int$ -- 177
+cite$ -- 30
+duplicate$ -- 1082
+empty$ -- 1212
+format.name$ -- 78
+if$ -- 3272
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 124
-newline$ -- 71
-num.names$ -- 14
-pop$ -- 326
+int.to.str$ -- 22
+missing$ -- 195
+newline$ -- 101
+num.names$ -- 22
+pop$ -- 511
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 691
+skip$ -- 1094
 stack$ -- 0
-substring$ -- 306
-swap$ -- 510
-text.length$ -- 13
+substring$ -- 471
+swap$ -- 801
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 14
-warning$ -- 5
-while$ -- 33
-width$ -- 16
-write$ -- 150
-(There were 5 warnings)
+type$ -- 22
+warning$ -- 8
+while$ -- 51
+width$ -- 24
+write$ -- 228
+(There were 8 warnings)

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  11 AUG 2021 23:41
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  12 AUG 2021 20:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1612,7 +1612,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 ] (./dissertation.lof
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
-(Font)              scaled to size 12.0pt on input line 5.
+(Font)              scaled to size 12.0pt on input line 6.
 )
 \tf@lof=\write6
 \openout6 = `dissertation.lof'.
@@ -1653,32 +1653,51 @@ Chapter 2.
 [3]
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
 (Font)              scaled to size 17.28pt on input line 26.
- [4]
+ [4] [5] [6]
 File: figures/example_explainability.png Graphic file (type bmp)
 <figures/example_explainability.png>
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/b/n' will be
-(Font)              scaled to size 9.5907pt on input line 36.
+(Font)              scaled to size 9.5907pt on input line 58.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LatoRegular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/b/n' will be
-(Font)              scaled to size 7.99225pt on input line 36.
+(Font)              scaled to size 7.99225pt on input line 58.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
-(Font)              scaled to size 9.71375pt on input line 36.
+(Font)              scaled to size 9.71375pt on input line 58.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
-(Font)              scaled to size 8.09479pt on input line 36.
- [5] [6] [7]) [8]
+(Font)              scaled to size 8.09479pt on input line 58.
+ [7] [8] [9]
+Missing character: There is no ´ ("B4) in font cmr12!
+
+Overfull \hbox (4.97171pt too wide) in paragraph at lines 101--102
+[]\TU/EBGaramond(0)/m/n/12 The proposed definition doesn’t yield good results i
+n practice: although producing strong
+ []
+
+File: figures/image-dream-map.png Graphic file (type bmp)
+<figures/image-dream-map.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (2.22908pt too wide) in paragraph at lines 112--119
+\TU/EBGaramond(0)/m/n/12 faithful manner, by learning an interpretable model lo
+cally around the prediction... Prob-
+ []
+
+) [10] [11]
 \openout2 = `chapters/chapter2.aux'.
 
- (./chapters/chapter2.tex
+ (./chapters/chapter2.tex [12
+
+
+
+
+]
 Chapter 3.
-[9
-
-
-
-
-] [10]
+[13] [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 57.
@@ -1700,11 +1719,11 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-[12]
+ [15]
+[16]
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
 (Font)              scaled to size 6.0pt on input line 103.
- [13]
+ [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 121.
@@ -1713,11 +1732,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 121.
 
-[14] [15]
+[18] [19]
 Underfull \vbox (badness 7486) has occurred while \output is active []
 
- [16]
-[17]
+ [20]
+[21]
 File: figures/preac_deltas_example.jpg Graphic file (type bmp)
 <figures/preac_deltas_example.jpg>
 File: figures/sigmoid_shape_example.png Graphic file (type bmp)
@@ -1728,57 +1747,58 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18] [19]
+[22] [23]
 File: figures/delta_single_clause.png Graphic file (type bmp)
 <figures/delta_single_clause.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20]
+[24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
+ [25]
 File: figures/CE.png Graphic file (type bmp)
 <figures/CE.png>
 File: figures/KE.png Graphic file (type bmp)
 <figures/KE.png>
 
-[22] [23] [24]) [25]
+[26] [27] [28]) [29]
 \openout2 = `chapters/conclusion.aux'.
 
- (./chapters/conclusion.tex [26
+ (./chapters/conclusion.tex [30
 
 
 
 
 ]
 Chapter 4.
-) [27] [28
+) [31] [32
 
 
 
-] (./dissertation.bbl [29
+] (./dissertation.bbl [33
 
-]) [30] (./frontmatter/thanks.tex) [31
+] [34]) [35] [36
 
+] (./frontmatter/thanks.tex) [37
 
-]
-(./dissertation.aux (./chapters/introduction.aux) (./chapters/chapter1.aux)
-(./chapters/chapter2.aux) (./chapters/conclusion.aux))
+] (./dissertation.aux (./chapters/introduction.aux)
+(./chapters/chapter1.aux) (./chapters/chapter2.aux) (./chapters/conclusion.aux)
+)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 82057BD53EF9C6B1452337B805C1CB2B;4134.
+(rerunfilecheck)             Checksum: 4004139961861687EBCD8170AC4CE128;4134.
  ) 
 Here is how much of TeX's memory you used:
- 43735 strings out of 476476
- 1037310 string characters out of 5814301
- 1484277 words of memory out of 5000000
- 63314 multiletter control sequences out of 15000+600000
+ 43768 strings out of 476476
+ 1038231 string characters out of 5814301
+ 1484979 words of memory out of 5000000
+ 63346 multiletter control sequences out of 15000+600000
  412095 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,17n,133p,2448b,934s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 103i,17n,133p,2448b,976s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on dissertation.pdf (45 pages).
+Output written on dissertation.pdf (51 pages).
