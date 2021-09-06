@@ -4,7 +4,7 @@ The top-level auxiliary file: dissertation.aux
 The style file: IEEEtran.bst
 A level-1 auxiliary file: chapters/introduction.aux
 A level-1 auxiliary file: chapters/chapter1.aux
-A level-1 auxiliary file: chapters/chapter2.aux
+A level-1 auxiliary file: chapters/chapter3.aux
 A level-1 auxiliary file: chapters/conclusion.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -15,55 +15,55 @@ Database file #1: references.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty booktitle in gilpin2018explaining
 Warning--empty journal in marcus2018appraisal
 Warning--empty journal in szegedy2013intriguing
 Warning--empty booktitle in nguyen2015fooled
 Warning--empty booktitle in jia2017adversarial
 Warning--empty booktitle in Kim2015InteractiveAI
 Warning--empty booktitle in ribeiro2016trust
+Warning--empty booktitle in gilpin2018explaining
 Warning--empty journal in mahendran2014understanding
 
 Done.
-You've used 22 entries,
+You've used 45 entries,
             4087 wiz_defined-function locations,
-            948 strings with 11429 characters,
-and the built_in function-call counts, 14054 in all, are:
-= -- 1102
-> -- 320
-< -- 80
-+ -- 172
-- -- 61
-* -- 650
-:= -- 2149
-add.period$ -- 46
-call.type$ -- 22
-change.case$ -- 22
-chr.to.int$ -- 177
-cite$ -- 30
-duplicate$ -- 1082
-empty$ -- 1212
-format.name$ -- 78
-if$ -- 3272
+            1074 strings with 16276 characters,
+and the built_in function-call counts, 30239 in all, are:
+= -- 2347
+> -- 818
+< -- 174
++ -- 429
+- -- 163
+* -- 1406
+:= -- 4558
+add.period$ -- 95
+call.type$ -- 45
+change.case$ -- 46
+chr.to.int$ -- 390
+cite$ -- 53
+duplicate$ -- 2306
+empty$ -- 2569
+format.name$ -- 200
+if$ -- 7060
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 195
-newline$ -- 101
-num.names$ -- 22
-pop$ -- 511
+int.to.str$ -- 45
+missing$ -- 430
+newline$ -- 172
+num.names$ -- 47
+pop$ -- 1107
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1094
+skip$ -- 2340
 stack$ -- 0
-substring$ -- 471
-swap$ -- 801
-text.length$ -- 21
+substring$ -- 1014
+swap$ -- 1721
+text.length$ -- 44
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 22
+type$ -- 45
 warning$ -- 8
-while$ -- 51
-width$ -- 24
-write$ -- 228
+while$ -- 113
+width$ -- 47
+write$ -- 439
 (There were 8 warnings)

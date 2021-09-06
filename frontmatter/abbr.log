@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  10 AUG 2021 17:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.7.28)  30 AUG 2021 00:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **abbr.tex
 (./abbr.tex
-LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-07-12>
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
 
 ! LaTeX Error: Environment abbreviations undefined.
 
@@ -26,24 +26,96 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2 \item[NN]
+l.2 \item[ML]
+              Machine Learning
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no M in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \item[XAI]
+               Explainable Artificial Intelligence
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no E in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \item[NN]
               Neural Network
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-Missing character: There is no N ("4E) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no u ("75) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no N ("4E) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no w ("77) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no k ("6B) in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -51,41 +123,41 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3 \item[KENN]
+l.5 \item[KENN]
                 Knowledge Enhanced Neural Network
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-Missing character: There is no K ("4B) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no w ("77) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no g ("67) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no E ("45) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no N ("4E) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no u ("75) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no N ("4E) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no w ("77) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no k ("6B) in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
 
 ! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
@@ -93,37 +165,37 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4 \item[TBF]
+l.6 \item[TBF]
                $t$-conorm Boost Function
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 4.
+(Font)              <7> on input line 6.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 4.
-Missing character: There is no - ("2D) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no m ("6D) in font nullfont!
-Missing character: There is no B ("42) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no s ("73) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no F ("46) in font nullfont!
-Missing character: There is no u ("75) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
+(Font)              <5> on input line 6.
+Missing character: There is no - in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
 
-Overfull \hbox (3.61111pt too wide) in paragraph at lines 4--5
+Overfull \hbox (3.61111pt too wide) in paragraph at lines 6--7
 \OML/cmm/m/it/10 t$ 
  []
 
@@ -134,25 +206,131 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5 \item[CE]
+l.7 \item[CE]
               Clause Enhancer
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-Missing character: There is no C ("43) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no u ("75) in font nullfont!
-Missing character: There is no s ("73) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no E ("45) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \item[SBR]
+               Semantic Based Regularization
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no S in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 \item[LTN]
+               Logic Tensor Networks
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no L in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no s in font nullfont!
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \item[RNM]
+                Relational Neural Machines
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no R in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
 
 ! LaTeX Error: \begin{document} ended by \end{abbreviations}.
 
@@ -160,8 +338,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6 \end{abbreviations}
-                       
+l.11 \end{abbreviations}
+                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -174,11 +352,11 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 18 strings out of 476476
- 329 string characters out of 5814301
- 300545 words of memory out of 5000000
- 20572 multiletter control sequences out of 15000+600000
- 403430 words of font info for 27 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 18i,1n,12p,86b,72s stack positions out of 5000i,500n,10000p,200000b,80000s
-No pages of output.
+ 19 strings out of 483065
+ 421 string characters out of 5963550
+ 232997 words of memory out of 5000000
+ 15152 multiletter control sequences out of 15000+600000
+ 532338 words of font info for 24 fonts, out of 8000000 for 9000
+ 81 hyphenation exceptions out of 8191
+ 18i,1n,15p,63b,70s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

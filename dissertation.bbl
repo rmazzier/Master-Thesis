@@ -21,11 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{gilpin2018explaining}
-L.~Gilpin, D.~Bau, B.~Yuan, A.~Bajwa, M.~Specter, and L.~Kagal, ``Explaining
-  explanations: An overview of interpretability of machine learning,'' Oct.
-  2018, pp. 80--89.
-
 \bibitem{mordvintsev2015inceptionism}
 \BIBentryALTinterwordspacing
 A.~Mordvintsev, C.~Olah, and M.~Tyka, ``Inceptionism: Going deeper into neural
@@ -36,9 +31,18 @@ A.~Mordvintsev, C.~Olah, and M.~Tyka, ``Inceptionism: Going deeper into neural
 \bibitem{marcus2018appraisal}
 G.~Marcus, ``Deep learning: A critical appraisal,'' Jan. 2018.
 
+\bibitem{sabour2017dynamic}
+S.~Sabour, N.~Frosst, and G.~E. Hinton, ``Dynamic routing between capsules,''
+  \emph{arXiv preprint arXiv:1710.09829}, 2017.
+
 \bibitem{szegedy2013intriguing}
 C.~Szegedy, W.~Zaremba, I.~Sutskever, J.~Bruna, D.~Erhan, I.~Goodfellow, and
   R.~Fergus, ``Intriguing properties of neural networks,'' 12 2013.
+
+\bibitem{buckner2020adversarial}
+C.~Buckner, ``Adversarial examples and the deeper riddle of induction: The need
+  for a theory of artifacts in deep learning,'' \emph{arXiv preprint
+  arXiv:2003.11917}, 2020.
 
 \bibitem{nguyen2015fooled}
 A.~Nguyen, J.~Yosinski, and J.~Clune, ``Deep neural networks are easily fooled:
@@ -49,12 +53,22 @@ A.~Nguyen, J.~Yosinski, and J.~Clune, ``Deep neural networks are easily fooled:
 R.~Jia and P.~Liang, ``Adversarial examples for evaluating reading
   comprehension systems,'' 01 2017, pp. 2021--2031.
 
+\bibitem{zhang2019generating}
+W.~E. Zhang, Q.~Z. Sheng, A.~A.~F. Alhazmi, and C.~Li, ``Generating textual
+  adversarial examples for deep learning models: A survey,'' \emph{arXiv
+  preprint arXiv:1901.06796}, p. 129, 2019.
+
 \bibitem{bolukbasi2016debiasing}
 T.~Bolukbasi, K.-W. Chang, J.~Zou, V.~Saligrama, and A.~Kalai, ``Man is to
   computer programmer as woman is to homemaker? debiasing word embeddings,'' in
   \emph{Proceedings of the 30th International Conference on Neural Information
   Processing Systems}, ser. NIPS'16.\hskip 1em plus 0.5em minus 0.4em\relax Red
   Hook, NY, USA: Curran Associates Inc., 2016, p. 4356–4364.
+
+\bibitem{goodman2017european}
+B.~Goodman and S.~Flaxman, ``European union regulations on algorithmic
+  decision-making and a “right to explanation”,'' \emph{AI magazine},
+  vol.~38, no.~3, pp. 50--57, 2017.
 
 \bibitem{acm2017transparency}
 \BIBentryALTinterwordspacing
@@ -70,6 +84,11 @@ D.~Gunning and D.~Aha, ``Darpa’s explainable artificial intelligence (xai)
   [Online]. Available:
   \url{https://ojs.aaai.org/index.php/aimagazine/article/view/2850}
 \BIBentrySTDinterwordspacing
+
+\bibitem{bromberger1992we}
+S.~Bromberger, \emph{On what we know we don't know: Explanation, theory,
+  linguistics, and how questions shape them}.\hskip 1em plus 0.5em minus
+  0.4em\relax University of Chicago Press, 1992.
 
 \bibitem{lipton2017mythos}
 Z.~Lipton, ``The mythos of model interpretability,'' \emph{Communications of
@@ -93,6 +112,21 @@ M.~Ribeiro, S.~Singh, and C.~Guestrin, ``“why should i trust you?”:
 N.~Burkart and M.~Huber, ``A survey on the explainability of supervised machine
   learning,'' \emph{Journal of Artificial Intelligence Research}, vol.~70, 01
   2021.
+
+\bibitem{chen2019judicial}
+B.~Chen, Y.~Li, S.~Zhang, H.~Lian, and T.~He, ``A deep learning method for
+  judicial decision support,'' in \emph{2019 IEEE 19th International Conference
+  on Software Quality, Reliability and Security Companion (QRS-C)}, 2019, pp.
+  145--149.
+
+\bibitem{zhang2018explainable}
+Y.~Zhang and X.~Chen, ``Explainable recommendation: A survey and new
+  perspectives,'' \emph{arXiv preprint arXiv:1804.11192}, 2018.
+
+\bibitem{gilpin2018explaining}
+L.~Gilpin, D.~Bau, B.~Yuan, A.~Bajwa, M.~Specter, and L.~Kagal, ``Explaining
+  explanations: An overview of interpretability of machine learning,'' Oct.
+  2018, pp. 80--89.
 
 \bibitem{montavon2018methods}
 G.~Montavon, W.~Samek, and K.-R. Müller, ``Methods for interpreting and
@@ -141,5 +175,94 @@ A.~Mahendran and A.~Vedaldi, ``Understanding deep image representations by
 K.~Simonyan, A.~Vedaldi, and A.~Zisserman, ``Deep inside convolutional
   networks: Visualising image classification models and saliency maps,''
   \emph{preprint}, 12 2013.
+
+\bibitem{wang2016dueling}
+Z.~Wang, T.~Schaul, M.~Hessel, H.~Hasselt, M.~Lanctot, and N.~Freitas,
+  ``Dueling network architectures for deep reinforcement learning,'' in
+  \emph{Proceedings of The 33rd International Conference on Machine Learning},
+  ser. Proceedings of Machine Learning Research, M.~F. Balcan and K.~Q.
+  Weinberger, Eds., vol.~48.\hskip 1em plus 0.5em minus 0.4em\relax New York,
+  New York, USA: PMLR, 20--22 Jun 2016, pp. 1995--2003.
+
+\bibitem{ross2017right}
+A.~S. Ross, M.~C. Hughes, and F.~Doshi-Velez, ``Right for the right reasons:
+  Training differentiable models by constraining their explanations,''
+  \emph{arXiv preprint arXiv:1703.03717}, 2017.
+
+\bibitem{attentionisall2017vaswani}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
+  {\L}.~Kaiser, and I.~Polosukhin, ``Attention is all you need,'' in
+  \emph{Advances in neural information processing systems}, 2017, pp.
+  5998--6008.
+
+\bibitem{devlin2018bert}
+J.~Devlin, M.-W. Chang, K.~Lee, and K.~Toutanova, ``Bert: Pre-training of deep
+  bidirectional transformers for language understanding,'' \emph{arXiv preprint
+  arXiv:1810.04805}, 2018.
+
+\bibitem{dosovitskiy2020image}
+A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai,
+  T.~Unterthiner, M.~Dehghani, M.~Minderer, G.~Heigold, S.~Gelly \emph{et~al.},
+  ``An image is worth 16x16 words: Transformers for image recognition at
+  scale,'' \emph{arXiv preprint arXiv:2010.11929}, 2020.
+
+\bibitem{park2018multimodal}
+D.~H. Park, L.~A. Hendricks, Z.~Akata, A.~Rohrbach, B.~Schiele, T.~Darrell, and
+  M.~Rohrbach, ``Multimodal explanations: Justifying decisions and pointing to
+  the evidence,'' in \emph{Proceedings of the IEEE Conference on Computer
+  Vision and Pattern Recognition}, 2018, pp. 8779--8788.
+
+\bibitem{das2017human}
+A.~Das, H.~Agrawal, L.~Zitnick, D.~Parikh, and D.~Batra, ``Human attention in
+  visual question answering: Do humans and deep networks look at the same
+  regions?'' \emph{Computer Vision and Image Understanding}, vol. 163, pp.
+  90--100, 2017.
+
+\bibitem{caruana1999case}
+R.~Caruana, H.~Kangarloo, J.~D. Dionisio, U.~Sinha, and D.~Johnson,
+  ``Case-based explanation of non-case-based learning methods.'' in
+  \emph{Proceedings of the AMIA Symposium}.\hskip 1em plus 0.5em minus
+  0.4em\relax American Medical Informatics Association, 1999, p. 212.
+
+\bibitem{Besold2017NeuralSymbolicLA}
+T.~R. Besold, A.~Garcez, S.~Bader, H.~Bowman, P.~M. Domingos, P.~Hitzler, K.-U.
+  K{\"u}hnberger, L.~Lamb, D.~Lowd, P.~Lima, L.~Penning, G.~Pinkas, H.~Poon,
+  and G.~Zaverucha, ``Neural-symbolic learning and reasoning: A survey and
+  interpretation,'' \emph{ArXiv}, vol. abs/1711.03902, 2017.
+
+\bibitem{valiant2003threeproblems}
+\BIBentryALTinterwordspacing
+L.~G. Valiant, ``Three problems in computer science,'' \emph{J. ACM}, vol.~50,
+  no.~1, p. 96–99, Jan. 2003. [Online]. Available:
+  \url{https://doi.org/10.1145/602382.602410}
+\BIBentrySTDinterwordspacing
+
+\bibitem{daniele2019kenn}
+A.~Daniele and L.~Serafini, ``Knowledge enhanced neural networks,'' in
+  \emph{PRICAI 2019: Trends in Artificial Intelligence}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Cham: Springer International Publishing, 2019, pp.
+  542--554.
+
+\bibitem{novak1987first}
+V.~Nov{\'a}k, ``First-order fuzzy logic,'' \emph{Studia logica}, vol.~46,
+  no.~1, pp. 87--109, 1987.
+
+\bibitem{serafini2016logic}
+L.~Serafini and A.~d. Garcez, ``Logic tensor networks: Deep learning and
+  logical reasoning from data and knowledge,'' \emph{arXiv preprint
+  arXiv:1606.04422}, 2016.
+
+\bibitem{sen2008collective}
+P.~Sen, G.~Namata, M.~Bilgic, L.~Getoor, B.~Galligher, and T.~Eliassi-Rad,
+  ``Collective classification in network data,'' \emph{AI magazine}, vol.~29,
+  no.~3, pp. 93--93, 2008.
+
+\bibitem{marra2020relational}
+G.~Marra, M.~Diligenti, F.~Giannini, M.~Gori, and M.~Maggini, ``Relational
+  neural machines,'' \emph{arXiv preprint arXiv:2002.02193}, 2020.
+
+\bibitem{lu2003link}
+Q.~Lu and L.~Getoor, ``Link-based text classification,'' in \emph{IJCAI
+  Workshop on Text Mining and Link Analysis}, 2003.
 
 \end{thebibliography}
