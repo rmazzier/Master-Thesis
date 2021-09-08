@@ -23,44 +23,55 @@
 \newlabel{fig:preacs_deltas_example}{{3.1}{27}{This image illustrates the actual deltas produced by KENN, which are the $\delta ^f$, opposed to the actual delta produced on the activations, which is $\delta ^g$. As we said, $\delta ^g$ is not produced directly by the model but it is indirectly \textit {induced} by the application of $\delta ^f$ on the preactivations. This also illustrates how, thanks to the shape of the sigmoid activation function, the same delta on the preactivation produces a different delta at the activations level: the closer the preactivations to zero, the highest the modification on the final predictions. \relax }{figure.caption.15}{}}
 \newlabel{eq:delta_c}{{3.12}{28}{Applying TBFs to preactivations}{equation.3.1.12}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}Increasing the satisfaction of the Knowledge}{28}{subsection.3.1.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Summary of all the steps needed to produce $\delta ^c$, the vector of deltas derived from a single clause. We refer to this process as \textit  {clause enhancement}.\relax }}{29}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:delta_single_clause}{{3.2}{29}{Summary of all the steps needed to produce $\delta ^c$, the vector of deltas derived from a single clause. We refer to this process as \textit {clause enhancement}.\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Example with all the steps needed to compute $\delta ^c$ for the clause $A \vee \neg B$ starting from the vector of preactivations $z$; for this example $w_c=2$. We refer to this process as \textit  {clause enhancement}.\relax }}{29}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:delta_single_clause}{{3.2}{29}{Example with all the steps needed to compute $\delta ^c$ for the clause $A \vee \neg B$ starting from the vector of preactivations $z$; for this example $w_c=2$. We refer to this process as \textit {clause enhancement}.\relax }{figure.caption.16}{}}
 \newlabel{eq:deltas_sum}{{3.13}{29}{Increasing the satisfaction of the Knowledge}{equation.3.1.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}KENN Architecture}{30}{section.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Detailed depiction of the Clause Enhancer for the clause.... todo\relax }}{31}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:CE}{{3.3}{31}{Detailed depiction of the Clause Enhancer for the clause.... todo\relax }{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces The KE architecture... todo\relax }}{32}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:KE}{{3.4}{32}{The KE architecture... todo\relax }{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Representation of relational data inside KENN\relax }}{32}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:KENNrelationalrepr}{{3.5}{32}{Representation of relational data inside KENN\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}KENN Architecture}{29}{section.3.2}\protected@file@percent }
+\citation{daniele2019kenn}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}KENN for relational data}{30}{section.3.3}\protected@file@percent }
+\newlabel{fig:ce}{{3.3a}{31}{The Clause Enhancer (CE) module.\relax }{figure.caption.17}{}}
+\newlabel{sub@fig:ce}{{a}{31}{The Clause Enhancer (CE) module.\relax }{figure.caption.17}{}}
+\newlabel{fig:ke}{{3.3b}{31}{The Knowledge Enhancer (KE) module.\relax }{figure.caption.17}{}}
+\newlabel{sub@fig:ke}{{b}{31}{The Knowledge Enhancer (KE) module.\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustration of the KENN architecture. Images are replications of the illustrations provided in \cite  {daniele2019kenn}.\relax }}{31}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:kenn_architecture_unary}{{3.3}{31}{Illustration of the KENN architecture. Images are replications of the illustrations provided in \cite {daniele2019kenn}.\relax }{figure.caption.17}{}}
+\newlabel{eq:binary_kenn_eq}{{3.14}{32}{KENN for relational data}{equation.3.3.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Table representation of binary data}{32}{equation.3.3.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{The JOIN operation}{32}{figure.caption.18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Representation of relational data inside KENN. Specifically, objects and relations can be seen as nodes and edges of a directed graph. The preactivations of each grounded predicate are represented in tables $U$ and $B$. In this example, two unary predicates and one binary predicate are present. Note that in matrix $B$ only the object pairs such that there is a relation between them are reported.\relax }}{33}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:KENNrelationalrepr}{{3.4}{33}{Representation of relational data inside KENN. Specifically, objects and relations can be seen as nodes and edges of a directed graph. The preactivations of each grounded predicate are represented in tables $U$ and $B$. In this example, two unary predicates and one binary predicate are present. Note that in matrix $B$ only the object pairs such that there is a relation between them are reported.\relax }{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsubsection}{The GROUP BY and SELECT operations}{34}{equation.3.3.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Putting it all together}{34}{definition.3.3.3}\protected@file@percent }
 \citation{daniele2019kenn,serafini2016logic}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Related Work}{35}{section.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces This figure shows an example with all the necessary computations to compute the final delta matrices $\delta U$ and $\delta B$ (in the bottom), starting from matrices $U$ and $B$ (top left).\relax }}{36}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:kenn_rel_global_scheme}{{3.5}{36}{This figure shows an example with all the necessary computations to compute the final delta matrices $\delta U$ and $\delta B$ (in the bottom), starting from matrices $U$ and $B$ (top left).\relax }{figure.caption.19}{}}
 \citation{serafini2016logic}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}KENN for relational data}{33}{section.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Related Work}{33}{section.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Regularization Approaches}{33}{subsection.3.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Logic Tensor Networks}{33}{subsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Regularization Approaches}{37}{subsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Logic Tensor Networks}{37}{subsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Semantic Based Regularization}{38}{subsection.3.4.1}\protected@file@percent }
+\citation{marra2020relational}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Model Based Approaches}{39}{subsection.3.4.2}\protected@file@percent }
 \citation{sen2008collective}
-\@writefile{toc}{\contentsline {subsubsection}{Semantic Based Regularization}{35}{subsection.3.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Model Based Approaches}{35}{subsection.3.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Experiments}{35}{section.3.5}\protected@file@percent }
 \citation{marra2020relational}
 \citation{lu2003link}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Citeseer Dataset}{36}{subsection.3.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}The Prior Knowledge}{36}{subsection.3.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Results}{37}{subsection.3.5.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Results of kenn experiments for the inductive case....\relax }}{37}{table.caption.20}\protected@file@percent }
-\newlabel{tab:resultsinductive}{{3.1}{37}{Results of kenn experiments for the inductive case....\relax }{table.caption.20}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Results of kenn experiments for the transductive case....\relax }}{37}{table.caption.21}\protected@file@percent }
-\newlabel{tab:resultstransductive}{{3.2}{37}{Results of kenn experiments for the transductive case....\relax }{table.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Deltas for the inductive learning task. $95\%$ confidence intervals.\relax }}{38}{figure.caption.22}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Deltas for the transductive learning task. $95\%$ confidence intervals.\relax }}{38}{figure.caption.23}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Histograms showing the distribution of the accuracies for all the different $500$ runs, for the inductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the difference between the NN accuracy vs KENN accuracy.\relax }}{39}{figure.caption.24}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Histograms showing the distribution of the accuracies for all the different $500$ runs, for the transductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the difference between the NN accuracy vs KENN accuracy.\relax }}{40}{figure.caption.25}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Clause Weights and satisfaction of the rules}{41}{subsection.3.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Explainability in KENN}{41}{section.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Experiments}{40}{section.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Citeseer Dataset}{40}{subsection.3.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}The Prior Knowledge}{41}{subsection.3.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Results}{41}{subsection.3.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Results of kenn experiments for the inductive case....\relax }}{41}{table.caption.20}\protected@file@percent }
+\newlabel{tab:resultsinductive}{{3.1}{41}{Results of kenn experiments for the inductive case....\relax }{table.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Deltas for the inductive learning task. $95\%$ confidence intervals.\relax }}{42}{figure.caption.22}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Deltas for the transductive learning task. $95\%$ confidence intervals.\relax }}{42}{figure.caption.23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Histograms showing the distribution of the accuracies for all the different $500$ runs, for the inductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the difference between the NN accuracy vs KENN accuracy.\relax }}{43}{figure.caption.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Histograms showing the distribution of the accuracies for all the different $500$ runs, for the transductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the difference between the NN accuracy vs KENN accuracy.\relax }}{44}{figure.caption.25}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Results of kenn experiments for the transductive case....\relax }}{45}{table.caption.21}\protected@file@percent }
+\newlabel{tab:resultstransductive}{{3.2}{45}{Results of kenn experiments for the transductive case....\relax }{table.caption.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Clause Weights and satisfaction of the rules}{45}{subsection.3.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Explainability in KENN}{45}{section.3.6}\protected@file@percent }
 \@setckpt{chapters/chapter3}{
-\setcounter{page}{42}
-\setcounter{equation}{13}
+\setcounter{page}{46}
+\setcounter{equation}{18}
 \setcounter{enumi}{3}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -81,7 +92,7 @@
 \setcounter{L@lines}{0}
 \setcounter{L@depth}{0}
 \setcounter{parentequation}{0}
-\setcounter{Item}{19}
+\setcounter{Item}{23}
 \setcounter{Hfootnote}{1}
 \setcounter{Hy@AnnotLevel}{0}
 \setcounter{bookmark@seq@number}{30}
@@ -105,6 +116,8 @@
 \setcounter{@ppsaveapp}{0}
 \setcounter{NAT@ctr}{0}
 \setcounter{dirtytalk@qdepth}{0}
+\setcounter{linenumber}{942}
+\setcounter{LN@truepage}{59}
 \setcounter{definition}{0}
 \setcounter{theorem}{0}
 \setcounter{corollary}{0}
