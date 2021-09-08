@@ -94,7 +94,6 @@ In Fuzzy Logic, $t$-conorm functions are used to represent the concept of logica
 %TODO: correzione: qui ho tolto direttamente sto pezzo...
 %It is also worth specifying that $\mathcal{I}(l_1 \vee \dots \vee l_n)$ will be a function from $\mathbb{R}^{nl}$ to $\left[0,1\right]$, where $n$ is the number of literals of the clause $c := \bigvee_{i=1}^n l_i$.
 With the given definitions, we have all that is needed to compute the truth value of any grounded clause. From a practical point of view, the only remaining step would be to choose a specific $t$-conorm function. KENN uses the Gödel $t$-conorm function, which is also known as the Maximum $t$-conorm and is defined as
-
 \begin{equation*}
 \perp_{max}(a,b) = \max\{a,b\},
 \end{equation*}
@@ -211,7 +210,7 @@ For this reason, KENN exploits the fact that $\sigma$ takes only values in $\lef
 	f(z) \geq 0 \Rightarrow \sigma\left(z_{i}+f(z)\right) \geq \sigma\left(z_{i}\right)
 	$$
 	This implies that $\delta^g(y)=\sigma(z+\delta^f(z)) - \sigma(z) \geq 0$.
-	We now define the function $g(y) = \sigma(z_i + f(z)) - \sigma(z_i)$, where $i = \arg\max_i z_i$. It's easy to see that this $g$ is the function associated to our $\delta^g$. In fact:
+	We now define the function $g(y) = \sigma(z_i + f(z)) - \sigma(z_i)$, where $i = \arg\max_j z_j$. It's easy to see that this $g$ is the function associated to our $\delta^g$. In fact:
 	\begin{align*}
 	\delta^g(y)_i &= \sigma(z + \delta^f(z))_i - \sigma(z)_i \\
 	&=\begin{cases}
@@ -239,14 +238,13 @@ This will result in the following behavior: if the NN is highly confident of its
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/preac_deltas_example.pdf}
-	\includegraphics[width=0.7\textwidth]{figures/sigmoid_shape_example.png}
+%	\includegraphics[width=0.7\textwidth]{figures/sigmoid_shape_example.png}
 	%TODO: refine this caption!!!
-	\caption{This image illustrates the actual deltas produced by KENN, which are the $\delta^f$, opposed to the actual delta produced on the activations, which is $\delta^g$. As we said, $\delta^g$ is not produced directly by the model but it is indirectly \textit{induced} by the application of $\delta^f$ on the preactivations. This also illustrates how, thanks to the shape of the sigmoid activation function, the same delta on the preactivation produces a different delta at the activations level: the closer the preactivations to zero, the highest the modification on the final predictions. }
+	\caption{On the left, example preactivations for the clause $\operatorname{A}(x) \vee \neg \operatorname{B}(x)$ are shown. For both the examples, the same delta ($\delta^f$) is applied to these preactivations. In the first example, the NN has a high confidence, while in the second one it is much lower. We can see how, when applying the activation function, the actual delta ($\delta^g$) is much smaller in the first case and larger in the second. This is due to the shape of the sigmoid activation function itself.  }
 	\label{fig:preacs_deltas_example}
 \end{figure}
 
 As we already mentioned, the minimal TBF directly modeled by KENN is the one we called $\delta^f(z)$. From its definition, we know that the magnitude of the produced delta is determined by the definition of $f$. One of the most important features of KENN is that, by design, it learns to give the proper \textit{importance} to each clause in the base knowledge: this precise feature of the model gives also a way to find such function $f$. Specifically, for each clause $c$ a learnable parameter $w_c$ is defined so that the produced delta for $c$ is:
-
 \begin{equation*}
 \delta^{w_c}(z)_i = 
 \begin{cases}
@@ -254,35 +252,26 @@ w_c \quad &\text{if } i = \arg\max_{j=1}^nz_j \\
 0 \quad &\text{otherwise.}
 \end{cases}
 \end{equation*}
-
 From this definition it's now clear that the function $f$ we were looking for is not actually the same for all the clauses in the base knowledge, but it is defined for each different clause and it's equal to the constant function $f_c(z) = w_c, \quad w_c \in \left[0, \infty\right]$. 
 There is one last problem: while it's true that the function $\delta^{w_c}$ is a minimal TBF, the implementation of this kind of functions inside a NN is unfeasible since they are not differentiable. For this reason KENN uses a soft approximation of $\delta^{w_c}$, defined as:
-
 \begin{equation}
 \delta_s^{w_c}(z)_i = w_c \cdot \operatorname{softmax}(z)_i = w_c \cdot \frac{e^{z_i}}{\sum_{j=1}^ne^{z_j}}.
 \label{eq:soft_approx_delta}
 \end{equation}
-
 There are still, however, some steps to describe in order to fully understand how KENN produces a vector of deltas. Recall our notation: we defined with $y \in \mathbb{R}^m$ the vector of predictions from the NN. Specifically, we now define with $y_A$ the truth value relative to $A$, where $A$ is a generic grounded predicate of our language. We also define $z_A=\sigma^{-1}(y_A)$. Now, we note that equation (\ref{eq:soft_approx_delta}), tells us that the produced $\delta$ is always $m$-dimensional, where $m$ is the number of output classes. This however is not desirable: in fact, in general, not all the clauses in our base knowledge contain all the predicates of our language. For example, given $\mathcal{P}=\{A,B,C\}$, the clause $c = A \vee \neg B$ contains only two of the three predicates in the language. Therefore, we would like this specific clause to not modify in any way $z_C$. Another problem is that we don't know how to express the preactivation of a negated literal, i.e. we don't know how to derive $z_{\neg A}$ from $z_A$. In fact, recall that in equation (\ref{eq:lukasiewicz}) we defined the interpretation of a negated predicate, where we knew that the truth values were well defined in the interval $\left[0,1\right]$. Now we are dealing with preactivations, which cannot be considered truth values in the Fuzzy Logic theoretical framework. However, this problem can be easily solved by exploiting the following property of the sigmoid activation function:
-
 \begin{equation*}
 1 - \sigma(x) = \sigma(-x).
 \end{equation*}
-
 Now it's easy to see that, since $y_{\neg A} = 1 - y_A$, we can define:
-
 \begin{equation*}
 z_{\neg A} = -z_A.
 \end{equation*}
-
 Notice that we are not introducing any new concepts: instead we are just redefining quantities that were already mentioned at the activation level, to the preactivation level. %TODO Maybe remove this sentence
 We finally define $z_c = \left(z_{l_1}, \dots, z_{l_k}\right)$ for every clause $c := \bigvee_{i=1}^k l_i$ of the knowledge. We refer to the process of transforming from $z$ to $z_c$ as the \textit{selection} step. This new vector contains only the preactivations of literals present in $c$, and is the one that we actually want to use to produce the delta relative to clause $c$. Now, let $\mathcal{K}$ be the set of clauses in our knowledge, and $\{w_c\}_{c\in\mathcal{K}}$ their corresponding weights. For every clause $c\in \mathcal{K}$ we want to obtain a new delta, namely $\delta^c \in \mathbb{R}^m$, which contains one value for each predicate in the clause and is defined as follows:
-
 \begin{equation}
 \delta_{A}^{c}= \begin{cases}\delta_{s}^{w_{c}}\left(z_{c}\right)_{A} & \text { if } A \in c \\ -\delta_{s}^{w_{c}}\left(z_{c}\right)_{\neg A} & \text { if } \neg A \in c \\ 0 & \text { otherwise }\end{cases}, \quad \forall A \in c
 \label{eq:delta_c}
 \end{equation}
-
 This newly defined delta, $\delta^c$, will be the delta obtained from clause $c$ and will be summed to $z$ to obtain the updated prediction. More specifically:
 
 $$y' = \sigma(z + \delta^c)$$
@@ -299,7 +288,6 @@ In Figure \ref{fig:delta_single_clause}, an example of computation of the $\delt
 
 \subsection{Increasing the satisfaction of the Knowledge}
 In the previous section we found out how KENN produces a vector of changes $\delta$ to be applied to the original NN predictions, but only considering a single clause. That would suffice in the cases where the knowledge is constituted only by a single clause, but in real applications a higher number of logical rules will be desirable. Therefore, the next and final problem is to understand how KENN takes all the deltas from all the clauses and produces a single vector of changes. This particular step of aggregation is critical, as it constitutes one of the best features of KENN, but at the same time one of its bigger inaccuracies. This is because, to aggregate the contributions from all the clauses $c \in \mathcal{K}$, KENN just sums the contributions. Specifically, the final prediction is defined as follows:
-
 \begin{equation}
 \label{eq:deltas_sum}
 y'=\sigma(z + \sum_{c\in\mathcal{K}}\delta^c).
@@ -308,16 +296,14 @@ This particular choice makes KENN really fast at inference and learning time, in
 
 
 \section{KENN Architecture}
-In this section we present the architecture of the KENN layer in details. To be more precise, the architecture we are about to describe is valid only for unary predicates, meaning that only unary clauses will work as base knowledge. In general, KENN is capable of dealing also with binary clauses, but that will require a modification of the architecture, as we'll see later.
+In this section we describe the architecture of the KENN layer in details. KENN can work with clauses of any arity, but first we will describe the basic functioning for unary clauses. Then, in Section \ref{sec:relational_kenn}, we will describe how KENN is able to handle binary clauses. All the contents of this section have been implemented as a Python 3 package, based on TensorFlow 2 \cite{abadi2016tensorflow} and all the source code is publicly available on Github\footnote{\url{https://github.com/DanieleAlessandro/KENN2}}.
 
-As described above, the core functionality of KENN is the \textit{clause enhancement}, i.e. the creation of a vector $\delta$ which, summed to the vector of predictions $y$, produces a modified vector of predictions $y'$ which increases the truth value of the relative clause. The architecture that takes care of this task is the Clause Enhancer (CE): this submodule takes in input the full vector of preactivations from the original NN and computes the vector of deltas $\delta^c$ described in equation (\ref{eq:delta_c}). For each clause in the base knowledge, a CE will be instantiated. The details of the architecture of the CE are described in Figure \ref{fig:ce}.
-
-%TODO Fare immagini definitive
+As described above, the core functionality of KENN is the \textit{clause enhancement}, i.e. the creation of a vector $\delta$ which, summed to the vector of predictions $y$, produces a modified vector of predictions $y'$ which increases the truth value of the relative clause. The architecture that takes care of this task is the Clause Enhancer (CE): this submodule takes in input the full vector of preactivations from the original NN and computes the vector of deltas described in equation (\ref{eq:delta_c}). For each clause in the base knowledge, a CE will be instantiated. Note how the CE does not take in input a single vector of preactivations at a time, but works in parallel taking in input mini-batches of data. The details of the architecture of the CE are described in Figure \ref{fig:ce}.
 \begin{figure}
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{figures/CE.pdf}
+		\includegraphics[width=0.8\linewidth]{figures/CE.pdf}
 		\caption{The Clause Enhancer (CE) module.}
 		\label{fig:ce}
 	\end{subfigure}%
@@ -330,14 +316,12 @@ As described above, the core functionality of KENN is the \textit{clause enhance
 	\caption{Illustration of the KENN architecture. Images are replications of the illustrations provided in \cite{daniele2019kenn}.}
 	\label{fig:kenn_architecture_unary}
 \end{figure}
-The CE performs the following operations:
+Specifically, the CE takes in input the mini-batch of preactivations $\{z_1,\dots,z_k\}$ coming from the base NN, and for each sample in the mini-batch performs the following operations:
 \begin{enumerate}
-	\item Takes in input the vector of preactivations $z$ coming from the base NN;
 	\item Performs the \textit{selection} step;
 	\item Computes the vector of deltas according to equation (\ref{eq:soft_approx_delta});
 	\item Transforms the delta vector according to equation (\ref{eq:delta_c})
 \end{enumerate}
-Note that, in practice, the CE does not take in input a single vector of preactivations at a time, but works in parallel taking in input mini-batches of data.
 Once every CE has produced a vector of deltas, the next step is to aggregate them by summing them up. The module that performs this operation is called the \textit{Knowledge Enhancer} (KE), which is shown in Figure \ref{fig:ke}. More specifically, the KE performs the following operations:
 \begin{enumerate}
 	\item Takes as inputs all the $\delta^c$ for each clause $c$ in the Base Knowledge and sums them;
@@ -346,9 +330,10 @@ Once every CE has produced a vector of deltas, the next step is to aggregate the
 \end{enumerate}
 
 
- These steps produce the final vector of modified predictions $y'$. Notice that the KE is just the implementation of equation (\ref{eq:deltas_sum}).
+ These steps produce the final vector of modified predictions $y'$. Notice that the KE is the implementation of equation (\ref{eq:deltas_sum}).
  
  \section{KENN for relational data}
+ \label{sec:relational_kenn}
  
  As we said, KENN can also handle relational data; specifically, thanks to its general approach, KENN can handle clauses with any arity. Nevertheless, for simplicity, we will just describe the binary case. In order to integrate binary clauses, the first step is to split the base knowledge into two complementary subsets of clauses $\mathcal{K}_U$ and $\mathcal{K}_B$, containing the unary and binary clauses respectively. In this way, the set of all the clauses constituting the Prior Knowledge is denoted as \mbox{$\mathcal{K} = \mathcal{K}_U \cup \mathcal{K}_B$}. The intuition at the base of KENN remains the same: starting from initial predictions $z$, we will need to produce a vector of deltas $\delta$. The only difference, is that $\delta$ will be the sum of two different deltas, one produced just by unary clauses and the other just by binary clauses. More simply, this consists in modifying equation (\ref{eq:deltas_sum}) as follows:
  
@@ -356,18 +341,17 @@ Once every CE has produced a vector of deltas, the next step is to aggregate the
  \label{eq:binary_kenn_eq}
  y'=\sigma(z + \sum_{c\in\mathcal{K}_U}\delta^c + \sum_{c\in\mathcal{K}_B}\delta^c).
  \end{equation}
- 
-Note that the procedure to compute the quantity $\sum_{c\in \mathcal{K}_U}\delta^c$ is the one we described before, since all is limited to unary clauses. The only thing left to define is how to compute a delta vector starting from a binary clause. 
+Note that the procedure to compute the quantity $\sum_{c\in \mathcal{K}_U}\delta^c$ is the one we described before, since it deals just with unary clauses. The only thing left to define is how to compute a delta vector starting from a binary clause. 
 
 \subsubsection{Table representation of binary data}
 
 In order to deal with binary clauses, KENN represents truth values of every grounded predicate inside two different matrices: $U$ and $B$. Matrix $U$ has one row for each constant object, one column for each unary predicate and an additional column containing an identifier for each object. Matrix $B$, instead, has one row for each couple of objects: specifically, for each pair of objects such that there is a binary relation between them. The first two columns of $B$ contain the identifier indices of the pair of objects, while the remaining columns contain the preactivations for each binary predicate, grounded on that pair of objects. So, in the case of $n$ unary predicates, $m$ binary predicates, $p$ total objects and $q$ couples of objects, $U$ and $B$ will have dimensions $p \times (n+1)$ and $ q \times (m+2)$ respectively. Figure \ref{fig:KENNrelationalrepr} shows an example with a visualization of $U$ and $B$. With those newly defined matrices, equation (\ref{eq:binary_kenn_eq}) can be implemented as follows:
-\begin{equation}
+\begin{equation*}
 \begin{cases}
 y_u = \sigma(U+\delta U)\\
-y_b = \sigma(B + \delta B)
+y_b = \sigma(B + \delta B),
 \end{cases}
-\end{equation}
+\end{equation*}
 where $y_u$ and $y_b$ are the final predictions for the unary and binary predicates respectively, and $\delta U$ and $\delta B$ are the delta matrices that need to be computed.
  
  \begin{figure}
@@ -387,16 +371,16 @@ For this reason, we need a way to merge both the binary and unary preactivations
 %, the JOIN operation is defined as follows:
 \begin{definition}[JOIN]
 	Given $n$ unary predicates, $m$ binary predicates and their respective matrices $U$ and $B$, the JOIN operation is defined as follows:
-	\begin{equation}
+	\begin{equation*}
 	\operatorname{JOIN}(U,B) = M
-	\end{equation}
+	\end{equation*}
 	where the $i$-th row of the matrix $M$ is:
-	\begin{equation}
+	\begin{equation*}
 	\begin{align*}
-	&M_{i} = (sx,sy, U_{sx,2}, \dots, U_{sx,n+1}, U_{sy,2}, \dots, U_{sy,n+1},B_{i3},\dots, B_{i(m+2)}),\\
-	&\text{where   } sx = B_{i1}, sy = B_{i2}.
+	&M_{i} = (s^x,s^y, U_{s^x2}, \dots, U_{s^x(n+1)}, U_{s^y2}, \dots, U_{s^y(n+1)},B_{i3},\dots, B_{i(m+2)}),\\
+	&\text{where   } s^x = B_{i1}, s^y = B_{i2}.
 	\end{align*}
-	\end{equation}
+	\end{equation*}
 More simply, $M$ has the same number of rows as matrix $B$ and shares its two first columns; additionally, it also contains the preactivations of all the unary predicates for both the first and second index of each row, together with all the preactivations for the binary predicates. 
 \end{definition}
 
@@ -418,17 +402,17 @@ As we saw with our previous example, binary clauses can also contain unary predi
 		
 	where 
 	
-	\begin{equation}
+	\begin{equation*}
 	\begin{cases}
 	\left(\delta U_x \right)_i = \left(i, \sum_{j\in J_x}\delta M_{j3},\dots, \sum_{j \in J_x}\delta M_{j(2+n)}\right)\\
 	\left(\delta U_y \right)_i = \left(i, \sum_{j\in J_y}\delta M_{j(n+3)},\dots, \sum_{j \in J_y}\delta M_{j(2n+2)}\right)\\
 	J_x:=\{j:\delta M_{j1}=i\}\\
 	J_y:=\{j:\delta M_{j2}=i\}
 	\end{cases}
-	\end{equation}
+	\end{equation*}
 \end{definition}
 
-In simple terms, the GROUP BY operation extracts the deltas for the unary predicates from the delta matrix $\delta M$, by aggregating the results for each object identifier. This is exactly equivalent to a GROUP BY query in relational databases.
+In simple terms, the GROUP BY operation extracts the deltas for the unary predicates from the delta matrix $\delta M$, by aggregating the results for each object identifier. This is exactly equivalent to a GROUP BY query in a relational database.
 
 \begin{definition}[SELECT]
 The SELECT operation simply extracts the preactivations of the binary atoms from the $\delta M$ matrix. Specifically:
@@ -437,9 +421,9 @@ where:
 $$\delta B_i = \left(\delta M_{i1}, \delta M_{i2}, \delta M_{i(2n+3)},\dots, \delta M_{i(2n+m+2)}\right).$$
 \end{definition}
 
-\subsubsection{Putting it all together} %TODO titolo migliore?
+\subsubsection{Computing the delta matrices} 
 
-Now that all the necessary tools have been defined, we are ready to describe the process to compute the matrices $\delta U$ and $\delta B$. KENN uses two different KE to generate delta matrices: one ($\text{KE}_u$) takes in input the matrix $U$, and returns a delta matrix $\delta U_u$, using the standard procedure for unary predicates described in the previous section. The other ($\text{KE}_b$) takes in input a matrix $M=\text{JOIN}(U,B)$, and returns a delta matrix $\delta M$. Afterwards, the following operations are performed:
+Now that all the necessary tools have been defined, we are ready to describe the process to compute the matrices $\delta U$ and $\delta B$. KENN uses two different KEs to generate delta matrices: one ($\text{KE}_u$) takes in input the matrix $U$, and returns a delta matrix $\delta U_u$, using the standard procedure for unary predicates described in the previous section. The other ($\text{KE}_b$) takes in input a matrix $M=\text{JOIN}(U,B)$, and returns a delta matrix $\delta M$. Afterwards, the following operations are performed:
 \begin{enumerate}
 	\item The final delta matrix for binary predicates is obtained as follows: $\delta B = \operatorname{SELECT}(\delta M)$;
 	\item Two matrices $\delta U_x = \operatorname{GB}(\delta M, x)$ and $\delta U_y = \operatorname{GB}(\delta M, y)$ are computed;
@@ -477,7 +461,6 @@ In KGL, regularization approaches enforce the satisfaction of the knowledge by d
  In simple terms, the role of Real Logic is to act as a bridge between the purely symbolic world of logic, and the sub-symbolic world of neural systems. We give a brief summary of the core definitions in Real Logic, in order to understand how learning is possible.
  
  Real Logic is defined over a first order language $\mathcal{L}$ with a signature containing a set of constant symbols (or objects) $\mathcal{C}$, a set of variable symbols $\mathcal{X}$, a set of functional symbols $\mathcal{F}$ and a set of relational symbols (or predicates) $\mathcal{P}$. We refer to the set $\mathcal{S} = \mathcal{C} \cup \mathcal{X} \cup \mathcal{F} \cup  \mathcal{P}$ as the set of symbols of $\mathcal{L}$. Each symbol of the language can belong to different domains (i.e. can be of different types): for example the constant $c_1 \in \mathcal{C}$ can represent a specific person, while the constant $c_2 \in \mathcal{C}$ can represent a specific city. The same concept applies to functions and predicates. To represent the domain of each symbol, it is assumed that there exists a non-empty set $\mathcal{D}$, containing all the domains, which are in turn symbols. Then, to properly assign each symbol to its corresponding domain, the functions $\mathbf{D}, \mathbf{D_{in}}$ and $\mathbf{D_{out}}$ are defined:
- 
  \begin{equation*}
  \mathbf{D}: \mathcal{X} \cup \mathcal{C} \rightarrow\mathcal{D}
  \qquad \qquad
@@ -485,7 +468,6 @@ In KGL, regularization approaches enforce the satisfaction of the knowledge by d
  \qquad \qquad 
  \mathbf{D_{out}}: \mathcal{F} \rightarrow\mathcal{D},
  \end{equation*}
- 
  where $\mathcal{D^*}$ is the set of all finite sequences of symbols in $\mathcal{D}$.
  %The set of terms of the language $T$ is recursively defined, to be the smallest set such that...
  The point where the symbolic language meets the subsymbolic world of neural networks is in the definition of grounding, which is the process in which each symbol is given its numeric representation. Indeed, in Real Logic, each domain is interpreted as sets of tensors in the real field. In the same way, each constant, variable and term of the language is interpreted as a tensor of real values, and function symbols are interpreted as functions between tensors. Predicates, are interpreted as functions that map tensors into the interval $[0,1]$. So, given $s$ any symbol of $\mathcal{L}$, its grounding is denoted as $\mathcal{G}(s)$. 
@@ -498,19 +480,17 @@ In KGL, regularization approaches enforce the satisfaction of the knowledge by d
  	\item If $s \in \mathcal{P}$, it corresponds to learning a classification task.
  \end{itemize}
 
-For the simple case of binary classification, for example, the parametric grounding can be defined as $\mathcal{G}(A|\theta):x \rightarrow \sigma(\operatorname{MLP}_{\theta}(x))$
+For the simple case of binary classification, for example, the parametric grounding can be defined as $\mathcal{G}(A|\theta):x \rightarrow \sigma(\operatorname{MLP}_{\theta}(x))$, where $\operatorname{MLP}$ denotes a multi layer perceptron.
+\textcolor{red}{manca ancora spiegare come viene modificata la loss.... forse viene un po' troppo lunga la parte su LTN cosi? togliere del tutto o espanderla ancora un po' per renderla completa?}
  
  \subsubsection{Semantic Based Regularization}
  Semantic Based Regularization (SBR) is a general learning framework designed to integrate domain specific background knowledge in the form of first-order logic (FOL) clauses. To enforce the satisfaction of all the clauses, SBR introduces special regularization terms in the loss function, which represent the satisfaction of the knowledge. Specifically, given a background knowledge represented by set of $H$ clauses, the satisfaction of the $h$-th clause can be represented by the quantity denoted by $0 \leq \phi_h(f) \leq 1$, where $f$ is the vector function learned by the model. From here, the regularization term to be added to the loss function is defined as
- 
  $$ \sum_{h=1}^H \lambda_h(1 - \phi_h(f)), $$
- 
  where $\lambda_h$ is the weight associated to the $h$-th constraint. A higher value of $\lambda_h$ will increase the cost of not satisfying the constraint, meaning that the importance of the corresponding rule will increase. The conversion of FOL clauses into differentiable functions is made possible by considering fuzzy generalizations of FOL logic, similarly to how it is done in KENN. This is a natural approach for machine learning tasks, but a major disadvantage over KENN is that, since the clause weights are introduced at the level of the loss function, those cannot be learned and are required to be known in advance. This, of course, is unlikely to happen in real scenarios and it is much more desirable to learn the weights together with the other learnable parameters of the model.
  
  \subsection{Model Based Approaches}
- An example of model based approach for the integration of logic in NNs is represented by Relational Neural Machines (RNM) \cite{marra2020relational}. An RNM models a probability distribution over a set of $m$ output variables, given the predictions provided by one (or more) base NN, and a set of model parameters. Specifically, differently from a standard NN, each forward pass in RNM is performed in two separate stages: in the first one, the predictions from the NN are obtained from the input data; the second is a \textit{semantic} stage, where the logical costraints are enforced over the output. More precisely, this second stage is performed by an undirected graphical model.
+ An example of model based approach for the integration of logic in NNs is represented by Relational Neural Machines (RNM) \cite{marra2020relational}. A RNM models a probability distribution over a set of $m$ output variables, given the predictions provided by one (or more) base NN, and a set of model parameters. Specifically, differently from a standard NN, each forward pass in RNM is performed in two separate stages: in the first one, the predictions from the NN are obtained from the input data; the second is a \textit{semantic} stage, where the logical costraints are enforced over the output. More precisely, this second stage is performed by an undirected graphical model.
  RNM defines a conditional probability distribution of the exponential family over the output variables, which is defined as follows:
- 
  \begin{equation*}
  p(y|f,\lambda) = \frac{1}{Z} \exp \left( \sum_{x \in S}\Phi_0(f(x),y(x))+\sum_c \lambda_c \Phi_c(y) \right), 
  \end{equation*}
@@ -527,15 +507,14 @@ In this section we describe in detail the experiments performed with KENN. We te
 \begin{definition}[Collective Classification]
 Consider a directed graph, consisting in a set of nodes $V$ and a set of edges $E$. Each $v \in V$ is described with a vector of features $x\in \mathbb{R}^n$ and belongs to one of $k$ classes $\{\omega_i\}_{i=1}^k$. The set of nodes $V$ is further divided in two subsets of nodes: $X$, the set of nodes for which the correct label is known (Training Set), and $Y$, the set of nodes for which it is unknown (Test Set). The task of Collective Classification is to correctly predict the labels of nodes in $Y$, given the feature vectors of $X$ and the topology structure determined by $E$. 
 \end{definition}
-
-Based on how the edges from $E$ are split between Training and Test set, a different learning paradigm is defined:
+Two learning paradigms can be defined:
 
 \begin{itemize}
-	\item \textbf{Inductive Learning}: two separate graphs are used, $G_x = (X,E_x)$ for training and $G_y = (Y, E_y)$ for testing, where $E_x = \{(u,v) | u,v\in X\}$ and $E_y = \{(u,v) | u,v\in Y\}$. In other words, the edges of nodes between train and test set are not considered.
-	\item \textbf{Transductive Learning}: in the training graph, also edges connecting training and test data are retained. This means that the model can use additional information, in the form of connections between test and training data, even during training.
+	\item \textbf{Inductive Learning}: two separate graphs are used: $G_x = (X,E_x)$ for training and $G_y = (Y, E_y)$ for testing, where $E_x = \{(u,v) | u,v\in X\}$ and $E_y = \{(u,v) | u,v\in Y\}$. In other words, the edges of nodes between train and test set are not considered.
+	\item \textbf{Transductive Learning}: a single graph is considered, with both training and test nodes: the network can use the information coming from the relations from the Test set even during training, but the actual supervision will come only from training nodes. Compared with the inductive paradigm, here the network has more available information, and for this reason we can expect better results.
 \end{itemize}
 
-We also provide a comparison of our results with the ones from SBR and RNM, reported on \cite{marra2020relational}, on the same dataset and tasks. 
+We also provide a comparison of our results with the ones from SBR and RNM, reported on \cite{marra2020relational}, on the same dataset and using the same learning paradigms. All the experiments were carried out with Python 3 and TensorFlow 2 \cite{abadi2016tensorflow}. All the code is publicly available on Github\footnote{\url{https://github.com/rmazzier/KENN-Citeseer-Experiments}}.
 
 \subsection{Citeseer Dataset}
 
@@ -544,41 +523,93 @@ The experiments were conducted on the Citeseer Dataset \cite{lu2003link}: it con
 \subsection{The Prior Knowledge}
 
 The knowledge that we want to use in order to improve the predictions from the NN is the intuitive fact that, if a paper cites another paper, it is probably true that they are of the same topic. If we denote with $T_i(x)$ the truth value that node $x$ belongs to the $i$-th output class, this fact can be encoded in terms of a logical clause as follows:
-
 $$\forall x \forall y \quad T_i(x) \wedge \operatorname{Cite}(x, y) \rightarrow T_i(y), \quad i=1,\dots,6$$
-
 meaning that the this clause is repeated one time for each different output class. Inside KENN, this clause is represented as a disjunction of literals as follows:
 
 $$\forall x \forall y \quad \neg T_i(x) \vee \neg \operatorname{Cite}(x,y) \vee T_i(y), \quad i=1,\dots,6 $$
 
+\subsection{Experimental Setup}
+%TODO: rephrase..
+The aim of these experiments was to obtain comparable results to those reported in \cite{marra2020relational}. For this reason we used the same base NN that was used there, which consists in a fully connected dense NN with three hidden layers, each of which using $50$ hidden units and the ReLu activation function. Specifically, the NN takes in input only the features of each document in the dataset, meaning that it will be blind to the relations between them. For this reason, we can already observe that the predictions of the NN will not be influenced in any way by the choice of the learning paradigm. Specifically, we used the same random seed for both the tasks, so the the predictions of the NN are exactly the same between the two paradigms.
+The relational information (i.e. the citations between the papers) is introduced only at the level of the KE, and is treated as base knowledge. Note that this is a very specific case: KENN, in general, is designed to be able to learn both unary and binary predicates. In this case instead, relational knowledge acts just as a supervisor, and the only learned predicates are the unary ones. Specifically, the forward pass is constituted by the following steps:
+\begin{enumerate}
+	\item The base NN takes in input the matrix of features for the current batch of data, and returns the matrix of unary preactivations $U$ (without the column containing the object identifiers, which is left implicit);
+	\item The matrix of binary predicates $B$ is derived directly from the data, according to the current learning paradigm being considered. Since there is just a binary predicate, namely the $\operatorname{Cite}$ predicate, matrix $B$ will have just three columns, two for the indices of the object pairs, and one for the truth value of the binary predicate. 
+	\item KENN takes in input $U$ and $B$, and produces deltas $\delta U$ and $\delta B$, as described in Section \ref{sec:relational_kenn}. Since we are just interested in learning unary predicates, we just keep $\delta U$, while $\delta B$ is discarded;
+	\item Differently from the standard case where the sigmoidal activation function is applied in the KE module, here the KE uses the softmax activation function. This is because for these experiments we are considering a multi-class classification task where each object can belong exclusively to one class. Specifically, the output of the KENN layer is obtained as follows:
+	\begin{equation*}
+	y'= \operatorname{softmax}(U + \delta U).
+	\end{equation*}
+	
+\end{enumerate}
+
+In Figure \ref{fig:citeseer_setup_chart} an example with all the listed steps is reported.
+Additionally, note that the truth values of the connections for this dataset are hard, meaning that nodes can be either connected or not connected, with no other alternative. For this reason pairs of connected objects are assigned a very high value, in this case $500$\footnote{There is not a specific reason for the choice of this number. The only important thing is that, when applying the sigmoidal activation function, the resulting truth value is close to $1$.}. Also notice that only the pairs of connected objects are reported in $B$. In fact, it would be useless to consider also the pairs of not connected nodes (thus having a preactivation value equal to $-500$ for the $\operatorname{Cite}$ predicate), since for those cases the grounded clauses of our knowledge would be automatically satisfied\footnote{Take $c_1$ and $c_2$ two nodes in the graph which are not connected; given the clause $\neg T(c_1) \vee \neg \operatorname{Cite}(c_1,c_2) \vee T(c_2)$, its truth value will be always $\approx 1$, since $\mathcal{I}(\neg \operatorname{Cite}(c_1,c_2)) \approx 1$. }, and KENN would not apply any change. Thus, the number of rows of matrix $B$ will be equal to the number of edges in the training graph.
+
+%TODO continua qui
+In our model architecture, we also stack three KENN layers instead of only one: this choice is motivated by the fact that a single layer would consider only the neighbors of each node. By adding three layers, instead, we allow for a propagation of the changes to farther nodes. This intuition was confirmed by empirically better results with respect to ones using a single KENN layer.
+
+In addition to considering two different learning paradigms, we also evaluate our model on splits of different sizes, in order to see the impact of the dataset size on the final results. Specifically, for each learning paradigm, the model is trained on $10\%$, $25\%$, $50\%$, $75\%$, $90\%$ splits of the whole dataset. Additionally, to have statistically relevant results, for each training percentage the dataset was trained for $500$ times, where each time the training data is randomly picked in such a way that the class balance between train validation and test sets is preserved. Such a high number was motivated by the fact that, when training on always different splits, variance of the results can be very high, especially in the cases where the training set constitutes a small percentage of the whole dataset. In \cite{marra2020relational}, the same procedure has been adopted, with the only difference that the number of training runs for each split percentage was $10$ instead of $500$. This was probably due to much longer training times: recall that in the case of SBR and RNM an optimization problem must be solved at each training step and also at inference time. Indeed, this fact highlights how one of the main advantages of KENN is its efficiency and scalability. Due to the different number of training runs, results won't be exactly comparable to the ones provided in \cite{marra2020relational}; nevertheless, our results will have a strong statistical significance. Additionally, we also provide $95\%$ confidence intervals for each test set accuracy, as well as \mbox{p-values} with respect to the null hypothesis that the mean test set accuracy of KENN is the same as the one of the base NN.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{figures/citeseer_setup.drawio.pdf}
+	\caption{Simple example showing how the relational knowledge is injected in the NN for the Citeseer experiments. In this toy example, features are $4$-dimensional vectors and there are $3$ unary predicates; in the actual experiments, feature vectors have $3703$ components and the output classes are $6$.}
+	\label{fig:citeseer_setup_chart}
+\end{figure}
+
 
 \subsection{Results}
+\subsubsection{Inductive Learning}
 
-In Table \ref{tab:resultsinductive} we report the results of the experiments for the inductive case. The accuracies for KENN are the mean of $500$ different runs on different randomly extracted splits.
-In Table \ref{tab:resultstransductive} the results for the transductive case are reported.
+In Table \ref{tab:resultsinductive} we report the results of the experiments for the inductive case. Specifically, each column contains the mean of all the test set accuracies from the different runs. The results for SBR and RNM are the ones reported in \cite{marra2020relational}. Also note that since we were not able to perfectly replicate the results for the base NN accuracies reported in \cite{marra2020relational}, we report the ones obtained by our base NN, and use the relative improvements as the main evaluation metric.
+The relative improvements are also visualized in Figure \ref{fig:inductive_deltas_comparison}, together with $95\%$ confidence intervals, with a comparison with those from SBR and RNM. Finally in Figure \ref{fig:inductive_histograms}, we report histograms showing the distribution of the test set accuracies of both our base NN and KENN, together with the distribution of the relative improvements for all the runs.
+The p-values for every training percentage were extremely small and well below the $0.05$ threshold: for completeness, they are reported in Table \ref{tab:p_vals}. This means that, for both the training paradigms, we can safely reject the null hypothesis and be almost sure that the improvements provided by KENN are not a result of random perturbations due to the different choice of the training splits.
 \begin{table}[h]
-	\caption{Results of kenn experiments for the inductive case....}
+	\caption{Test set accuracies obtained with the inductive paradigm. The columns for SBR and RNM show the results reported in \cite{marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.}
 	\label{tab:resultsinductive}
 	\centering
+	\scalebox{0.95}{
 	\begin{tabular}{c|lll|ll} 
-	\% training & NN & SBR & RNM & NN & KENN \\
-	\hline 
-	\rule{0pt}{3ex}    $10$ & $0.645$ & $0.650$ & $\mathbf{0 . 6 8 5}$ & $0.544$ & $0.601$ \\
-	& & $(+0.005)$ & $(+0.040)$ & & $\mathbf{(+0.048)}$ \\
-	$25$ & $0.674$ & $0.682$ & $\mathbf{0 . 7 0 9}$ & $0.629$ & $0.671$ \\
-	& & $(+0.008)$ & $(+0.035)$ & & $\mathbf{( + 0 . 0 4 1 )}$ \\
-	$50$ & $0.707$ & $0.712$ & $\mathbf{0 . 7 2 6}$ & $0.680$ & $0.714$ \\
-	& & $(+0.005)$ & $(+0.019)$ & & $(+\mathbf{0 . 0 3 4 )}$ \\
-	$75$ & $0.717$ & $0.719$ & $0.726$ & $0.733$ & $\mathbf{0 . 7 5 4}$ \\
-	& & $(+0.002)$ & $(+0.009)$ & & $\mathbf{( + 0 . 0 2 1 )}$ \\
-	$90$ & $0.723$ & $0.726$ & $0.732$ & $0.759$ & $\mathbf{0 . 7 6 8}$ \\
-	 & & $(+0.003)$ & $(+0.009)$ & & $\mathbf{( + 0 . 0 1 0 )}$\\	
-	\hline \hline
-\end{tabular}
+		\% training & NN & SBR & RNM & NN & KENN \\
+		\hline 
+		\rule{0pt}{3ex}    $10$ & $0.645$ & $0.650$ & $\mathbf{0 . 6 8 5}$ & $0.544$ & $0.601$ \\
+		& & $(+0.005)$ & $(+0.040)$ & & $\mathbf{(+0.048)}$ \\
+		$25$ & $0.674$ & $0.682$ & $\mathbf{0 . 7 0 9}$ & $0.629$ & $0.671$ \\
+		& & $(+0.008)$ & $(+0.035)$ & & $\mathbf{( + 0 . 0 4 1 )}$ \\
+		$50$ & $0.707$ & $0.712$ & $\mathbf{0 . 7 2 6}$ & $0.680$ & $0.714$ \\
+		& & $(+0.005)$ & $(+0.019)$ & & $(+\mathbf{0 . 0 3 4 )}$ \\
+		$75$ & $0.717$ & $0.719$ & $0.726$ & $0.733$ & $\mathbf{0 . 7 5 4}$ \\
+		& & $(+0.002)$ & $(+0.009)$ & & $\mathbf{( + 0 . 0 2 1 )}$ \\
+		$90$ & $0.723$ & $0.726$ & $0.732$ & $0.759$ & $\mathbf{0 . 7 6 8}$ \\
+		& & $(+0.003)$ & $(+0.009)$ & & $\mathbf{( + 0 . 0 1 0 )}$\\	
+		\hline \hline
+	\end{tabular}}
 \end{table}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/deltas_inductive.pdf} 
+	\caption{Relative improvements for the inductive learning task. $95\%$ confidence intervals are provided for our results.}
+	\label{fig:inductive_deltas_comparison}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.95\linewidth]{figures/histograms_inductive.pdf}
+	\caption{Histograms showing the distribution of the accuracies for all the different $500$ runs, for the inductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the relative improvements.}
+	\label{fig:inductive_histograms}
+\end{figure}
+As we can observe, KENN outperforms both RNM and SBR for each training percentage. Additionally, we can see how the relative improvement becomes smaller as the training percentage increases. This makes sense from an intuitive point of view: when disposing of few data, NNs struggle to give good results and the prior knowledge plays a more important role, providing more improvements. On the other hand, when the NN is trained on a lot of data, the knowledge becomes less important: indeed the NN has now access to much more information and, in some sense, can learn the rules on its own from the patterns in the data. In this sense, RNM shows a similar behavior with respect to KENN, even if providing less relative improvement overall.
+
+\subsubsection{Transductive Learning}
+
+We report the same results for the transductive case in Table \ref{tab:resultstransductive}, Figure \ref{fig:transductive_deltas_comparison} and Figure \ref{fig:transductive_histograms} respectively. Note that the results of our NN are exactly same of the ones from the inductive paradigm; this is because we used the same random seed for both the paradigms, and, as already mentioned, the base NN is blind to the learning paradigm. On the other hand, results of the NN from \cite{marra2020relational} report different results. Looking at the relative improvements, we can observe how all the three methods provide similar results for all the training dimensions, the only exception being the $10\%$ training percentage, where KENN shows a much higher relative improvement. KENN still seem to outperform SBR and RNM for the $10\%,25\%$ and $50\%$ training percentages, but the difference is far less pronounced. However, recalling how the results from \cite{marra2020relational} are the average of just $10$ runs, the comparison cannot be considered very reliable.
+
+
+
+
 
 \begin{table}[h]
-	\caption{Results of kenn experiments for the transductive case....}
+	\caption{Test set accuracies obtained with the transductive paradigm. The columns for SBR and RNM show the results reported in \cite{marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.}
 	\label{tab:resultstransductive}
 	\centering
 \begin{tabular}{c|lll|ll} 
@@ -598,35 +629,89 @@ In Table \ref{tab:resultstransductive} the results for the transductive case are
 \end{tabular}
 \end{table}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.9\linewidth]{figures/deltas_inductive.pdf} 
-		\caption{Deltas for the inductive learning task. $95\%$ confidence intervals.}
-\end{figure}
+
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\linewidth]{figures/deltas_transductive.pdf}
-		\caption{Deltas for the transductive learning task. $95\%$ confidence intervals.}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.95\linewidth]{figures/histograms_inductive.pdf}
-	\caption{Histograms showing the distribution of the accuracies for all the different $500$ runs, for the inductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the difference between the NN accuracy vs KENN accuracy.}
+	\includegraphics[width=0.8\linewidth]{figures/deltas_transductive.pdf}
+		\caption{Relative improvements for the transductive learning task. $95\%$ confidence intervals are provided for our results.}
+		\label{fig:transductive_deltas_comparison}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.95\linewidth]{figures/histograms_transductive.pdf}
-	\caption{Histograms showing the distribution of the accuracies for all the different $500$ runs, for the transductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the difference between the NN accuracy vs KENN accuracy.}
+	\caption{Histograms showing the distribution of the accuracies for all the different $500$ runs, for the transductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the relative improvements.}
+	\label{fig:transductive_histograms}
 \end{figure}
 
-
-
-
+\begin{table}[h]
+	\caption{p-values computed for each learning paradigm and for each training percentage. Values below $10^{-100}$ are reported as $0$.}
+	\label{tab:p_vals}
+	\centering
+	\begin{tabular}{c|cc} 
+		\% training & p-value Inductive & p-value Transductive \\
+		\hline 
+		\rule{0pt}{3ex}    $10$ & $3.22 \cdot 10^{-36}$ & $0$ \\
+		$25$ & $0$ & $0$ \\
+		$50$ & $0$ & $0$ \\
+		$75$ & $2.25 \cdot 10^{-48}$ & $0$ \\
+		$90$ & $2.87 \cdot 10^{-9}$ & $0$ \\	
+		\hline \hline
+	\end{tabular}
+\end{table}
 
 \subsection{Clause Weights and satisfaction of the rules}
+
+One of the best features of KENN is its capability to learn the clause weights. This is a fundamental property, since it allows the model to automatically boost the importance of useful rules, and to ignore useless ones. However, to actually verify that KENN is able to correctly learn these weights, we analyzed them after training and investigated on the reasons that lead to their growth or shrinkage.
+
+Specifically, what we care about is to have an empirical evidence that, if a certain clause is particularly important, KENN is able to increase its respective clause weight. We quantify the importance of a specific clause by defining the \textit{clause compliance}, a metric which expresses how much a clause is satisfied on the training data. 
+
+\begin{definition}[Clause Compliance]
+	Let $G:=(V,E,T)$ be the current training graph, where $V$ is the set of nodes, $E$ is the set of edges and $T:V\rightarrow \{1,\dots,6\}$ is the function that maps each node to its ground truth class.
+	Given one of the output classes $k\in\{1,\dots,6\}$ and the corresponding clause $c_k: \neg k(x) \vee \neg \operatorname{Cite}(x,y) \vee k(y)$, we define the clause compliance of $c_k$ in $G$ as:
+	\begin{equation}
+	 C(G,c_k) = \frac{\sum_{v \in T_k} \sum_{u \in \mathcal{N}(v)}\mathbf{1}(u\in T_k)}{\sum_{v\in T_k}|\mathcal{N}(v)|}
+	\end{equation}
+	where $T_k$ is the set of nodes of topic $k$, $\mathcal{N}(v)$ is the number of nodes cited by $v$, and $\mathbf{1}(u\in T_k)$ is equal to $1$ if $u\in T_k$ or $0$ otherwise. In simpler terms, $C(G,c_k)$ is the ratio between the number of citations from papers of topic $k$ to papers of topic $k$ and the total number of citations coming from papers of topic $k$. It is equal to $1$ when always satisfied, and is equal to $0$ when never satisfied. To investigate whether KENN is capable to associate higher weights to clauses with a high clause compliance, we perform $85$ different training runs, and inspect the learned weights for each clause against its clause compliance. We repeat this process for each percentage of the training set. Results are visualized in Figure \ref{fig:corrplots}: by looking at the obtained plots, we can observe that there is a strong correlation between the two variables, which gets more pronounced as the size of the training set increases. Another interesting fact is that, as the clause compliance decreases, an higher variance in the values of the clause weights is observed. For example, looking at the $90\%$ case, we can see that the clause associated to the topic \say{AI} has a mean clause compliance slightly smaller than $0.5$, meaning that this rule is satisfied slightly less than half of the times. By looking at all the values assumed by its clause weight throughout the runs, we can indeed see that the results are very variable with respect to the other topics. This behavior goes against our intuition in some way: if a rule is not useful (like in this case), then the clause weights should monotonically decrease during training, leading to low and tightly packed values for the learned clause weights. In reality, we found that as the compliance of the rules in the data decreases, the learning of their clause weights becomes more randomic: this could be due to a variety of factors, which do not appear to have an obvious or easy explanation. One possible interpretation could be that different randomic initializations of the base NN could lead less compliant clauses to actually produce positive changes, in turn leading KENN to believe that the importance of such a clause should be boosted.
+\end{definition}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.95\linewidth]{figures/scatter_10.pdf}
+%		\caption{The Clause Enhancer (CE) module.}
+		\label{fig:aa}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.95\linewidth]{figures/scatter_25.pdf}
+%		\caption{The Knowledge Enhancer (KE) module.}
+		\label{fig:vv}	
+	\end{subfigure}\\
+	\begin{subfigure}{.5\textwidth}
+	\centering
+	\includegraphics[width=0.95\linewidth]{figures/scatter_50.pdf}
+%	\caption{The Clause Enhancer (CE) module.}
+	\label{fig:cc}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+	\centering
+	\includegraphics[width=0.95\linewidth]{figures/scatter_75.pdf}
+%	\caption{The Knowledge Enhancer (KE) module.}
+	\label{fig:dd}	
+\end{subfigure}\\
+\begin{subfigure}{0.5\textwidth}
+	\centering
+	\includegraphics[width=0.95\linewidth]{figures/scatter_90.pdf}
+%	\caption{The Knowledge Enhancer (KE) module.}
+	\label{fig:ee}	
+\end{subfigure}
+%	\label{fig:kenn_architecture_unary}
+\caption{Scatterplots showing the relation between clause weight and clause compliance, for each clause from $85$ different runs, for each different training percentage. We can observe how, as the training dimension increases, KENN learns to adjust the clause weights according on how much that clause is satisfied in the training set. Each dot in the scatterplots corresponds to a clause in a specific run; the colour of the dot denotes the topic related to that clause.}
+\label{fig:corrplots}
+\end{figure}
  
  \section{Explainability in KENN}
 %TODO:

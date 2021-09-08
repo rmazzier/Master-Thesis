@@ -28,6 +28,16 @@ A.~Mordvintsev, C.~Olah, and M.~Tyka, ``Inceptionism: Going deeper into neural
   \url{https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html}
 \BIBentrySTDinterwordspacing
 
+\bibitem{daniele2019kenn}
+A.~Daniele and L.~Serafini, ``Knowledge enhanced neural networks,'' in
+  \emph{PRICAI 2019: Trends in Artificial Intelligence}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Cham: Springer International Publishing, 2019, pp.
+  542--554.
+
+\bibitem{marra2020relational}
+G.~Marra, M.~Diligenti, F.~Giannini, M.~Gori, and M.~Maggini, ``Relational
+  neural machines,'' \emph{arXiv preprint arXiv:2002.02193}, 2020.
+
 \bibitem{marcus2018appraisal}
 G.~Marcus, ``Deep learning: A critical appraisal,'' Jan. 2018.
 
@@ -237,15 +247,16 @@ L.~G. Valiant, ``Three problems in computer science,'' \emph{J. ACM}, vol.~50,
   \url{https://doi.org/10.1145/602382.602410}
 \BIBentrySTDinterwordspacing
 
-\bibitem{daniele2019kenn}
-A.~Daniele and L.~Serafini, ``Knowledge enhanced neural networks,'' in
-  \emph{PRICAI 2019: Trends in Artificial Intelligence}.\hskip 1em plus 0.5em
-  minus 0.4em\relax Cham: Springer International Publishing, 2019, pp.
-  542--554.
-
 \bibitem{novak1987first}
 V.~Nov{\'a}k, ``First-order fuzzy logic,'' \emph{Studia logica}, vol.~46,
   no.~1, pp. 87--109, 1987.
+
+\bibitem{abadi2016tensorflow}
+M.~Abadi, P.~Barham, J.~Chen, Z.~Chen, A.~Davis, J.~Dean, M.~Devin,
+  S.~Ghemawat, G.~Irving, M.~Isard \emph{et~al.}, ``Tensorflow: A system for
+  large-scale machine learning,'' in \emph{12th $\{$USENIX$\}$ symposium on
+  operating systems design and implementation ($\{$OSDI$\}$ 16)}, 2016, pp.
+  265--283.
 
 \bibitem{serafini2016logic}
 L.~Serafini and A.~d. Garcez, ``Logic tensor networks: Deep learning and
@@ -256,10 +267,6 @@ L.~Serafini and A.~d. Garcez, ``Logic tensor networks: Deep learning and
 P.~Sen, G.~Namata, M.~Bilgic, L.~Getoor, B.~Galligher, and T.~Eliassi-Rad,
   ``Collective classification in network data,'' \emph{AI magazine}, vol.~29,
   no.~3, pp. 93--93, 2008.
-
-\bibitem{marra2020relational}
-G.~Marra, M.~Diligenti, F.~Giannini, M.~Gori, and M.~Maggini, ``Relational
-  neural machines,'' \emph{arXiv preprint arXiv:2002.02193}, 2020.
 
 \bibitem{lu2003link}
 Q.~Lu and L.~Getoor, ``Link-based text classification,'' in \emph{IJCAI

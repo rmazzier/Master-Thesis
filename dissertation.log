@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  8 SEP 2021 03:30
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  9 SEP 2021 00:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1655,15 +1655,19 @@ esign; they can be inspected
  []
 
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
-(Font)              scaled to size 12.0pt on input line 6.
-[9
+(Font)              scaled to size 12.0pt on input line 7.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9
 
 
 ])
 \tf@lof=\write6
 \openout6 = `dissertation.lof'.
 
- [10] (./dissertation.lot)
+
+[10] (./dissertation.lot)
 \tf@lot=\write7
 \openout7 = `dissertation.lot'.
 
@@ -1722,7 +1726,7 @@ File: figures/image-dream-map.png Graphic file (type bmp)
 <figures/image-dream-map.png>
 Missing character: There is no ´ ("B4) in font cmr12!
  [11] [12]
-Overfull \hbox (4.53307pt too wide) in paragraph at lines 160--163
+Overfull \hbox (5.52907pt too wide) in paragraph at lines 160--163
 \TU/EBGaramond(0)/m/n/12 models, following the completeness-interpretability tr
 adeoff mentioned by Gilpin in [[]] . More
  []
@@ -1792,47 +1796,47 @@ Overfull \hbox (2.65979pt too wide) in paragraph at lines 93--97
 [20] [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 124.
+(hyperref)                removing `math shift' on input line 123.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 124.
+(hyperref)                removing `math shift' on input line 123.
 
 [22] [23] [24] [25]
 File: figures/preac_deltas_example.pdf Graphic file (type pdf)
 <use figures/preac_deltas_example.pdf>
-File: figures/sigmoid_shape_example.png Graphic file (type bmp)
-<figures/sigmoid_shape_example.png>
-LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
-(Font)              scaled to size 8.09479pt on input line 244.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[26]
-Underfull \vbox (badness 1264) has occurred while \output is active []
+ [26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [27]
 File: figures/delta_single_clause.pdf Graphic file (type pdf)
 <use figures/delta_single_clause.pdf>
+LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
+(Font)              scaled to size 8.09479pt on input line 284.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[28] [29]
+ [28]
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
+(Font)              scaled to size 8.54172pt on input line 299.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `SourceCodePro' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 File: figures/CE.pdf Graphic file (type pdf)
 <use figures/CE.pdf>
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 321.
+(Font)              scaled to size 10.95pt on input line 307.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 321.
+(Font)              scaled to size 10.95pt on input line 307.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/b/n' will be
-(Font)              scaled to size 8.7515pt on input line 321.
+(Font)              scaled to size 8.7515pt on input line 307.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
-(Font)              scaled to size 8.86378pt on input line 321.
+(Font)              scaled to size 8.86378pt on input line 307.
 File: figures/KE.pdf Graphic file (type pdf)
 <use figures/KE.pdf>
- [30] [31]
+
+[29] [30] [31]
 File: figures/kenn_relational_representation2.pdf Graphic file (type pdf)
 <use figures/kenn_relational_representation2.pdf>
  [32]
@@ -1844,17 +1848,13 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.398 ^^I\end{align*}
+l.382 ^^I\end{align*}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
-[34]
-Overfull \hbox (3.91075pt too wide) in paragraph at lines 444--445
+[33]
+Overfull \hbox (3.91075pt too wide) in paragraph at lines 428--429
 []\TU/EBGaramond(0)/m/n/12 The final delta matrix for binary predicates is obta
 ined as follows: $\OML/cmm/m/it/12 ^^NB \OT1/cmr/m/n/12 = [](\OML/cmm/m/it/12 ^
 ^NM\OT1/cmr/m/n/12 )$\TU/EBGaramond(0)/m/n/12 ; 
@@ -1862,7 +1862,9 @@ ined as follows: $\OML/cmm/m/it/12 ^^NB \OT1/cmr/m/n/12 = [](\OML/cmm/m/it/12 ^
 
 File: figures/kenn_relational_global_chart.pdf Graphic file (type pdf)
 <use figures/kenn_relational_global_chart.pdf>
-[35] [36] [37] [38] [39] [40]
+[34] [35] [36] [37] [38] [39] [40] [41] [42]
+File: figures/citeseer_setup.drawio.pdf Graphic file (type pdf)
+<use figures/citeseer_setup.drawio.pdf>
 
 Package fontspec Info: Font family 'EBGaramond(2)' created for font 'EB
 (fontspec)             Garamond' with options
@@ -1901,43 +1903,55 @@ um;mapping=tex-text;"
 um;+smcp;mapping=tex-text;"
 
 LaTeX Font Info:    Font shape `TU/EBGaramond(2)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 563.
+(Font)              scaled to size 12.0pt on input line 587.
+File: figures/deltas_inductive.pdf Graphic file (type pdf)
+<use figures/deltas_inductive.pdf>
+File: figures/histograms_inductive.pdf Graphic file (type pdf)
+<use figures/histograms_inductive.pdf>
+ [43] [44] [45]
+File: figures/deltas_transductive.pdf Graphic file (type pdf)
+<use figures/deltas_transductive.pdf>
+File: figures/histograms_transductive.pdf Graphic file (type pdf)
+<use figures/histograms_transductive.pdf>
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-File: figures/deltas_inductive.pdf Graphic file (type pdf)
-<use figures/deltas_inductive.pdf>
-File: figures/deltas_transductive.pdf Graphic file (type pdf)
-<use figures/deltas_transductive.pdf>
-File: figures/histograms_inductive.pdf Graphic file (type pdf)
-<use figures/histograms_inductive.pdf>
-File: figures/histograms_transductive.pdf Graphic file (type pdf)
-<use figures/histograms_transductive.pdf>
-)
-Underfull \vbox (badness 4217) has occurred while \output is active []
+[46]
+Underfull \vbox (badness 2600) has occurred while \output is active []
 
- [41]
-[42] [43] [44] [45]
+ [47]
+[48]
+File: figures/scatter_10.pdf Graphic file (type pdf)
+<use figures/scatter_10.pdf>
+File: figures/scatter_25.pdf Graphic file (type pdf)
+<use figures/scatter_25.pdf>
+File: figures/scatter_50.pdf Graphic file (type pdf)
+<use figures/scatter_50.pdf>
+File: figures/scatter_75.pdf Graphic file (type pdf)
+<use figures/scatter_75.pdf>
+File: figures/scatter_90.pdf Graphic file (type pdf)
+<use figures/scatter_90.pdf>
+) [49] [50]
 \openout2 = `chapters/conclusion.aux'.
 
- (./chapters/conclusion.tex [46
-
-
-
-
-]
+ (./chapters/conclusion.tex
 Chapter 4.
-) [47] [48
+) [51
 
 
 
-] (./dissertation.bbl [49
 
-] [50] [51] [52]) [53] [54
+] [52
+
+
+
+] (./dissertation.bbl [53
+
+] [54] [55] [56]) [57] [58
 
 ]
-(./frontmatter/thanks.tex) [55
+(./frontmatter/thanks.tex) [59
 
 ] (./dissertation.aux
 (./chapters/introduction.aux) (./chapters/chapter1.aux)
@@ -1946,15 +1960,15 @@ Chapter 4.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 0939E77559464ABD203BDC352963E232;5521.
+(rerunfilecheck)             Checksum: 87A19D751E097151634680C90A0E4A4E;5676.
  ) 
 Here is how much of TeX's memory you used:
- 44192 strings out of 476476
- 1048445 string characters out of 5814301
- 1493330 words of memory out of 5000000
- 63745 multiletter control sequences out of 15000+600000
- 414022 words of font info for 127 fonts, out of 8000000 for 9000
+ 44260 strings out of 476476
+ 1050134 string characters out of 5814301
+ 1498540 words of memory out of 5000000
+ 63806 multiletter control sequences out of 15000+600000
+ 414030 words of font info for 128 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,17n,133p,2209b,1072s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 103i,17n,133p,2317b,1068s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on dissertation.pdf (69 pages).
+Output written on dissertation.pdf (73 pages).

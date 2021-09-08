@@ -25,45 +25,45 @@ Warning--empty booktitle in gilpin2018explaining
 Warning--empty journal in mahendran2014understanding
 
 Done.
-You've used 45 entries,
+You've used 46 entries,
             4087 wiz_defined-function locations,
-            1074 strings with 16276 characters,
-and the built_in function-call counts, 30239 in all, are:
-= -- 2347
-> -- 818
-< -- 174
-+ -- 429
-- -- 163
-* -- 1406
-:= -- 4558
-add.period$ -- 95
-call.type$ -- 45
-change.case$ -- 46
-chr.to.int$ -- 390
-cite$ -- 53
-duplicate$ -- 2306
-empty$ -- 2569
-format.name$ -- 200
-if$ -- 7060
+            1079 strings with 16647 characters,
+and the built_in function-call counts, 31420 in all, are:
+= -- 2425
+> -- 870
+< -- 183
++ -- 457
+- -- 174
+* -- 1463
+:= -- 4704
+add.period$ -- 97
+call.type$ -- 46
+change.case$ -- 47
+chr.to.int$ -- 414
+cite$ -- 54
+duplicate$ -- 2385
+empty$ -- 2666
+format.name$ -- 212
+if$ -- 7343
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 430
-newline$ -- 172
-num.names$ -- 47
-pop$ -- 1107
+int.to.str$ -- 46
+missing$ -- 448
+newline$ -- 175
+num.names$ -- 48
+pop$ -- 1156
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2340
+skip$ -- 2427
 stack$ -- 0
-substring$ -- 1014
-swap$ -- 1721
-text.length$ -- 44
+substring$ -- 1071
+swap$ -- 1788
+text.length$ -- 45
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 45
+type$ -- 46
 warning$ -- 8
-while$ -- 113
-width$ -- 47
-write$ -- 439
+while$ -- 118
+width$ -- 48
+write$ -- 448
 (There were 8 warnings)
