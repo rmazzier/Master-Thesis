@@ -9,10 +9,9 @@
 \contentsline {section}{\numberline {2.3}What is explainability}{7}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Transparency}{9}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Post-hoc interpretations}{10}{subsection.2.3.2}%
-\contentsline {subsubsection}{Text explanations}{10}{subsection.2.3.2}%
-\contentsline {subsubsection}{Visualization}{11}{subsection.2.3.2}%
+\contentsline {subsubsection}{Visualization}{10}{subsection.2.3.2}%
 \contentsline {subsubsection}{Local explanations}{12}{figure.caption.14}%
-\contentsline {subsubsection}{Explanation by example}{14}{figure.caption.14}%
+\contentsline {subsubsection}{Explanation by example}{13}{figure.caption.14}%
 \contentsline {section}{\numberline {2.4}Neural Symbolic Integration}{14}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Knowledge Enhanced Neural Networks}{17}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Theoretical Framework}{17}{section.3.1}%
@@ -41,6 +40,6 @@
 \contentsline {subsubsection}{Transductive Learning}{46}{figure.caption.23}%
 \contentsline {subsection}{\numberline {3.5.5}Clause Weights and satisfaction of the rules}{46}{subsection.3.5.5}%
 \contentsline {section}{\numberline {3.6}Explainability in KENN}{49}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Conclusion}{51}{chapter.4}%
-\contentsline {chapter}{References}{53}{section*.29}%
-\contentsline {chapter}{Acknowledgments}{59}{section*.31}%
+\contentsline {chapter}{\numberline {4}Conclusion}{55}{chapter.4}%
+\contentsline {chapter}{References}{57}{section*.31}%
+\contentsline {chapter}{Acknowledgments}{63}{section*.33}%

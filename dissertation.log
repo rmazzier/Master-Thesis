@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  9 SEP 2021 02:04
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  10 SEP 2021 16:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1424,38 +1424,38 @@ LaTeX Info: Redefining \\ on input line 3056.
 \c@theorem=\count386
 \c@corollary=\count387
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 23.
+h' as default language. on input line 25.
 
 (./dissertation.aux (./chapters/introduction.aux) (./chapters/chapter1.aux)
 (./chapters/chapter3.aux) (./chapters/conclusion.aux))
 \openout1 = `dissertation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
-3.
+5.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1498,8 +1498,8 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 23.
-Package hyperref Info: Link coloring ON on input line 23.
+or `english'. on input line 25.
+Package hyperref Info: Link coloring ON on input line 25.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1513,9 +1513,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count388
 )
-LaTeX Info: Redefining \ref on input line 23.
-LaTeX Info: Redefining \pageref on input line 23.
-LaTeX Info: Redefining \nameref on input line 23.
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
  (./dissertation.out) (./dissertation.out)
 \@outlinefile=\write4
 \openout4 = `dissertation.out'.
@@ -1524,7 +1524,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package newfloat Info: `float' package detected.
-LaTeX Info: Redefining \microtypecontext on input line 23.
+LaTeX Info: Redefining \microtypecontext on input line 25.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1549,31 +1549,21 @@ File: resources/unipd-light.jpg Graphic file (type bmp)
 File: resources/unipd-bn.png Graphic file (type bmp)
 <resources/unipd-bn.png>
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 27.
+(Font)              scaled to size 12.0pt on input line 29.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
-(Font)              scaled to size 24.88pt on input line 27.
+(Font)              scaled to size 24.88pt on input line 29.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/sc' will be
-(Font)              scaled to size 24.88pt on input line 27.
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 27.
-LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
-(Font)              scaled to size 4.85687pt on input line 27.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `LatoRegular' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+(Font)              scaled to size 24.88pt on input line 29.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 27.
+(Font)              scaled to size 14.4pt on input line 29.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/scit' will be
-(Font)              scaled to size 14.4pt on input line 27.
+(Font)              scaled to size 14.4pt on input line 29.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
-(Font)              scaled to size 20.74pt on input line 27.
+(Font)              scaled to size 20.74pt on input line 29.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/sc' will be
-(Font)              scaled to size 20.74pt on input line 27.
+(Font)              scaled to size 20.74pt on input line 29.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/scit' will be
-(Font)              scaled to size 12.0pt on input line 27.
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 27.
+(Font)              scaled to size 12.0pt on input line 29.
  [1
 
 ] [2
@@ -1583,14 +1573,14 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 27.
-LaTeX Font Info:    Trying to load font information for TU+ppl on input line 27
+(Font)              scaled to size 24.88pt on input line 29.
+LaTeX Font Info:    Trying to load font information for TU+ppl on input line 29
 .
-LaTeX Font Info:    No file TUppl.fd. on input line 27.
+LaTeX Font Info:    No file TUppl.fd. on input line 29.
 
 
 LaTeX Font Warning: Font shape `TU/ppl/b/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 27.
+(Font)              using `TU/lmr/m/n' instead on input line 29.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
@@ -1686,8 +1676,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 (./chapters/introduction.tex
 Chapter 1.
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 100.0pt on input line 2.
 ) [1
 
 
@@ -1704,8 +1692,6 @@ Chapter 2.
 [3]
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/sc' will be
 (Font)              scaled to size 17.28pt on input line 24.
-LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 24.
  [4] [5] [6] [7]
 Underfull \vbox (badness 1888) has occurred while \output is active []
 
@@ -1714,6 +1700,10 @@ File: figures/trasparency_vs_posthoc.drawio.png Graphic file (type bmp)
 <figures/trasparency_vs_posthoc.drawio.png>
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/b/n' will be
 (Font)              scaled to size 9.5907pt on input line 105.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `LatoRegular' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/b/n' will be
 (Font)              scaled to size 7.99225pt on input line 105.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
@@ -1725,23 +1715,19 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 File: figures/image-dream-map.png Graphic file (type bmp)
 <figures/image-dream-map.png>
 Missing character: There is no ´ ("B4) in font cmr12!
- [11] [12]
-Overfull \hbox (5.52907pt too wide) in paragraph at lines 160--163
+ [11]
+Overfull \hbox (5.52907pt too wide) in paragraph at lines 162--165
 \TU/EBGaramond(0)/m/n/12 models, following the completeness-interpretability tr
 adeoff mentioned by Gilpin in [[]] . More
  []
 
-
-Underfull \vbox (badness 4060) has occurred while \output is active []
-
- [13]
-[14]
-Overfull \hbox (5.44376pt too wide) in paragraph at lines 183--185
+[12] [13]
+Overfull \hbox (5.44376pt too wide) in paragraph at lines 185--187
 []\TU/EBGaramond(0)/m/n/12 In the next chapter, we delve in the details of Know
 ledge Enhanced Neural Networks (KENN)
  []
 
-) [15]
+) [14] [15]
 \openout2 = `chapters/chapter3.aux'.
 
  (./chapters/chapter3.tex [16
@@ -1793,7 +1779,10 @@ Overfull \hbox (2.65979pt too wide) in paragraph at lines 93--97
  to compute the truth value of any grounded
  []
 
-[20] [21]
+[20]
+LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 105.
+ [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 123.
@@ -1812,13 +1801,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figures/delta_single_clause.pdf Graphic file (type pdf)
 <use figures/delta_single_clause.pdf>
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
-(Font)              scaled to size 8.09479pt on input line 284.
+(Font)              scaled to size 8.09479pt on input line 285.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 8.54172pt on input line 299.
+(Font)              scaled to size 8.54172pt on input line 300.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `SourceCodePro' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -1826,13 +1815,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 File: figures/CE.pdf Graphic file (type pdf)
 <use figures/CE.pdf>
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 307.
+(Font)              scaled to size 10.95pt on input line 308.
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 307.
+(Font)              scaled to size 10.95pt on input line 308.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/b/n' will be
-(Font)              scaled to size 8.7515pt on input line 307.
+(Font)              scaled to size 8.7515pt on input line 308.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
-(Font)              scaled to size 8.86378pt on input line 307.
+(Font)              scaled to size 8.86378pt on input line 308.
 File: figures/KE.pdf Graphic file (type pdf)
 <use figures/KE.pdf>
 
@@ -1848,13 +1837,13 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.382 ^^I\end{align*}
+l.383 ^^I\end{align*}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [33]
-Overfull \hbox (3.91075pt too wide) in paragraph at lines 428--429
+Overfull \hbox (3.91075pt too wide) in paragraph at lines 429--430
 []\TU/EBGaramond(0)/m/n/12 The final delta matrix for binary predicates is obta
 ined as follows: $\OML/cmm/m/it/12 ^^NB \OT1/cmr/m/n/12 = [](\OML/cmm/m/it/12 ^
 ^NM\OT1/cmr/m/n/12 )$\TU/EBGaramond(0)/m/n/12 ; 
@@ -1903,7 +1892,7 @@ um;mapping=tex-text;"
 um;+smcp;mapping=tex-text;"
 
 LaTeX Font Info:    Font shape `TU/EBGaramond(2)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 587.
+(Font)              scaled to size 12.0pt on input line 588.
 File: figures/deltas_inductive.pdf Graphic file (type pdf)
 <use figures/deltas_inductive.pdf>
 File: figures/histograms_inductive.pdf Graphic file (type pdf)
@@ -1932,26 +1921,37 @@ File: figures/scatter_75.pdf Graphic file (type pdf)
 <use figures/scatter_75.pdf>
 File: figures/scatter_90.pdf Graphic file (type pdf)
 <use figures/scatter_90.pdf>
-) [49] [50]
+File: figures/deltas_extraction_unary.pdf Graphic file (type pdf)
+<use figures/deltas_extraction_unary.pdf>
+File: figures/delta_extractions.pdf Graphic file (type pdf)
+<use figures/delta_extractions.pdf>
+ [49] [50]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51]
+File: figures/example_more_clauses.pdf Graphic file (type pdf)
+<use figures/example_more_clauses.pdf>
+
+[52] [53]) [54]
 \openout2 = `chapters/conclusion.aux'.
 
  (./chapters/conclusion.tex
 Chapter 4.
-) [51
+) [55
 
 
 
 
-] [52
+] [56
 
 
 
-] (./dissertation.bbl [53
+] (./dissertation.bbl [57
 
-] [54] [55] [56]) [57] [58
+] [58] [59] [60]) [61] [62
 
 ]
-(./frontmatter/thanks.tex) [59
+(./frontmatter/thanks.tex) [63
 
 ] (./dissertation.aux
 (./chapters/introduction.aux) (./chapters/chapter1.aux)
@@ -1960,15 +1960,15 @@ Chapter 4.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 87A19D751E097151634680C90A0E4A4E;5676.
+(rerunfilecheck)             Checksum: 9E54C2AA2DFAF13324241B5B7FA3DD00;5676.
  ) 
 Here is how much of TeX's memory you used:
- 44260 strings out of 476476
- 1050134 string characters out of 5814301
- 1498540 words of memory out of 5000000
- 63806 multiletter control sequences out of 15000+600000
- 414030 words of font info for 128 fonts, out of 8000000 for 9000
+ 44280 strings out of 476476
+ 1050692 string characters out of 5814301
+ 1501685 words of memory out of 5000000
+ 63827 multiletter control sequences out of 15000+600000
+ 413998 words of font info for 124 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,17n,133p,2317b,1068s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 103i,17n,133p,2317b,1058s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on dissertation.pdf (73 pages).
+Output written on dissertation.pdf (77 pages).

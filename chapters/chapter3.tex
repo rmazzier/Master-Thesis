@@ -182,6 +182,7 @@ The next step at this point is to find such a minimal TBF. In the following resu
 %This makes sense even from an intuitive point of view: since $\perp (a) = \max_ia_i$, the only way to increase $\perp(a)$ is to let $\max_{i} a_i$ increase, without modifying the rest of the $a_j, j \neq i$.
 
 \subsection{Applying TBFs to preactivations} 
+\label{sec:tbf_preac}
 There is a problem with the definition of $\delta^f$: there is a specific constraint $f(t) \leq 1 - \max_i t_i$ that limits the number of candidates for $f$. Indeed, this is imposed to ensure that the final output $y'= y + \delta^f(y)$ will be in $\left[0,1\right]$. There is a natural way to solve this impracticality: since we are assuming a multilabel classification scenario, the final $m$ output units of the NN will pass through a sigmoidal activation function. More specifically, $y_i$ will be of the form:
 \begin{equation*}
 y_i = \sigma(z_i) = \frac{1}{1+e^{-z_i}}, \forall i=1,\dots,m.	
@@ -237,7 +238,7 @@ This will result in the following behavior: if the NN is highly confident of its
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/preac_deltas_example.pdf}
+	\includegraphics[width=0.75\textwidth]{figures/preac_deltas_example.pdf}
 %	\includegraphics[width=0.7\textwidth]{figures/sigmoid_shape_example.png}
 	%TODO: refine this caption!!!
 	\caption{On the left, example preactivations for the clause $\operatorname{A}(x) \vee \neg \operatorname{B}(x)$ are shown. For both the examples, the same delta ($\delta^f$) is applied to these preactivations. In the first example, the NN has a high confidence, while in the second one it is much lower. We can see how, when applying the activation function, the actual delta ($\delta^g$) is much smaller in the first case and larger in the second. This is due to the shape of the sigmoid activation function itself.  }
@@ -712,15 +713,59 @@ Specifically, what we care about is to have an empirical evidence that, if a cer
 \caption{Scatterplots showing the relation between clause weight and clause compliance, for each clause from $85$ different runs, for each different training percentage. We can observe how, as the training dimension increases, KENN learns to adjust the clause weights according on how much that clause is satisfied in the training set. Each dot in the scatterplots corresponds to a clause in a specific run; the colour of the dot denotes the topic related to that clause.}
 \label{fig:corrplots}
 \end{figure}
- 
+
  \section{Explainability in KENN}
-%TODO:
-% In che modo KENN è un modello explainable/interpretable.
-% Prima fare qualche collegamento con quanto visto nel capitolo dell'explainability...
-% \begin{enumerate}
-% 	\item clause weights -> quanto le clausole influiscono sulle predizioni
-% 	\item ispezionare i delta permette di vedere direttamente come è stata modificata una predizione e perché;
-% 	\item possibilità di definire metriche (rank by improvement etc) che permettono di capire bene quali predizioni sono state migliorate, quali peggiorate, e a causa di quale clausola.
-% 	\item Interpretability: si può capire come KENN impari i clause weights e quanto è legato alla "verità di una clausola"-> correlazione tra clause compliance e clause weights.
-% \end{enumerate}
+ In this section, we study how to obtain explanations from KENN. In Chapter \ref{chapt:explainability} we studied different kinds of approaches for interpretability and explainability in ML, specifically for the case of NNs. We also analyzed the important distinction between transparent models and post-hoc explainability methods, together with their advantages and disadvantages.
+ As we know, KENN can't work on its own: it needs a base NN classifier which has the task of providing the initial predictions. For this reason, KENN can't be considered a completely transparent model just because it is designed to work alongside a standard NN architecture, which is inherently hard to interpret and explain. However, once the initial predictions from the base NN are provided, everything that happens inside the KE can be interpreted; for this reason, KENN can be considered a partially transparent model. Indeed, if we restrict just to the phase where the rules from the knowledge are enforced, there is a straightforward way to visualize how KENN modified the predictions of the NN, that is to inspect the delta vectors. Specifically, this process can happen at different levels of precision: for example, at inference time, we might want to study the changes caused by the whole base knowledge, or we might desire to isolate the effects of a single clause on a subset of input samples. More precisely, given a base knowledge $\mathcal{K}$, and given a subset of clauses $\mathcal{C} \subset \mathcal{K}$ for which we want to observe the effects, the delta vector we are looking for is the sum of all the vectors $\delta_c, \forall c \in \mathcal{C}$. However, note that the KE module is designed to compute $\sum_{\mathcal{K}}\delta^c$, while we are interested in $\sum_{\mathcal{C}}\delta^c$: for this reason we will need to intercept the deltas just as they are returned by their respective CEs. Figure \ref{fig:delta_extraction} provides a visualization of this process for the unary and binary case. 
+ \begin{figure}
+ 	\centering
+ 	\begin{subfigure}{.4\textwidth}
+ 		\centering
+ 		\includegraphics[width=\linewidth]{figures/deltas_extraction_unary.pdf}
+ 		\caption{Delta extraction from the KE module, for the clauses subset $\mathcal{C}=\{c_1,c_2\}$.}
+ 		\label{fig:delta_extraction_unary}	
+ 	\end{subfigure}%
+  	\begin{subfigure}{.6\textwidth}
+ 	\centering
+ 	\includegraphics[width=\linewidth]{figures/delta_extractions.pdf}
+ 	\caption{Delta extraction for the binary case. Blue arrows denote the extraction operation depicted on Figure \ref{fig:delta_extraction_unary}.}
+ 	\label{fig:delta_extraction_binary}
+ \end{subfigure}%
+\caption{Process for extracting deltas relative to the clauses in $\mathcal{C \subset \mathcal{K}}$. The output deltas are highlighted in yellow for both the unary case (a) and binary case (b).}
+\label{fig:delta_extraction}
+ \end{figure}
+We can also extract the deltas caused by different non overlapping subsets of clauses. Note however that the exact contribution from each different subset can be visualized only when working at the level of preactivations. Indeed, we know that the actual delta at the activation level (denoted in Section \ref{sec:tbf_preac} as $\delta^g$) will change based on the preactivations values, even if the initial delta applied at the preactivation level (denoted in previous section as $\delta^f$) is the same. Recall that we already illustrated this fact in Figure \ref{fig:preacs_deltas_example}. This implies that, when cumulating more deltas from different clauses, we can visualize the exact contribution from each clause at the preactivation level, but we lose this information at the activation level, where the only thing we can observe is the aggregated contribution of all the clauses. In other words, the contribution of each clause at the activation level depends on the order in which the clauses apply their contribution at the preactivation level, which is not defined since all the deltas are applied simultaneously. A simple example showing this problem is reported in Figure \ref{fig:ex_more_clauses}.
+ 
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[width=0.75\linewidth]{figures/example_more_clauses.pdf}
+ 	\caption{The Figure shows an example where we apply deltas for two different clauses, in different orders, at the preactivation level (left), and the resulting deltas at the activation level (right). The deltas from each clause are represented by different colors, while the predictions from the base NN are shown in blue. On the right, the deltas at the activation level are shown: note how, when changing the order of application of the same deltas at the preactivation level, the deltas at the activation level change.}
+ 	\label{fig:ex_more_clauses}
+ \end{figure}
+
+Another nice property of KENN is that we can quantify at inference time how much the contributions from the Base Knowledge improved (or worsened) the predictions of the base NN for the current sample being classified. For example, we can define the following metric:
+\begin{definition}[Improvement Score]
+	Given an input sample $x$ to be classified into $m$ different classes, given the vector of deltas $\delta^{\mathcal{C}} \in \mathbb{R}^m$ coming from clauses belonging to $\mathcal{C} \subset \mathcal{K}$ and given vector of ground truth labels $l \in \{-1,1\}^m$, where entries corresponding to the positive class are equal to $1$ and $-1$ otherwise, then the improvement score for sample $x$ with respect to $\mathcal{C}$ is defined as follows:
+	\begin{equation}
+	\label{eq:impr_score}
+	IS(x,\mathcal{C})=\sum_{i=1}^m -\delta^{\mathcal{C}}_i \cdot  l_i =  -\delta^{\mathcal{C}\top} \cdot  l.
+	\end{equation}
+	Specifically, the improvement score quantifies the positive contribution of the KENN layer for the current prediction.
+\end{definition}
+In simple terms, what happens in equation (\ref{eq:impr_score}) is that each term of the delta vector will produce a positive contribution only when its sign is the same as the corresponding ground truth label.
+
+Additionally, recall that KENN aggregates the deltas of all the clauses by simply summing the individual deltas: this is very convenient since it makes KENN fast and scalable. However, we saw that this kind of aggregation may be too simplistic, and may cause inconsistencies in the case where multiple clauses disagree on how certain truth values should be changed. In order to diagnose this kind of behavior on a trained KENN model, we can use the following score.
+
+\begin{definition}[Disagreement Score]
+	Using the previously defined notation, the disagreement score for sample $x$ with respect to the subset of clauses $\mathcal{C}$ is defined as follows:
+	\begin{equation}
+DS(x, \mathcal{C}) = \sum_{c\in\mathcal{C}}\left|\delta_c\right| - \left|\sum_{c\in\mathcal{C}}\delta_{c} \right|.
+	\end{equation}
+This score quantifies the amount of inconsistencies and disagreement among the clauses belonging to $\mathcal{C}$; a score of $0$ implies perfect agreement between all the clauses, while higher score reflect an higher disagreement.
+\end{definition}
+These defined metrics can be useful for different situations, like debugging or during the model evaluation phase. For example, we might want to analyze the predictions for which KENN gave the most improvements or, viceversa, we might want to see where KENN has actually provided worse results with respect to the base NN. 
+
+In general, explanations that can be extracted from KENN can be useful mostly to evaluate the impact of the knowledge, and can allow the user to refine it, by adding or removing rules that proved to be useful or damaging. We remark, however, that this transparency is just partial and limited to the knowledge enforcement stage, since the base NN remains an opaque component of the whole model.
+ 
+
 
