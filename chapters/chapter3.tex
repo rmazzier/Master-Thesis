@@ -743,7 +743,7 @@ We can also extract the deltas caused by different non overlapping subsets of cl
  	\label{fig:ex_more_clauses}
  \end{figure}
 
-Another nice property of KENN is that we can quantify at inference time how much the contributions from the Base Knowledge improved (or worsened) the predictions of the base NN for the current sample being classified. For example, we can define the following metric:
+Another nice property of KENN is the possibility to quantify at inference time how much the contributions from the Base Knowledge improved (or worsened) the predictions of the base NN for the current sample being classified. For example, we can define the following metric:
 \begin{definition}[Improvement Score]
 	Given an input sample $x$ to be classified into $m$ different classes, given the vector of deltas $\delta^{\mathcal{C}} \in \mathbb{R}^m$ coming from clauses belonging to $\mathcal{C} \subset \mathcal{K}$ and given vector of ground truth labels $l \in \{-1,1\}^m$, where entries corresponding to the positive class are equal to $1$ and $-1$ otherwise, then the improvement score for sample $x$ with respect to $\mathcal{C}$ is defined as follows:
 	\begin{equation}
@@ -761,11 +761,11 @@ Additionally, recall that KENN aggregates the deltas of all the clauses by simpl
 	\begin{equation}
 DS(x, \mathcal{C}) = \sum_{c\in\mathcal{C}}\left|\delta_c\right| - \left|\sum_{c\in\mathcal{C}}\delta_{c} \right|.
 	\end{equation}
-This score quantifies the amount of inconsistencies and disagreement among the clauses belonging to $\mathcal{C}$; a score of $0$ implies perfect agreement between all the clauses, while higher score reflect an higher disagreement.
+This score quantifies the amount of inconsistencies and disagreement among the clauses belonging to $\mathcal{C}$: a score of $0$ implies perfect agreement between all the clauses, while an higher score reflects an higher disagreement.
 \end{definition}
-These defined metrics can be useful for different situations, like debugging or during the model evaluation phase. For example, we might want to analyze the predictions for which KENN gave the most improvements or, viceversa, we might want to see where KENN has actually provided worse results with respect to the base NN. 
+These defined metrics can be useful for different situations, like during debugging or for the model evaluation phase. For example, we might want to analyze the predictions for which KENN gave the most improvements or, viceversa, we might want to see where KENN has actually provided worse results with respect to the base NN. 
 
-In general, explanations that can be extracted from KENN can be useful mostly to evaluate the impact of the knowledge, and can allow the user to refine it, by adding or removing rules that proved to be useful or damaging. We remark, however, that this transparency is just partial and limited to the knowledge enforcement stage, since the base NN remains an opaque component of the whole model.
+In general, explanations extracted from KENN can be useful mostly to evaluate the impact of the knowledge, and can allow the user to refine it, by adding or removing rules that proved to be useful or damaging. We remark, however, that this transparency is just partial and limited to the knowledge enforcement stage: indeed, the base NN remains an opaque component of the whole model.
  
 
 
