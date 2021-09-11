@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{daniele2019kenn}
+A.~Daniele and L.~Serafini, ``Knowledge enhanced neural networks,'' in
+  \emph{PRICAI 2019: Trends in Artificial Intelligence}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Cham: Springer International Publishing, 2019, pp.
+  542--554.
+
 \bibitem{mordvintsev2015inceptionism}
 \BIBentryALTinterwordspacing
 A.~Mordvintsev, C.~Olah, and M.~Tyka, ``Inceptionism: Going deeper into neural
@@ -28,18 +34,43 @@ A.~Mordvintsev, C.~Olah, and M.~Tyka, ``Inceptionism: Going deeper into neural
   \url{https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html}
 \BIBentrySTDinterwordspacing
 
-\bibitem{daniele2019kenn}
-A.~Daniele and L.~Serafini, ``Knowledge enhanced neural networks,'' in
-  \emph{PRICAI 2019: Trends in Artificial Intelligence}.\hskip 1em plus 0.5em
-  minus 0.4em\relax Cham: Springer International Publishing, 2019, pp.
-  542--554.
-
 \bibitem{marra2020relational}
 G.~Marra, M.~Diligenti, F.~Giannini, M.~Gori, and M.~Maggini, ``Relational
   neural machines,'' \emph{arXiv preprint arXiv:2002.02193}, 2020.
 
 \bibitem{marcus2018appraisal}
 G.~Marcus, ``Deep learning: A critical appraisal,'' Jan. 2018.
+
+\bibitem{o2016weapons}
+C.~O'Neil, \emph{Weapons of Math Destruction: How Big Data Increases Inequality
+  and Threatens Democracy}.\hskip 1em plus 0.5em minus 0.4em\relax Crown, 2016.
+
+\bibitem{jumper2021highly}
+J.~Jumper, R.~Evans, A.~Pritzel, T.~Green, M.~Figurnov, O.~Ronneberger,
+  K.~Tunyasuvunakool, R.~Bates, A.~{\v{Z}}{\'\i}dek, A.~Potapenko
+  \emph{et~al.}, ``Highly accurate protein structure prediction with
+  alphafold,'' \emph{Nature}, vol. 596, no. 7873, pp. 583--589, 2021.
+
+\bibitem{gebru2017using}
+T.~Gebru, J.~Krause, Y.~Wang, D.~Chen, J.~Deng, E.~L. Aiden, and L.~Fei-Fei,
+  ``Using deep learning and google street view to estimate the demographic
+  makeup of the us,'' \emph{arXiv preprint arXiv:1702.06683}, 2017.
+
+\bibitem{schrittwieser2020mastering}
+J.~Schrittwieser, I.~Antonoglou, T.~Hubert, K.~Simonyan, L.~Sifre, S.~Schmitt,
+  A.~Guez, E.~Lockhart, D.~Hassabis, T.~Graepel \emph{et~al.}, ``Mastering
+  atari, go, chess and shogi by planning with a learned model,'' \emph{Nature},
+  vol. 588, no. 7839, pp. 604--609, 2020.
+
+\bibitem{lecun1989digits}
+Y.~LeCun, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~Hubbard, and
+  L.~D. Jackel, ``Backpropagation applied to handwritten zip code
+  recognition,'' \emph{Neural Computation}, vol.~1, no.~4, pp. 541--551, 1989.
+
+\bibitem{rosenblatt1958perceptron}
+F.~Rosenblatt, ``The perceptron: a probabilistic model for information storage
+  and organization in the brain.'' \emph{Psychological review}, vol.~65, no.~6,
+  p. 386, 1958.
 
 \bibitem{sabour2017dynamic}
 S.~Sabour, N.~Frosst, and G.~E. Hinton, ``Dynamic routing between capsules,''
@@ -153,22 +184,6 @@ F.~K. Došilović, M.~Brčić, and N.~Hlupić, ``Explainable artificial
   Information and Communication Technology, Electronics and Microelectronics
   (MIPRO)}, 2018, pp. 0210--0215.
 
-\bibitem{krening2017leaning}
-S.~Krening, B.~Harrison, K.~M. Feigh, C.~L. Isbell, M.~Riedl, and A.~Thomaz,
-  ``Learning from explanations using sentiment and advice in rl,'' \emph{IEEE
-  Transactions on Cognitive and Developmental Systems}, vol.~9, no.~1, pp.
-  44--55, 2017.
-
-\bibitem{mcauley2013hidden}
-\BIBentryALTinterwordspacing
-J.~McAuley and J.~Leskovec, ``Hidden factors and hidden topics: Understanding
-  rating dimensions with review text,'' in \emph{Proceedings of the 7th ACM
-  Conference on Recommender Systems}, ser. RecSys '13.\hskip 1em plus 0.5em
-  minus 0.4em\relax New York, NY, USA: Association for Computing Machinery,
-  2013, p. 165–172. [Online]. Available:
-  \url{https://doi.org/10.1145/2507157.2507163}
-\BIBentrySTDinterwordspacing
-
 \bibitem{laurens2008tsne}
 \BIBentryALTinterwordspacing
 L.~van~der Maaten and G.~Hinton, ``Visualizing data using t-sne,''
@@ -234,18 +249,30 @@ R.~Caruana, H.~Kangarloo, J.~D. Dionisio, U.~Sinha, and D.~Johnson,
   \emph{Proceedings of the AMIA Symposium}.\hskip 1em plus 0.5em minus
   0.4em\relax American Medical Informatics Association, 1999, p. 212.
 
-\bibitem{Besold2017NeuralSymbolicLA}
-T.~R. Besold, A.~Garcez, S.~Bader, H.~Bowman, P.~M. Domingos, P.~Hitzler, K.-U.
-  K{\"u}hnberger, L.~Lamb, D.~Lowd, P.~Lima, L.~Penning, G.~Pinkas, H.~Poon,
-  and G.~Zaverucha, ``Neural-symbolic learning and reasoning: A survey and
-  interpretation,'' \emph{ArXiv}, vol. abs/1711.03902, 2017.
-
 \bibitem{valiant2003threeproblems}
 \BIBentryALTinterwordspacing
 L.~G. Valiant, ``Three problems in computer science,'' \emph{J. ACM}, vol.~50,
   no.~1, p. 96–99, Jan. 2003. [Online]. Available:
   \url{https://doi.org/10.1145/602382.602410}
 \BIBentrySTDinterwordspacing
+
+\bibitem{richardson2006markov}
+M.~Richardson and P.~Domingos, ``Markov logic networks,'' \emph{Machine
+  learning}, vol.~62, no. 1-2, pp. 107--136, 2006.
+
+\bibitem{pearl2014probabilistic}
+J.~Pearl, \emph{Probabilistic reasoning in intelligent systems: networks of
+  plausible inference}.\hskip 1em plus 0.5em minus 0.4em\relax Elsevier, 2014.
+
+\bibitem{wang2008hybrid}
+J.~Wang and P.~M. Domingos, ``Hybrid markov logic networks.'' in \emph{AAAI},
+  vol.~8, 2008, pp. 1106--1111.
+
+\bibitem{Besold2017NeuralSymbolicLA}
+T.~R. Besold, A.~Garcez, S.~Bader, H.~Bowman, P.~M. Domingos, P.~Hitzler, K.-U.
+  K{\"u}hnberger, L.~Lamb, D.~Lowd, P.~Lima, L.~Penning, G.~Pinkas, H.~Poon,
+  and G.~Zaverucha, ``Neural-symbolic learning and reasoning: A survey and
+  interpretation,'' \emph{ArXiv}, vol. abs/1711.03902, 2017.
 
 \bibitem{novak1987first}
 V.~Nov{\'a}k, ``First-order fuzzy logic,'' \emph{Studia logica}, vol.~46,

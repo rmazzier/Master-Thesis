@@ -1,9 +1,9 @@
 %!TEX root = ../dissertation.tex
 
 \chapter{Knowledge Enhanced Neural Networks}\label{chapt:kenn}
-Knowledge Enhanced Neural Networks (KENN) \cite{daniele2019kenn} is a special type of Neural Network (NN) layer, designed for injecting logical knowledge into a pre-existing base NN. More specifically, it is a residual layer designed to be stacked after the last layer of a standard NN, in order to boost its predictive performances via the addition of a Prior Knowledge in the form of first order logic clauses. In this chapter we will describe the theory behind KENN, its architecture, and experimental results.
+Knowledge Enhanced Neural Networks (KENN) \cite{daniele2019kenn} is a special type of NN layer, designed for injecting logical knowledge into a pre-existing base NN. More specifically, it is a residual layer designed to be stacked after the last layer of any NN, in order to boost its predictive performances via the addition of a Prior Knowledge in the form of first order logic clauses. In this chapter we will describe the theory behind KENN, its architecture, and experimental results.
 
-\section{Theoretical Framework}\label{sec:theoretical_framework}
+\section{Theoretical Framework}\label{sec:kenn_theoretical_framework}
  We present here the theoretical framework behind KENN. The first step will be to rigorously define the symbolic language and how to link it with the theoretical framework of NNs, which consists in defining a semantic for the language. Next, we will describe the process with which the truth value of a clause can be increased, and how to integrate this method inside NNs.
  
  \subsection{Prior Knowledge and language semantic}
@@ -297,6 +297,7 @@ This particular choice makes KENN really fast at inference and learning time, in
 
 
 \section{KENN Architecture}
+\label{sec:kenn_architecture}
 In this section we describe the architecture of the KENN layer in details. KENN can work with clauses of any arity, but first we will describe the basic functioning for unary clauses. Then, in Section \ref{sec:relational_kenn}, we will describe how KENN is able to handle binary clauses. All the contents of this section have been implemented as a Python 3 package, based on TensorFlow 2 \cite{abadi2016tensorflow} and all the source code is publicly available on Github\footnote{\url{https://github.com/DanieleAlessandro/KENN2}}.
 
 As described above, the core functionality of KENN is the \textit{clause enhancement}, i.e. the creation of a vector $\delta$ which, summed to the vector of predictions $y$, produces a modified vector of predictions $y'$ which increases the truth value of the relative clause. The architecture that takes care of this task is the Clause Enhancer (CE): this submodule takes in input the full vector of preactivations from the original NN and computes the vector of deltas described in equation (\ref{eq:delta_c}). For each clause in the base knowledge, a CE will be instantiated. Note how the CE does not take in input a single vector of preactivations at a time, but works in parallel taking in input mini-batches of data. The details of the architecture of the CE are described in Figure \ref{fig:ce}.
@@ -502,6 +503,7 @@ For the simple case of binary classification, for example, the parametric ground
  
  
  \section{Experiments}
+ \label{sec:kenn_experiments}
  
 In this section we describe in detail the experiments performed with KENN. We tested the ability of KENN of working with relational data, in the context of Collective Classification~\cite{sen2008collective}, both with the inductive and transductive learning paradigm. 
 
@@ -715,6 +717,7 @@ Specifically, what we care about is to have an empirical evidence that, if a cer
 \end{figure}
 
  \section{Explainability in KENN}
+ \label{sec:explainability_kenn}
  In this section, we study how to obtain explanations from KENN. In Chapter \ref{chapt:explainability} we studied different kinds of approaches for interpretability and explainability in ML, specifically for the case of NNs. We also analyzed the important distinction between transparent models and post-hoc explainability methods, together with their advantages and disadvantages.
  As we know, KENN can't work on its own: it needs a base NN classifier which has the task of providing the initial predictions. For this reason, KENN can't be considered a completely transparent model just because it is designed to work alongside a standard NN architecture, which is inherently hard to interpret and explain. However, once the initial predictions from the base NN are provided, everything that happens inside the KE can be interpreted; for this reason, KENN can be considered a partially transparent model. Indeed, if we restrict just to the phase where the rules from the knowledge are enforced, there is a straightforward way to visualize how KENN modified the predictions of the NN, that is to inspect the delta vectors. Specifically, this process can happen at different levels of precision: for example, at inference time, we might want to study the changes caused by the whole base knowledge, or we might desire to isolate the effects of a single clause on a subset of input samples. More precisely, given a base knowledge $\mathcal{K}$, and given a subset of clauses $\mathcal{C} \subset \mathcal{K}$ for which we want to observe the effects, the delta vector we are looking for is the sum of all the vectors $\delta_c, \forall c \in \mathcal{C}$. However, note that the KE module is designed to compute $\sum_{\mathcal{K}}\delta^c$, while we are interested in $\sum_{\mathcal{C}}\delta^c$: for this reason we will need to intercept the deltas just as they are returned by their respective CEs. Figure \ref{fig:delta_extraction} provides a visualization of this process for the unary and binary case. 
  \begin{figure}
@@ -764,8 +767,8 @@ DS(x, \mathcal{C}) = \sum_{c\in\mathcal{C}}\left|\delta_c\right| - \left|\sum_{c
 This score quantifies the amount of inconsistencies and disagreement among the clauses belonging to $\mathcal{C}$: a score of $0$ implies perfect agreement between all the clauses, while an higher score reflects an higher disagreement.
 \end{definition}
 These defined metrics can be useful for different situations, like during debugging or for the model evaluation phase. For example, we might want to analyze the predictions for which KENN gave the most improvements or, viceversa, we might want to see where KENN has actually provided worse results with respect to the base NN. 
-
-In general, explanations extracted from KENN can be useful mostly to evaluate the impact of the knowledge, and can allow the user to refine it, by adding or removing rules that proved to be useful or damaging. We remark, however, that this transparency is just partial and limited to the knowledge enforcement stage: indeed, the base NN remains an opaque component of the whole model.
+%TODO: magari fare il collegamento con le definizioni date da lipton sulla transparency , su kenn? tipo simulatability etc...
+In general, explanations extracted from KENN can be useful mostly to evaluate the impact of the knowledge, and can allow the user to refine it, by adding or removing rules that proved to be useful or damaging. We remark, however, that this transparency is just partial and limited to the knowledge enforcement stage: indeed, the base NN remains an opaque component of the whole model, even if used in conjunction with KENN.
  
 
 
