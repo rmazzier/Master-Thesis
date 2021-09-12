@@ -12,6 +12,7 @@
 \citation{novak1987first}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}$t$-conorm Functions}{19}{subsection.3.1.2}\protected@file@percent }
 \newlabel{eq:lukasiewicz}{{3.4}{20}{Lukasiewicz Negation}{equation.3.1.4}{}}
+\newlabel{def:t-conorm}{{3.1.6}{20}{$t$-conorm}{definition.3.1.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}$t$-conorm Boost Functions}{22}{subsection.3.1.3}\protected@file@percent }
 \newlabel{thm:min_tbf}{{3.1.2}{23}{}{theorem.3.1.2}{}}
 \newlabel{eq:proof1}{{3.8}{23}{$t$-conorm Boost Functions}{equation.3.1.8}{}}
@@ -23,11 +24,11 @@
 \newlabel{fig:preacs_deltas_example}{{3.1}{26}{On the left, example preactivations for the clause $\operatorname {A}(x) \vee \neg \operatorname {B}(x)$ are shown. For both the examples, the same delta ($\delta ^f$) is applied to these preactivations. In the first example, the NN has a high confidence, while in the second one it is much lower. We can see how, when applying the activation function, the actual delta ($\delta ^g$) is much smaller in the first case and larger in the second. This is due to the shape of the sigmoid activation function itself. \relax }{figure.caption.15}{}}
 \newlabel{eq:soft_approx_delta}{{3.11}{27}{Applying TBFs to preactivations}{equation.3.1.11}{}}
 \newlabel{eq:delta_c}{{3.12}{28}{Applying TBFs to preactivations}{equation.3.1.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Example with all the steps needed to compute $\delta ^c$ for the clause $A \vee \neg B$ starting from the vector of preactivations $z$; for this example $w_c=2$. We refer to this process as \textit  {clause enhancement}.\relax }}{28}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:delta_single_clause}{{3.2}{28}{Example with all the steps needed to compute $\delta ^c$ for the clause $A \vee \neg B$ starting from the vector of preactivations $z$; for this example $w_c=2$. We refer to this process as \textit {clause enhancement}.\relax }{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}Increasing the satisfaction of the Knowledge}{28}{subsection.3.1.5}\protected@file@percent }
 \citation{abadi2016tensorflow}
 \citation{daniele2019kenn}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}Increasing the satisfaction of the Knowledge}{29}{subsection.3.1.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Example with all the steps needed to compute $\delta ^c$ for the clause $A \vee \neg B$ starting from the vector of preactivations $z$; for this example $w_c=2$. We refer to this process as \textit  {clause enhancement}.\relax }}{29}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:delta_single_clause}{{3.2}{29}{Example with all the steps needed to compute $\delta ^c$ for the clause $A \vee \neg B$ starting from the vector of preactivations $z$; for this example $w_c=2$. We refer to this process as \textit {clause enhancement}.\relax }{figure.caption.16}{}}
 \newlabel{eq:deltas_sum}{{3.13}{29}{Increasing the satisfaction of the Knowledge}{equation.3.1.13}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}KENN Architecture}{29}{section.3.2}\protected@file@percent }
 \newlabel{sec:kenn_architecture}{{3.2}{29}{KENN Architecture}{section.3.2}{}}
@@ -39,84 +40,84 @@
 \newlabel{fig:kenn_architecture_unary}{{3.3}{30}{Illustration of the KENN architecture. Images are replications of the illustrations provided in \cite {daniele2019kenn}.\relax }{figure.caption.17}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}KENN for relational data}{31}{section.3.3}\protected@file@percent }
 \newlabel{sec:relational_kenn}{{3.3}{31}{KENN for relational data}{section.3.3}{}}
-\newlabel{eq:binary_kenn_eq}{{3.14}{31}{KENN for relational data}{equation.3.3.14}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Table representation of binary data}{31}{equation.3.3.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Representation of relational data inside KENN. Specifically, objects and relations can be seen as nodes and edges of a directed graph. The preactivations of each grounded predicate are represented in tables $U$ and $B$. In this example, two unary predicates and one binary predicate are present. Note that in matrix $B$ only the object pairs such that there is a relation between them are reported.\relax }}{32}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:KENNrelationalrepr}{{3.4}{32}{Representation of relational data inside KENN. Specifically, objects and relations can be seen as nodes and edges of a directed graph. The preactivations of each grounded predicate are represented in tables $U$ and $B$. In this example, two unary predicates and one binary predicate are present. Note that in matrix $B$ only the object pairs such that there is a relation between them are reported.\relax }{figure.caption.18}{}}
+\newlabel{eq:binary_kenn_eq}{{3.14}{32}{KENN for relational data}{equation.3.3.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Table representation of binary data}{32}{equation.3.3.14}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{The JOIN operation}{32}{figure.caption.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{The GROUP BY and SELECT operations}{33}{definition.3.3.1}\protected@file@percent }
-\citation{daniele2019kenn,serafini2016logic}
-\@writefile{toc}{\contentsline {subsubsection}{Computing the delta matrices}{34}{definition.3.3.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces This figure shows an example with all the necessary computations to compute the final delta matrices $\delta U$ and $\delta B$ (in the bottom), starting from matrices $U$ and $B$ (top left).\relax }}{35}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:kenn_rel_global_scheme}{{3.5}{35}{This figure shows an example with all the necessary computations to compute the final delta matrices $\delta U$ and $\delta B$ (in the bottom), starting from matrices $U$ and $B$ (top left).\relax }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Representation of relational data inside KENN. Specifically, objects and relations can be seen as nodes and edges of a directed graph. The preactivations of each grounded predicate are represented in tables $U$ and $B$. In this example, two unary predicates and one binary predicate are present. Note that in matrix $B$ only the object pairs such that there is a relation between them are reported.\relax }}{33}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:KENNrelationalrepr}{{3.4}{33}{Representation of relational data inside KENN. Specifically, objects and relations can be seen as nodes and edges of a directed graph. The preactivations of each grounded predicate are represented in tables $U$ and $B$. In this example, two unary predicates and one binary predicate are present. Note that in matrix $B$ only the object pairs such that there is a relation between them are reported.\relax }{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsubsection}{The GROUP BY and SELECT operations}{34}{definition.3.3.1}\protected@file@percent }
+\citation{daniele2019kenn}
+\@writefile{toc}{\contentsline {subsubsection}{Computing the delta matrices}{35}{definition.3.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Related Work}{35}{section.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces This figure shows an example with all the necessary computations to compute the final delta matrices $\delta U$ and $\delta B$ (in the bottom), starting from matrices $U$ and $B$ (top left).\relax }}{36}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:kenn_rel_global_scheme}{{3.5}{36}{This figure shows an example with all the necessary computations to compute the final delta matrices $\delta U$ and $\delta B$ (in the bottom), starting from matrices $U$ and $B$ (top left).\relax }{figure.caption.19}{}}
 \citation{serafini2016logic}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Related Work}{36}{section.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Regularization Approaches}{36}{subsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Regularization Approaches}{37}{subsection.3.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Logic Tensor Networks}{37}{subsection.3.4.1}\protected@file@percent }
-\citation{marra2020relational}
 \@writefile{toc}{\contentsline {subsubsection}{Semantic Based Regularization}{38}{subsection.3.4.1}\protected@file@percent }
-\citation{sen2008collective}
+\citation{marra2020relational}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Model Based Approaches}{39}{subsection.3.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Experiments}{39}{section.3.5}\protected@file@percent }
-\newlabel{sec:kenn_experiments}{{3.5}{39}{Experiments}{section.3.5}{}}
+\citation{sen2008collective}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Experiments}{40}{section.3.5}\protected@file@percent }
+\newlabel{sec:kenn_experiments}{{3.5}{40}{Experiments}{section.3.5}{}}
 \citation{marra2020relational}
 \citation{abadi2016tensorflow}
 \citation{lu2003link}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Citeseer Dataset}{40}{subsection.3.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}The Prior Knowledge}{40}{subsection.3.5.2}\protected@file@percent }
 \citation{marra2020relational}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Citeseer Dataset}{41}{subsection.3.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}The Prior Knowledge}{41}{subsection.3.5.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Experimental Setup}{41}{subsection.3.5.3}\protected@file@percent }
 \citation{marra2020relational}
 \citation{marra2020relational}
 \citation{marra2020relational}
 \citation{marra2020relational}
 \citation{marra2020relational}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Simple example showing how the relational knowledge is injected in the NN for the Citeseer experiments. In this toy example, features are $4$-dimensional vectors and there are $3$ unary predicates; in the actual experiments, feature vectors have $3703$ components and the output classes are $6$.\relax }}{43}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:citeseer_setup_chart}{{3.6}{43}{Simple example showing how the relational knowledge is injected in the NN for the Citeseer experiments. In this toy example, features are $4$-dimensional vectors and there are $3$ unary predicates; in the actual experiments, feature vectors have $3703$ components and the output classes are $6$.\relax }{figure.caption.20}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Results}{43}{subsection.3.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Inductive Learning}{43}{subsection.3.5.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Relative improvements for the inductive learning task. $95\%$ confidence intervals are provided for our results.\relax }}{44}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:inductive_deltas_comparison}{{3.7}{44}{Relative improvements for the inductive learning task. $95\%$ confidence intervals are provided for our results.\relax }{figure.caption.22}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Test set accuracies obtained with the inductive paradigm. The columns for SBR and RNM show the results reported in \cite  {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }}{44}{table.caption.21}\protected@file@percent }
-\newlabel{tab:resultsinductive}{{3.1}{44}{Test set accuracies obtained with the inductive paradigm. The columns for SBR and RNM show the results reported in \cite {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }{table.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Histograms showing the distribution of the accuracies for all the different $500$ runs, for the inductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the relative improvements.\relax }}{45}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:inductive_histograms}{{3.8}{45}{Histograms showing the distribution of the accuracies for all the different $500$ runs, for the inductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the relative improvements.\relax }{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Simple example showing how the relational knowledge is injected in the NN for the Citeseer experiments. In this toy example, features are $4$-dimensional vectors and there are $3$ unary predicates; in the actual experiments, feature vectors have $3703$ components and the output classes are $6$.\relax }}{44}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:citeseer_setup_chart}{{3.6}{44}{Simple example showing how the relational knowledge is injected in the NN for the Citeseer experiments. In this toy example, features are $4$-dimensional vectors and there are $3$ unary predicates; in the actual experiments, feature vectors have $3703$ components and the output classes are $6$.\relax }{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Results}{44}{subsection.3.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Inductive Learning}{44}{subsection.3.5.4}\protected@file@percent }
 \citation{marra2020relational}
 \citation{marra2020relational}
 \citation{marra2020relational}
-\@writefile{toc}{\contentsline {subsubsection}{Transductive Learning}{46}{figure.caption.23}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Test set accuracies obtained with the transductive paradigm. The columns for SBR and RNM show the results reported in \cite  {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }}{46}{table.caption.24}\protected@file@percent }
-\newlabel{tab:resultstransductive}{{3.2}{46}{Test set accuracies obtained with the transductive paradigm. The columns for SBR and RNM show the results reported in \cite {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }{table.caption.24}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.5}Clause Weights and satisfaction of the rules}{46}{subsection.3.5.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Relative improvements for the transductive learning task. $95\%$ confidence intervals are provided for our results.\relax }}{47}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:transductive_deltas_comparison}{{3.9}{47}{Relative improvements for the transductive learning task. $95\%$ confidence intervals are provided for our results.\relax }{figure.caption.25}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces p-values computed for each learning paradigm and for each training percentage. Values below $10^{-100}$ are reported as $0$.\relax }}{47}{table.caption.27}\protected@file@percent }
-\newlabel{tab:p_vals}{{3.3}{47}{p-values computed for each learning paradigm and for each training percentage. Values below $10^{-100}$ are reported as $0$.\relax }{table.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Histograms showing the distribution of the accuracies for all the different $500$ runs, for the transductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the relative improvements.\relax }}{48}{figure.caption.26}\protected@file@percent }
-\newlabel{fig:transductive_histograms}{{3.10}{48}{Histograms showing the distribution of the accuracies for all the different $500$ runs, for the transductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the relative improvements.\relax }{figure.caption.26}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Test set accuracies obtained with the inductive paradigm. The columns for SBR and RNM show the results reported in \cite  {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }}{45}{table.caption.21}\protected@file@percent }
+\newlabel{tab:resultsinductive}{{3.1}{45}{Test set accuracies obtained with the inductive paradigm. The columns for SBR and RNM show the results reported in \cite {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }{table.caption.21}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Transductive Learning}{45}{figure.caption.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.5}Clause Weights and satisfaction of the rules}{45}{subsection.3.5.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Relative improvements for the inductive learning task. $95\%$ confidence intervals are provided for our results.\relax }}{46}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:inductive_deltas_comparison}{{3.7}{46}{Relative improvements for the inductive learning task. $95\%$ confidence intervals are provided for our results.\relax }{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Histograms showing the distribution of the accuracies for all the different $500$ runs, for the inductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the relative improvements.\relax }}{47}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:inductive_histograms}{{3.8}{47}{Histograms showing the distribution of the accuracies for all the different $500$ runs, for the inductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the relative improvements.\relax }{figure.caption.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Test set accuracies obtained with the transductive paradigm. The columns for SBR and RNM show the results reported in \cite  {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }}{48}{table.caption.24}\protected@file@percent }
+\newlabel{tab:resultstransductive}{{3.2}{48}{Test set accuracies obtained with the transductive paradigm. The columns for SBR and RNM show the results reported in \cite {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }{table.caption.24}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces p-values computed for each learning paradigm and for each training percentage. Values below $10^{-100}$ are reported as $0$.\relax }}{48}{table.caption.27}\protected@file@percent }
+\newlabel{tab:p_vals}{{3.3}{48}{p-values computed for each learning paradigm and for each training percentage. Values below $10^{-100}$ are reported as $0$.\relax }{table.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Relative improvements for the transductive learning task. $95\%$ confidence intervals are provided for our results.\relax }}{49}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:transductive_deltas_comparison}{{3.9}{49}{Relative improvements for the transductive learning task. $95\%$ confidence intervals are provided for our results.\relax }{figure.caption.25}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.6}Explainability in KENN}{49}{section.3.6}\protected@file@percent }
 \newlabel{sec:explainability_kenn}{{3.6}{49}{Explainability in KENN}{section.3.6}{}}
-\newlabel{fig:aa}{{\caption@xref {fig:aa}{ on input line 688}}{50}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
-\newlabel{sub@fig:aa}{{}{50}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
-\newlabel{fig:vv}{{\caption@xref {fig:vv}{ on input line 694}}{50}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
-\newlabel{sub@fig:vv}{{}{50}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
-\newlabel{fig:cc}{{\caption@xref {fig:cc}{ on input line 700}}{50}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
-\newlabel{sub@fig:cc}{{}{50}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
-\newlabel{fig:dd}{{\caption@xref {fig:dd}{ on input line 706}}{50}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
-\newlabel{sub@fig:dd}{{}{50}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
-\newlabel{fig:ee}{{\caption@xref {fig:ee}{ on input line 712}}{50}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
-\newlabel{sub@fig:ee}{{}{50}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Scatterplots showing the relation between clause weight and clause compliance, for each clause from $85$ different runs, for each different training percentage. We can observe how, as the training dimension increases, KENN learns to adjust the clause weights according on how much that clause is satisfied in the training set. Each dot in the scatterplots corresponds to a clause in a specific run; the colour of the dot denotes the topic related to that clause.\relax }}{50}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:corrplots}{{3.11}{50}{Scatterplots showing the relation between clause weight and clause compliance, for each clause from $85$ different runs, for each different training percentage. We can observe how, as the training dimension increases, KENN learns to adjust the clause weights according on how much that clause is satisfied in the training set. Each dot in the scatterplots corresponds to a clause in a specific run; the colour of the dot denotes the topic related to that clause.\relax }{figure.caption.28}{}}
-\newlabel{fig:delta_extraction_unary}{{3.12a}{51}{Delta extraction from the KE module, for the clauses subset $\mathcal {C}=\{c_1,c_2\}$.\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:delta_extraction_unary}{{a}{51}{Delta extraction from the KE module, for the clauses subset $\mathcal {C}=\{c_1,c_2\}$.\relax }{figure.caption.29}{}}
-\newlabel{fig:delta_extraction_binary}{{3.12b}{51}{Delta extraction for the binary case. Blue arrows denote the extraction operation depicted on Figure \ref {fig:delta_extraction_unary}.\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:delta_extraction_binary}{{b}{51}{Delta extraction for the binary case. Blue arrows denote the extraction operation depicted on Figure \ref {fig:delta_extraction_unary}.\relax }{figure.caption.29}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Process for extracting deltas relative to the clauses in $\mathcal  {C \subset \mathcal  {K}}$. The output deltas are highlighted in yellow for both the unary case (a) and binary case (b).\relax }}{51}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:delta_extraction}{{3.12}{51}{Process for extracting deltas relative to the clauses in $\mathcal {C \subset \mathcal {K}}$. The output deltas are highlighted in yellow for both the unary case (a) and binary case (b).\relax }{figure.caption.29}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces The Figure shows an example where we apply deltas for two different clauses, in different orders, at the preactivation level (left), and the resulting deltas at the activation level (right). The deltas from each clause are represented by different colors, while the predictions from the base NN are shown in blue. On the right, the deltas at the activation level are shown: note how, when changing the order of application of the same deltas at the preactivation level, the deltas at the activation level change.\relax }}{52}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:ex_more_clauses}{{3.13}{52}{The Figure shows an example where we apply deltas for two different clauses, in different orders, at the preactivation level (left), and the resulting deltas at the activation level (right). The deltas from each clause are represented by different colors, while the predictions from the base NN are shown in blue. On the right, the deltas at the activation level are shown: note how, when changing the order of application of the same deltas at the preactivation level, the deltas at the activation level change.\relax }{figure.caption.30}{}}
-\newlabel{eq:impr_score}{{3.16}{53}{Improvement Score}{equation.3.6.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Histograms showing the distribution of the accuracies for all the different $500$ runs, for the transductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the relative improvements.\relax }}{50}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:transductive_histograms}{{3.10}{50}{Histograms showing the distribution of the accuracies for all the different $500$ runs, for the transductive case. On the left, the accuracies of the base NN vs accuracies of KENN. On the right the distribution of the relative improvements.\relax }{figure.caption.26}{}}
+\newlabel{fig:aa}{{\caption@xref {fig:aa}{ on input line 716}}{51}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
+\newlabel{sub@fig:aa}{{}{51}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
+\newlabel{fig:vv}{{\caption@xref {fig:vv}{ on input line 722}}{51}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
+\newlabel{sub@fig:vv}{{}{51}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
+\newlabel{fig:cc}{{\caption@xref {fig:cc}{ on input line 728}}{51}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
+\newlabel{sub@fig:cc}{{}{51}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
+\newlabel{fig:dd}{{\caption@xref {fig:dd}{ on input line 734}}{51}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
+\newlabel{sub@fig:dd}{{}{51}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
+\newlabel{fig:ee}{{\caption@xref {fig:ee}{ on input line 740}}{51}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
+\newlabel{sub@fig:ee}{{}{51}{Clause Weights and satisfaction of the rules}{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Scatterplots showing the relation between clause weight and clause compliance, for each clause from $85$ different runs, for each different training percentage. We can observe how, as the training dimension increases, KENN learns to adjust the clause weights according on how much that clause is satisfied in the training set. Each dot in the scatterplots corresponds to a clause in a specific run; the colour of the dot denotes the topic related to that clause.\relax }}{51}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:corrplots}{{3.11}{51}{Scatterplots showing the relation between clause weight and clause compliance, for each clause from $85$ different runs, for each different training percentage. We can observe how, as the training dimension increases, KENN learns to adjust the clause weights according on how much that clause is satisfied in the training set. Each dot in the scatterplots corresponds to a clause in a specific run; the colour of the dot denotes the topic related to that clause.\relax }{figure.caption.28}{}}
+\newlabel{fig:delta_extraction_unary}{{3.12a}{52}{Delta extraction from the KE module, for the clauses subset $\mathcal {C}=\{c_1,c_2\}$.\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:delta_extraction_unary}{{a}{52}{Delta extraction from the KE module, for the clauses subset $\mathcal {C}=\{c_1,c_2\}$.\relax }{figure.caption.29}{}}
+\newlabel{fig:delta_extraction_binary}{{3.12b}{52}{Delta extraction for the binary case. Blue arrows denote the extraction operation depicted on Figure \ref {fig:delta_extraction_unary}.\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:delta_extraction_binary}{{b}{52}{Delta extraction for the binary case. Blue arrows denote the extraction operation depicted on Figure \ref {fig:delta_extraction_unary}.\relax }{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Process for extracting deltas relative to the clauses in $\mathcal  {C \subset \mathcal  {K}}$. The output deltas are highlighted in yellow for both the unary case (a) and binary case (b).\relax }}{52}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:delta_extraction}{{3.12}{52}{Process for extracting deltas relative to the clauses in $\mathcal {C \subset \mathcal {K}}$. The output deltas are highlighted in yellow for both the unary case (a) and binary case (b).\relax }{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces The Figure shows an example where we apply deltas for two different clauses, in different orders, at the preactivation level (left), and the resulting deltas at the activation level (right). The deltas from each clause are represented by different colors, while the predictions from the base NN are shown in blue. On the right, the deltas at the activation level are shown: note how, when changing the order of application of the same deltas at the preactivation level, the deltas at the activation level change.\relax }}{53}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:ex_more_clauses}{{3.13}{53}{The Figure shows an example where we apply deltas for two different clauses, in different orders, at the preactivation level (left), and the resulting deltas at the activation level (right). The deltas from each clause are represented by different colors, while the predictions from the base NN are shown in blue. On the right, the deltas at the activation level are shown: note how, when changing the order of application of the same deltas at the preactivation level, the deltas at the activation level change.\relax }{figure.caption.30}{}}
+\newlabel{eq:impr_score}{{3.16}{54}{Improvement Score}{equation.3.6.16}{}}
 \@setckpt{chapters/chapter3}{
 \setcounter{page}{55}
 \setcounter{equation}{17}
@@ -124,7 +125,7 @@
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{5}
+\setcounter{footnote}{6}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{3}
@@ -140,8 +141,8 @@
 \setcounter{L@lines}{0}
 \setcounter{L@depth}{0}
 \setcounter{parentequation}{0}
-\setcounter{Item}{26}
-\setcounter{Hfootnote}{5}
+\setcounter{Item}{27}
+\setcounter{Hfootnote}{6}
 \setcounter{Hy@AnnotLevel}{0}
 \setcounter{bookmark@seq@number}{31}
 \setcounter{eu@}{0}
@@ -164,7 +165,7 @@
 \setcounter{@ppsaveapp}{0}
 \setcounter{NAT@ctr}{0}
 \setcounter{dirtytalk@qdepth}{0}
-\setcounter{linenumber}{1173}
+\setcounter{linenumber}{1180}
 \setcounter{LN@truepage}{68}
 \setcounter{definition}{2}
 \setcounter{theorem}{0}

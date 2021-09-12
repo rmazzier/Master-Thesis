@@ -1,7 +1,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Test set accuracies obtained with the inductive paradigm. The columns for SBR and RNM show the results reported in \cite {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }}{44}{table.caption.21}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Test set accuracies obtained with the transductive paradigm. The columns for SBR and RNM show the results reported in \cite {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }}{46}{table.caption.24}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces p-values computed for each learning paradigm and for each training percentage. Values below $10^{-100}$ are reported as $0$.\relax }}{47}{table.caption.27}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Test set accuracies obtained with the inductive paradigm. The columns for SBR and RNM show the results reported in \cite {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }}{45}{table.caption.21}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Test set accuracies obtained with the transductive paradigm. The columns for SBR and RNM show the results reported in \cite {marra2020relational}. The quantities between parentheses denote the relative improvement with respect to the base NN.\relax }}{48}{table.caption.24}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces p-values computed for each learning paradigm and for each training percentage. Values below $10^{-100}$ are reported as $0$.\relax }}{48}{table.caption.27}%
 \addvspace {10\p@ }

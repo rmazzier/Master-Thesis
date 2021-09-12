@@ -19,26 +19,26 @@
 \contentsline {subsection}{\numberline {3.1.2}$t$-conorm Functions}{19}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}$t$-conorm Boost Functions}{22}{subsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.1.4}Applying TBFs to preactivations}{24}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Increasing the satisfaction of the Knowledge}{29}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.5}Increasing the satisfaction of the Knowledge}{28}{subsection.3.1.5}%
 \contentsline {section}{\numberline {3.2}KENN Architecture}{29}{section.3.2}%
 \contentsline {section}{\numberline {3.3}KENN for relational data}{31}{section.3.3}%
-\contentsline {subsubsection}{Table representation of binary data}{31}{equation.3.3.14}%
+\contentsline {subsubsection}{Table representation of binary data}{32}{equation.3.3.14}%
 \contentsline {subsubsection}{The JOIN operation}{32}{figure.caption.18}%
-\contentsline {subsubsection}{The GROUP BY and SELECT operations}{33}{definition.3.3.1}%
-\contentsline {subsubsection}{Computing the delta matrices}{34}{definition.3.3.3}%
-\contentsline {section}{\numberline {3.4}Related Work}{36}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Regularization Approaches}{36}{subsection.3.4.1}%
+\contentsline {subsubsection}{The GROUP BY and SELECT operations}{34}{definition.3.3.1}%
+\contentsline {subsubsection}{Computing the delta matrices}{35}{definition.3.3.3}%
+\contentsline {section}{\numberline {3.4}Related Work}{35}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Regularization Approaches}{37}{subsection.3.4.1}%
 \contentsline {subsubsection}{Logic Tensor Networks}{37}{subsection.3.4.1}%
 \contentsline {subsubsection}{Semantic Based Regularization}{38}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Model Based Approaches}{39}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Experiments}{39}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Citeseer Dataset}{40}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}The Prior Knowledge}{40}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.5}Experiments}{40}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Citeseer Dataset}{41}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}The Prior Knowledge}{41}{subsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.5.3}Experimental Setup}{41}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Results}{43}{subsection.3.5.4}%
-\contentsline {subsubsection}{Inductive Learning}{43}{subsection.3.5.4}%
-\contentsline {subsubsection}{Transductive Learning}{46}{figure.caption.23}%
-\contentsline {subsection}{\numberline {3.5.5}Clause Weights and satisfaction of the rules}{46}{subsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.5.4}Results}{44}{subsection.3.5.4}%
+\contentsline {subsubsection}{Inductive Learning}{44}{subsection.3.5.4}%
+\contentsline {subsubsection}{Transductive Learning}{45}{figure.caption.23}%
+\contentsline {subsection}{\numberline {3.5.5}Clause Weights and satisfaction of the rules}{45}{subsection.3.5.5}%
 \contentsline {section}{\numberline {3.6}Explainability in KENN}{49}{section.3.6}%
 \contentsline {chapter}{\numberline {4}Conclusion}{55}{chapter.4}%
 \contentsline {chapter}{References}{57}{section*.31}%
