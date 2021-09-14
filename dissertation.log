@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  14 SEP 2021 16:33
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  14 SEP 2021 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2005,7 +2005,7 @@ Package rerunfilecheck Info: File `dissertation.out' has not changed.
 Here is how much of TeX's memory you used:
  44300 strings out of 476476
  1051181 string characters out of 5814301
- 1500336 words of memory out of 5000000
+ 1500335 words of memory out of 5000000
  63850 multiletter control sequences out of 15000+600000
  413998 words of font info for 124 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
