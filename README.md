@@ -9,14 +9,12 @@ symbolic representations of knowledge, which are inherently opaque to human bein
 to derive explanations. In this work, we first give a survey on the research field of Explainable
 AI, providing more rigorous definitions of the concepts of interpretability and explainability.
 We then delve deeper in the research field of Neural Symbolic Integration, which tackles the
-task of integrating the statistical learning power of machine learning with the symbolic and ab-
-stract world of logic. Specifically, we analyze Knowledge Enhanced Neural Networks (KENN), a special kind of residual layer for neural architectures which makes it possible to inject
-symbolic logical knowledge inside a neural network. We describe and analyze experimental re-
-sults on relational data on the task of collective classification, and study how KENN is able to
+task of integrating the statistical learning power of machine learning with the symbolic and abstract world of logic. Specifically, we analyze Knowledge Enhanced Neural Networks (KENN), a special kind of residual layer for neural architectures which makes it possible to inject
+symbolic logical knowledge inside a neural network. We describe and analyze experimental results on relational data on the task of collective classification, and study how KENN is able to
 automatically learn the importance of logical rules from the training data. We finally review
 explainability methods for KENN, proposing ways to extract explanations for the predictions
 provided by the model.
 
-### Credits for LateX Template
+## Credits for LateX Template
 
 Fork of https://github.com/mychele/unipd-latex-template (https://github.com/suchow/Dissertate)
