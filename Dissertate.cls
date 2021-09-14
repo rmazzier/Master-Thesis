@@ -316,6 +316,7 @@
 \newcommand{\frontispiece}{
 	\newpage
 	\thispagestyle{empty}
+	\setcounter{page}{3}
 	\vspace*{\fill}
 	\begin{center}
 	\end{center}
@@ -349,7 +350,7 @@
 
 \newcommand{\abstractpage}{
 	\phantomsection
-	\setcounter{page}{5}
+	\setcounter{page}{3}
 	\addcontentsline{toc}{chapter}{Abstract}
 	\chapter*{Abstract}
 	\input{frontmatter/abstract}

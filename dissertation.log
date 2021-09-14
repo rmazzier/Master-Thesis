@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  14 SEP 2021 16:14
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.28)  14 SEP 2021 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1569,7 +1569,7 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/scit' will be
 ] [2
 
 ]
-[5] [6
+[3] [4
 
 ]
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/n' will be
@@ -1594,7 +1594,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-(./frontmatter/abstract.tex) [7] [8
+(./frontmatter/abstract.tex) [5] [6
 
 ] (./dissertation.toc
 LaTeX Font Info:    Font shape `TU/EBGaramond(0)/b/n' will be
@@ -1619,12 +1619,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [9])
+) [7])
 \tf@toc=\write5
 \openout5 = `dissertation.toc'.
 
 
-[10] (./dissertation.lof
+[8] (./dissertation.lof
 Overfull \hbox (2.12779pt too wide) in paragraph at lines 3--3
  [][] [][][]\TU/EBGaramond(0)/m/n/12 Intuitive representation of explanations c
 oming from transparent models (left) 
@@ -1647,7 +1647,7 @@ LaTeX Font Info:    Font shape `TU/EBGaramond(0)/m/it' will be
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11
+ [9
 
 
 ])
@@ -1655,18 +1655,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout6 = `dissertation.lof'.
 
 
-[12] (./dissertation.lot)
+[10] (./dissertation.lot)
 \tf@lot=\write7
 \openout7 = `dissertation.lot'.
 
- [13
+ [11
 
+
+] [12
+
+] (./frontmatter/abbr.tex) [13
 
 ] [14
-
-] (./frontmatter/abbr.tex) [15
-
-] [16
 
 ]
 \openout2 = `chapters/introduction.aux'.
@@ -2005,7 +2005,7 @@ Package rerunfilecheck Info: File `dissertation.out' has not changed.
 Here is how much of TeX's memory you used:
  44300 strings out of 476476
  1051181 string characters out of 5814301
- 1500340 words of memory out of 5000000
+ 1500336 words of memory out of 5000000
  63850 multiletter control sequences out of 15000+600000
  413998 words of font info for 124 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
