@@ -17,6 +17,6 @@ automatically learn the importance of logical rules from the training data. We f
 explainability methods for KENN, proposing ways to extract explanations for the predictions
 provided by the model.
 
-### Credits for LateX Template
+### Credits for LateX Template
 
 Fork of https://github.com/mychele/unipd-latex-template (https://github.com/suchow/Dissertate)
