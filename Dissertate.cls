@@ -213,13 +213,12 @@
     urlcolor=black,
 }
 
-
 \renewcommand{\frontmatter}{
 	\pagenumbering{roman}
 	\input{frontmatter/personalize}
 	\maketitle
 	\frontispiece
-	\dedicationpage
+	% \dedicationpage
 	\abstractpage
 	\tableofcontents
 	\phantomsection

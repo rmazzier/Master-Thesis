@@ -1,7 +1,7 @@
 %!TEX root = ../dissertation.tex
 
 \chapter{Knowledge Enhanced Neural Networks}\label{chapt:kenn}
-Knowledge Enhanced Neural Networks (KENN) \cite{daniele2019kenn} is a special type of NN layer, designed for injecting logical knowledge into a pre-existing base NN. More specifically, it is a residual layer designed to be stacked after the last layer of any NN, in order to boost its predictive performances via the addition of a Prior Knowledge in the form of first order logic clauses. In this chapter we will describe the theory behind KENN, its architecture, and experimental results.
+Knowledge Enhanced Neural Networks (KENN) \cite{daniele2019kenn} is a special type of NN layer, designed for injecting logical knowledge into a pre-existing base NN. More specifically, it is a residual layer designed to be stacked after the last layer of any NN, in order to boost its predictive performances via the addition of a Prior Knowledge in the form of FOL clauses. In this chapter we will describe the theory behind KENN, its architecture, and experimental results.
 
 \section{Theoretical Framework}\label{sec:kenn_theoretical_framework}
  We present here the theoretical framework behind KENN. The first step will be to rigorously define the symbolic language and how to link it with the theoretical framework of NNs, which consists in defining a semantic for the language. Next, we will describe the process with which the truth value of a clause can be increased, and how to integrate this method inside NNs.
@@ -11,7 +11,7 @@ Knowledge Enhanced Neural Networks (KENN) \cite{daniele2019kenn} is a special ty
 \begin{definition}[Prior Knowledge]
 	
 %	Each predicate can be applied to a specific number of constants $n$, which we will define as the \textit{arity} of the predicate.
-	The Prior Knowledge is defined as a collection of formulas of a function-free FO language $\mathcal{L}$ whose signature is defined with a set of constants $\mathcal{C} = \{a_1, \dots, a_{|\mathcal{C}|}\}$ and a set of predicates $\mathcal{P} = \{p_1, \dots, p_{|\mathcal{P}|}\}$. 
+	The Prior Knowledge is defined as a collection of formulas of a function-free first order language $\mathcal{L}$ whose signature is defined with a set of constants $\mathcal{C} = \{a_1, \dots, a_{|\mathcal{C}|}\}$ and a set of predicates $\mathcal{P} = \{p_1, \dots, p_{|\mathcal{P}|}\}$. 
 	A predicate is a symbol, which can take in input a number of constants $n \geq 1$. If $n=1$, the predicate represents a property of the input constant; if $n>1$, it represents a relation between the input constants. The number $n$ is called the \textit{arity} of the predicate.
 \end{definition}
 
@@ -125,7 +125,7 @@ y_c \in \mathbb{R}^k, \quad(y_c)_i = \begin{cases}
 The intuition behind KENN is very simple: given the vector $y$ of predictions of the NN, a new layer is added at its end with the aim to modify $y$ and obtain a new vector of predictions $y'$, of the form $y'=y+\delta$, such that $y'$ improves the truth value of each clause present in the base knowledge and, at the same time, keeps the quantity $\|y'-y\|_2$ minimal. It is worth noticing that this new layer introduced by KENN, called Knowledge Enhancer (KE), is a kind of residual layer, since it learns to represent the quantity $\delta = y'-y$.
 
 \subsection{$t$-conorm Boost Functions}
-The next problem is to understand how to improve the truth value of a single clause \textcolor{unipd}{$c \in \mathcal{K}$}. Since this truth value is represented by a $t$-conorm function, \textcolor{unipd}{this involves finding a way to let the value of $\perp(y_c)$ rise by manipulating the value of $y_c$, where $y_c$ is the vector of truth values of the literals contained in clause $c$, defined in equation (\ref{eq:yc})}. To do this, we define a new class of functions.
+The next problem is to understand how to improve the truth value of a single clause $c \in \mathcal{K}$. Since this truth value is represented by a $t$-conorm function, this involves finding a way to let the value of $\perp(y_c)$ rise by manipulating the value of $y_c$, where $y_c$ is the vector of truth values of the literals contained in clause $c$, defined in equation (\ref{eq:yc}). To do this, we define a new class of functions.
 
 \begin{definition}[$t$-conorm Boost Function (TBF)]
 	A function $\delta:[0,1]^{n} \rightarrow[0,1]^{n}$ is a $t$-conorm Boost Function (TBF) if:
@@ -145,7 +145,7 @@ From the definition follows a simple but essential result.
 	, it follows that $\perp(t) \leq \perp(t+\delta(t))$.
 \end{proof}
 
-\textcolor{unipd}{The purpose of such TBF $\delta$ is to update the value of $y_c$ in such a way that the truth value of the clause, $\perp\left(y_c\right)$, increases}. The problem is now how to choose such a TBF. It is clear that not all the $\delta \in \Delta$ would be useful: \textcolor{unipd}{for example, one could choose the function $\delta(y_c)_i = 1-(y_c)_i$}. In this way, we would obtain an updated truth value of $1$ for any literal, independently \textcolor{unipd}{of $y_c$}. This of course would be pointless, and would render the predictions of the base NN useless. For this reason another requirement for $y'$ is needed. Specifically, as we already mentioned, KENN is built in such a way that the learnt delta improves the $t$-conorm value in a minimal way. To be more rigorous, we will now formally define the concept of a minimal TBF.
+The purpose of such TBF $\delta$ is to update the value of $y_c$ in such a way that the truth value of the clause, $\perp\left(y_c\right)$, increases. The problem is now how to choose such a TBF. It is clear that not all the $\delta \in \Delta$ would be useful: for example, one could choose the function $\delta(y_c)_i = 1-(y_c)_i$. In this way, we would obtain an updated truth value of $1$ for any literal, independently of $y_c$. This of course would be pointless, and would render the predictions of the base NN useless. For this reason another requirement for $y'$ is needed. Specifically, as we already mentioned, KENN is built in such a way that the learnt delta improves the $t$-conorm value in a minimal way. To be more rigorous, we will now formally define the concept of a minimal TBF.
 
 \begin{definition}[Minimal TBF]
 	A function $\delta \in \Delta$ is minimal with respect to a norm $\|\cdot\|$ and a $t$-conorm $\perp$ if and only if:
@@ -156,11 +156,9 @@ From the definition follows a simple but essential result.
 
 As mentioned above, KENN works with the Gödel $t$-conorm function and the $L_p$ norm $\|x\|_p = \left( \sum_{i=1}^n |x_i|^p \right)^{\frac{1}{p}}$.
 The next step at this point is to find such a minimal TBF. In the following result, we present a possible form that a minimal TBF can assume.
-
-\textcolor{red}{(I teoremi sono risultati generali, nel senso che valgono per qualsiasi vettore che le TBF prendono in input. Per evitare confusione di notazione, nei teoremi uso $t$ per riferirmi a vettori generici in $[0,1]^n$. Per sicurezza lo evidenzio (nota che in Def. 3.1.7 e in Def 3.1.8 è già specificato).)}
 \begin{theorem}
 	\label{thm:min_tbf}
-	For any function $f: \mathbb{R}^{n} \rightarrow \mathbb{R}$ \textcolor{unipd}{and for any vector $t \in \left[0,1\right]^n$}, we define \mbox{$\delta^{f}: \mathbb{R}^{n} \rightarrow \mathbb{R}^{n}$} as
+	For any function $f: \mathbb{R}^{n} \rightarrow \mathbb{R}$ and for any vector $t \in \left[0,1\right]^n$, we define \mbox{$\delta^{f}: \mathbb{R}^{n} \rightarrow \mathbb{R}^{n}$} as
 	$$
 	\delta^{f}(t)_{i}= \begin{cases}f(t) & \text { if } i=\arg\max_{j=1}^n t_{j} \\ 0 & \text { otherwise }\end{cases}
 	$$
@@ -188,13 +186,12 @@ The next step at this point is to find such a minimal TBF. In the following resu
 
 \subsection{Applying TBFs to preactivations} 
 \label{sec:tbf_preac}
-There is a problem with the definition of $\delta^f$: there is a specific constraint $f(t) \leq 1 - \max_i t_i$ that limits the number of candidates for $f$. Indeed, this is imposed to ensure that \textcolor{unipd}{each entry of} the final output $y_c'= y_c + \delta^f(y_c)$ will be in $\left[0,1\right]$. There is a natural way to solve this impracticality: since we are assuming a multilabel classification scenario, the final $m$ output units of the NN will pass through a sigmoidal activation function. More specifically, $y_i$ will be of the form:
+There is a problem with the definition of $\delta^f$: there is a specific constraint $f(t) \leq 1 - \max_i t_i$ that limits the number of candidates for $f$. Indeed, this is imposed to ensure that each entry of the final output $y_c'= y_c + \delta^f(y_c)$ will be in $\left[0,1\right]$. There is a natural way to solve this impracticality: since we are assuming a multilabel classification scenario, the final $m$ output units of the NN will pass through a sigmoidal activation function. More specifically, $y_i$ will be of the form:
 \begin{equation*}
 y_i = \sigma(z_i) = \frac{1}{1+e^{-z_i}}, \quad \forall i=1,\dots,m,
 \end{equation*}
-\textcolor{unipd}{where $z$ is the vector of preactivations from the NN.} For this reason, KENN exploits the fact that $\sigma$ takes only values in $\left[0,1\right]$ by applying the TBF directly on the preactivations $z$. In fact, it is clear from an intuitive point of view that one can apply any delta to the preactivations vector, and at the same time always be sure that the final output will be in $\left[0,1\right]$. In this way, the constraint on $f$ is no longer needed. 
-\textcolor{red}{(Ora definisco subito cos'è $z_c$ e come si ottiene.)}
-\textcolor{unipd}{However, recall that the input for the TBF at the actvation level is $y_c$ (defined in equation (\ref{eq:yc})), which is the vector of truth values for the literals present in clause $c$. Therefore, in the same way, we will need to define $z_c$, vector of preactivations for the literals of clause $c$. There is one problem though: we don't know how to define the preactivation of a negated literal, i.e. we don't know how to derive $z_{\neg A}$ from $z_A$. In fact, recall that in equation (\ref{eq:lukasiewicz}) we defined the interpretation of a negated predicate, where we knew that the truth values were well defined in the interval $\left[0,1\right]$. Now we are dealing with preactivations, which cannot be considered truth values in the Fuzzy Logic theoretical framework. However, this problem can be easily solved by exploiting the following property of the sigmoid activation function:
+where $z$ is the vector of preactivations from the NN. For this reason, KENN exploits the fact that $\sigma$ takes only values in $\left[0,1\right]$ by applying the TBF directly on the preactivations $z$. In fact, it is clear from an intuitive point of view that one can apply any delta to the preactivations vector, and at the same time always be sure that the final output will be in $\left[0,1\right]$. In this way, the constraint on $f$ is no longer needed. 
+However, recall that the input for the TBF at the activation level is $y_c$ (defined in equation (\ref{eq:yc})), which is the vector of truth values for the literals present in clause $c$. Therefore, in the same way, we will need to define $z_c$, the vector of preactivations for the literals of clause $c$. There is one problem though: we don't know how to define the preactivation of a negated literal, i.e. we don't know how to derive $z_{\neg A}$ from $z_A$. In fact, recall that in equation (\ref{eq:lukasiewicz}) we defined the interpretation of a negated predicate, where we knew that the truth values were well defined in the interval $\left[0,1\right]$. Now we are dealing with preactivations, which cannot be considered truth values in the Fuzzy Logic theoretical framework. However, this problem can be easily solved by exploiting the following property of the sigmoid activation function:
 	\begin{equation*}
 	1 - \sigma(x) = \sigma(-x).
 	\end{equation*}
@@ -203,12 +200,9 @@ y_i = \sigma(z_i) = \frac{1}{1+e^{-z_i}}, \quad \forall i=1,\dots,m,
 	z_{\neg A} = -z_A.
 	\end{equation*}
 	Notice that we are not introducing any new concepts: instead we are just redefining quantities that were already mentioned at the activation level, to the preactivation level.
-	In this way, we can finally define $z_c := \left(z_{l_1}, \dots, z_{l_k}\right)$ for every clause $c := \bigvee_{i=1}^k l_i$ of the knowledge. We refer to the process of transforming from $z$ to $z_c$ as the \textit{selection} step.}
+	In this way, we can finally define $z_c := \left(z_{l_1}, \dots, z_{l_k}\right)$ for every clause $c := \bigvee_{i=1}^k l_i$ of the knowledge. We refer to the process of transforming from $z$ to $z_c$ as the \textit{selection} step.
 
-\textcolor{unipd}{Going back to the main problem, in the next theorem we prove formally that applying a minimal TBF on the preactivations $z_c$ is equivalent to applying a minimal TBF on $y_c$.}
-
-\textcolor{red}{(Anche qui, i risultati dei teoremi sono generali.. cioè valgono per qualsiasi vettore che dai in input, basta che siano della stessa dimensione.. prima usavo $y$ e $z$ come notazione per indicare generici vettori, ma siccome può essere ambiguo visto che ci chiamo i vettori delle attivazioni e preattivazioni, ho cambiato in questo teorema sostituendo $t$ e $v$ rispettivamente; (in pratica la notazione è uguale a quella che usi tu, solo che tecnicamente qui $v$ è un generico vettore in $\mathbb{R}^n$, non per forza un vettore di preattivazioni) )}
-
+Going back to the main problem, in the next theorem we prove formally that applying a minimal TBF on the preactivations $z_c$ is equivalent to applying a minimal TBF on $y_c$.
 \begin{theorem}
 	Given any function $f:\mathbb{R}^n\rightarrow\mathbb{R}$, and given $t = \sigma(v), v\in 
 	\mathbb{R}^n$, the function:
@@ -241,10 +235,9 @@ y_i = \sigma(z_i) = \frac{1}{1+e^{-z_i}}, \quad \forall i=1,\dots,m,
 	\end{align*}
 	Therefore, Theorem \ref{thm:min_tbf} guarantees that $\delta^g$ is a minimal TBF under the Gödel $t$-conorm and the $L_p$ norm.
 \end{proof}
-\textcolor{unipd}{Note that $\delta^g(y_c)$ is not directly computed in KENN but it's indirectly induced by applying $\delta^f$ on $z_c$.} 
+Note that $\delta^g(y_c)$ is not directly computed in KENN but it's indirectly induced by applying $\delta^f$ on $z_c$. 
 
 Applying the TBF directly on the preactivations has also another remarkable advantage. Indeed, it is known that it is  possible to interpret the value of the preactivation of the $i$-th output neuron as the \say{confidence} of the NN that the current feature vector is to be classified in the $i$-th class. 
-\textcolor{red}{(qui usavo $z$ per indicare un generico numero reale.. ma potrebbe essere fuorviante perché ci indico il vettore delle preattivazioni... quindi ora uso $x$.)}
 This \say{confidence} is not yet a probability, but a generic scalar value $x \in \mathbb{R}$; it will become a probability when transformed with the sigmoid activation function: $\sigma(x) \in \left[0,1\right]$. More specifically we know that:
 \begin{itemize}
 	\item $x \gg 0$ means high confidence of being classified in the $i$-th class. This follows from the fact that $\lim_{x\rightarrow +\infty} \sigma(x) = 1$;
@@ -254,7 +247,7 @@ This \say{confidence} is not yet a probability, but a generic scalar value $x \i
 
 %TODO: sicuro delle correzioni fatte ieri sera?
 By observing the shape of the sigmoid activation function we can notice that when $|z| \gg 0$ (high confidence in the NN predictions), even large deltas on the preactivations produce very small changes. 
-\textcolor{unipd}{More rigorously, $\lim_{|x| \rightarrow \infty} |\sigma(x+\delta)-\sigma(x)| = 0, \forall x\in \mathbb{R}, \delta \gg 0$.} On the contrary, when $x \approx 0$, even small deltas on the preactivations produce high modification at the activation level. 
+More rigorously, $\lim_{|x| \rightarrow \infty} |\sigma(x+\delta)-\sigma(x)| = 0, \forall x\in \mathbb{R}, \delta \gg 0$. On the contrary, when $x \approx 0$, even small deltas on the preactivations produce high modification at the activation level. 
 This will result in the following behavior: if the NN is highly confident of its decision, then logical rules will not modify too much the result of the NN predictions. On the contrary, in the cases where the NN is uncertain of its decision, our base knowledge will intervene and give higher modifications on the final predictions. This conforms to the intuition that KENN should produce minimal changes in the original predictions. These key concepts are further illustrated in Figure \ref{fig:preacs_deltas_example}.
 
 \begin{figure}[h!]
@@ -267,23 +260,23 @@ This will result in the following behavior: if the NN is highly confident of its
 \end{figure}
 
 As we already mentioned, the minimal TBF directly modeled by KENN is the one we called $\delta^f$. From its definition, we know that the magnitude of the produced delta is determined by the definition of $f$. One of the most important features of KENN is that, by design, it learns to give the proper \textit{importance} to each clause in the base knowledge: this precise feature of the model gives also a way to find such function $f$. Specifically, for each clause $c$ a learnable parameter $w_c$ is defined so that the produced delta for $c$ is:
-\textcolor{unipd}{\begin{equation*}
+\begin{equation*}
 	\delta^{w_c}(z_c)_i = 
 	\begin{cases}
 	w_c \quad &\text{if } i = \arg\max_{j=1}^n(z_c)_j \\
 	0 \quad &\text{otherwise.}
 	\end{cases}
-	\end{equation*}}
-From this definition it's now clear that the function $f$ we were looking for is not actually the same for all the clauses in the base knowledge, but it is defined for each different clause and it's equal to the constant \textcolor{unipd}{function $f_c(z_c) = w_c, \quad w_c \in \left[0, \infty\right]$}. 
+	\end{equation*}
+From this definition it's now clear that the function $f$ we were looking for is not actually the same for all the clauses in the base knowledge, but it is defined for each different clause and it's equal to the constant function $f_c(z_c) = w_c, \quad w_c \in \left[0, \infty\right]$. 
 There is one last problem: while it's true that the function $\delta^{w_c}$ is a minimal TBF, the implementation of this kind of functions inside a NN is unfeasible since they are not differentiable. For this reason KENN uses a soft approximation of $\delta^{w_c}$, defined as:
-\textcolor{unipd}{\begin{equation}
+\begin{equation}
 	\delta_s^{w_c}(z_c)_i = w_c \cdot \operatorname{softmax}(z_c)_i = w_c \cdot \frac{e^{(z_c)_i}}{\sum_{j=1}^ne^{(z_c)_j}}.
 	\label{eq:soft_approx_delta}
-	\end{equation}}
+	\end{equation}
 %Recall our notation: we defined with $y \in \mathbb{R}^m$ the vector of predictions from the NN. Specifically, we now define with $y_A$ the truth value relative to $A$, where $A$ is a generic grounded predicate of our language. We also define $z_A=\sigma^{-1}(y_A)$.
 % Now, we note that equation (\ref{eq:soft_approx_delta}), tells us that the produced $\delta$ is always $m$-dimensional, where $m$ is the number of output classes. 
 %This however is not desirable: in fact, in general, not all the clauses in our base knowledge contain all the predicates of our language. For example, given $\mathcal{P}=\{A,B,C\}$, the clause $c = A \vee \neg B$ contains only two of the three predicates in the language. Therefore, we would like this specific clause to not modify in any way $z_C$. 
-\textcolor{unipd}{There is still, however, one additional step to describe in order to fully understand how KENN produces a vector of deltas}. Let $\mathcal{K}$ be the set of clauses in our knowledge, and $\{w_c\}_{c\in\mathcal{K}}$ their corresponding weights. For every clause $c\in \mathcal{K}$ we want to obtain a new delta, namely $\delta^c \in \mathbb{R}^m$, which contains one value for each predicate in the clause and is defined as follows:
+There is still, however, one additional step to describe in order to fully understand how KENN produces a vector of deltas. Let $\mathcal{K}$ be the set of clauses in our knowledge, and $\{w_c\}_{c\in\mathcal{K}}$ their corresponding weights. For every clause $c\in \mathcal{K}$ we want to obtain a new delta, namely $\delta^c \in \mathbb{R}^m$, which contains one value for each predicate in the clause and is defined as follows:
 \begin{equation}
 \delta_{A}^{c}= \begin{cases}\delta_{s}^{w_{c}}\left(z_{c}\right)_{A} & \text { if } A \in c \\ -\delta_{s}^{w_{c}}\left(z_{c}\right)_{\neg A} & \text { if } \neg A \in c \\ 0 & \text { otherwise }\end{cases}, \quad \forall A \in c
 \label{eq:delta_c}
@@ -340,7 +333,7 @@ Specifically, the CE takes in input the mini-batch of preactivations $\{z_1,\dot
 	\item Computes the vector of deltas according to equation (\ref{eq:soft_approx_delta});
 	\item Transforms the delta vector according to equation (\ref{eq:delta_c})
 \end{enumerate}
-Once every CE has produced a vector of deltas, the next step is to aggregate them by summing them up. The module that performs this operation is called the \textit{Knowledge Enhancer} (KE), which is shown in Figure \ref{fig:ke}. More specifically, the KE performs the following operations:
+Once every CE has produced a vector of deltas, the next step is to aggregate them by summing them up. The module that performs this operation is called the Knowledge Enhancer (KE), which is shown in Figure \ref{fig:ke}. More specifically, the KE performs the following operations:
 \begin{enumerate}
 	\item Takes all the preactivations from the NN as inputs, and instantiates a CE for each clause in the knowledge base;
 		\item Sums the produced vector of changes from all the CEs, obtaining a final delta vector;
@@ -508,7 +501,7 @@ For the simple case of binary classification, for example, the task is to learn 
 	L = \left(1 - \underset{\phi \in \mathcal{K}} {\operatorname{SatAgg}} \mathcal{G}_{\theta,x\leftarrow B}(\phi(x)) \right),
 	\end{equation*}
 	where the notation $\underset{\phi \in \mathcal{K}} {\operatorname{SatAgg}} \mathcal{G}_{\theta,x\leftarrow B}(\phi(x))$ means that the variable $x$ is grounded with the data $B$, where $B$ is a mini-batch sampled from $D$. 
-	\textcolor{unipd}{Note how LTN does not define a regularization term to add to a predefined loss function, but defines the entire loss in terms of satisfiability of formulas. This means that also the supervised learning paradigm is enforced by logical rules. More specifically, for the case of binary classification, for each sample $x$ belonging to the positive class, the knowledge base will contain the formula $P(x)$, where the atom $P(x)$ means \say{sample $x$ belongs to the positive class}. The same happens for all the representatives of the negative class.}
+	Note how LTN does not define a regularization term to add to a predefined loss function, but defines the entire loss in terms of satisfiability of formulas. This means that also the supervised learning paradigm is enforced by logical rules. More specifically, for the case of binary classification, for each sample $a$ belonging to the positive class, the knowledge base will contain the formula $P(a)$, where the atom $P(a)$ means \say{sample $a$ belongs to the positive class}. The same happens for all the representatives of the negative class.
 
  
  \subsubsection{Semantic Based Regularization}
@@ -793,6 +786,8 @@ However, note how each individual clause contributes with different quantities, 
 \end{equation*}
 In simple terms, the contribution of each clause at the activation level depends on the order in which the clauses apply their contribution at the preactivation level: the problem is that this order is not defined since all the deltas are applied simultaneously. Therefore, when inspecting the changes caused by more clauses, the only information that we can retain is the aggregated contribution of all of them.
 
+\subsection{Evaluation Metrics}
+
 In real-world problems, one might deal with hundreds or thousands of clauses and/or predicates: the manual inspection of deltas in those cases is not feasible, and in general local explanations are less useful. For this reason, alternative approaches are necessary. For example, one might desire to find a certain score which quantifies how much the contribution from the knowledge (or a subset of the knowledge $\mathcal{C \subseteq \mathcal{K}}$) improved (or worsened) a certain prediction from the base NN.
 This score can be defined as follows:
 \begin{definition}[Improvement Score]
@@ -809,17 +804,22 @@ Note that $\hat{\delta^{\mathcal{C}}}$ is simply the vector of deltas at the act
 Now, recall that KENN aggregates the deltas of all the clauses by simply summing the individual deltas: this is very convenient since it makes KENN fast and scalable. However, we saw that this kind of aggregation may be too simplistic, and may cause inconsistencies in the case where multiple clauses disagree on how certain truth values should be changed. In order to diagnose this kind of behavior on a trained KENN model, we can define another score:
 
 \begin{definition}[Disagreement Score]
-	Using the previously defined notation, the disagreement score for sample $x$ with respect to the subset of clauses $\mathcal{C}$ is defined as follows:
+	Using the previously defined notation, we can define the disagreement vector for sample $x$ with respect to the subset of clauses $\mathcal{C}$ as follows:
 	\begin{equation}
-DS(x, \mathcal{C}) = \sum_{c\in\mathcal{C}}\left|\hat{\delta_c}\right| - \left|\sum_{c\in\mathcal{C}}\hat{\delta_c} \right|.
+DV(x, \mathcal{C}) = \sum_{c\in\mathcal{C}}\left|\hat{\delta_c}\right| - \left|\sum_{c\in\mathcal{C}}\hat{\delta_c} \right|.
 	\end{equation}
-This score quantifies the amount of inconsistencies and disagreement among the clauses belonging to $\mathcal{C}$: a score of $0$ implies perfect agreement between all the clauses, while an higher score reflects an higher disagreement. We recall that two clauses are said to disagree if, given a common literal, the deltas that they produce for that literal have different signs.
+Given $DV(x, \mathcal{C})$, we can define two different scores:
+\begin{itemize}
+	\item $DS(x,i,\mathcal{C}) = DV(x, \mathcal{C})_i$: the disagreement score for sample $x$, with respect to the $i$-th predicate;
+	\item $DS(x,\mathcal{C}) = \sum_i DV(x, \mathcal{C})_i$: the cumulated disagreement score for sample $x$ with respect to all the predicates. 
+\end{itemize}
+This score quantifies the amount of inconsistencies and disagreement among the clauses belonging to $\mathcal{C}$: a score of $0$ implies perfect agreement between all the clauses, while an higher score reflects an higher disagreement. We recall that two clauses are said to disagree if, given a common literal, the deltas that they produce for that literal have different signs. Not also how we can choose to restrict the analysis to a single predicate (or a subset of predicates), or to consider them all together.
 \end{definition}
 %An interesting property of these defined scores is that we can also focus on specific predicates: specifically, for each sample $x$, we can compute the improvement or disagreement score for a certain subset of predicates by simply retaining their relative deltas. 
 
-Also in this case, one could rank the predictions with respect to the disagreement score, to evaluate which clauses disagree more: this can be useful in different situations, like during debugging or for the knowledge selection phase.
+Also in this case, one could rank the predictions with respect to the disagreement score, to evaluate which clauses disagree more; we can also choose to measure the disagreement on specific predicates, or on all of them. This can be useful in different situations, like during debugging or for the knowledge selection phase.
 
-To conclude we saw that, in general, explanations extracted from KENN can be useful mostly to evaluate the impact of the knowledge, and can allow the user to refine it, by adding or removing rules that proved to be useful or damaging. We also saw that, when inspecting single clauses, more expressive explanations can be extracted: specifically, thanks to the transparency of the CE, simple and human readable explanations can be derived and even converted in natural language form. We remark, however, that this transparency is just partial and limited to the knowledge enforcement stage: indeed, the base NN remains an opaque component of the whole model, even if used in conjunction with KENN.
+To conclude, we saw that, in general, explanations extracted from KENN can be useful mostly to evaluate the impact of the knowledge, and can allow the user to refine it, by adding or removing rules that proved to be useful or damaging. We also saw that, when inspecting single clauses, more expressive explanations can be extracted: specifically, thanks to the transparency of the CE, simple and human readable explanations can be derived and even converted in natural language form. We remark, however, that this transparency is just partial and limited to the knowledge enforcement stage: indeed, the base NN remains an opaque component of the whole model, even if used in conjunction with KENN.
  
 
 

@@ -39,7 +39,8 @@ G.~Marra, M.~Diligenti, F.~Giannini, M.~Gori, and M.~Maggini, ``Relational
   neural machines,'' \emph{arXiv preprint arXiv:2002.02193}, 2020.
 
 \bibitem{marcus2018appraisal}
-G.~Marcus, ``Deep learning: A critical appraisal,'' Jan. 2018.
+G.~Marcus, ``Deep learning: A critical appraisal,'' \emph{arXiv preprint
+  arXiv:1801.00631}, 2018.
 
 \bibitem{o2016weapons}
 C.~O'Neil, \emph{Weapons of Math Destruction: How Big Data Increases Inequality
@@ -78,7 +79,7 @@ S.~Sabour, N.~Frosst, and G.~E. Hinton, ``Dynamic routing between capsules,''
 
 \bibitem{szegedy2013intriguing}
 C.~Szegedy, W.~Zaremba, I.~Sutskever, J.~Bruna, D.~Erhan, I.~Goodfellow, and
-  R.~Fergus, ``Intriguing properties of neural networks,'' 12 2013.
+  R.~Fergus, ``Intriguing properties of neural networks,'' Dec. 2013.
 
 \bibitem{buckner2020adversarial}
 C.~Buckner, ``Adversarial examples and the deeper riddle of induction: The need
@@ -87,12 +88,12 @@ C.~Buckner, ``Adversarial examples and the deeper riddle of induction: The need
 
 \bibitem{nguyen2015fooled}
 A.~Nguyen, J.~Yosinski, and J.~Clune, ``Deep neural networks are easily fooled:
-  High confidence predictions for unrecognizable images,'' 06 2015, pp.
+  High confidence predictions for unrecognizable images,'' Jun. 2015, pp.
   427--436.
 
 \bibitem{jia2017adversarial}
 R.~Jia and P.~Liang, ``Adversarial examples for evaluating reading
-  comprehension systems,'' 01 2017, pp. 2021--2031.
+  comprehension systems,'' Jan. 2017, pp. 2021--2031.
 
 \bibitem{zhang2019generating}
 W.~E. Zhang, Q.~Z. Sheng, A.~A.~F. Alhazmi, and C.~Li, ``Generating textual
@@ -133,7 +134,7 @@ S.~Bromberger, \emph{On what we know we don't know: Explanation, theory,
 
 \bibitem{lipton2017mythos}
 Z.~Lipton, ``The mythos of model interpretability,'' \emph{Communications of
-  the ACM}, vol.~61, 10 2016.
+  the ACM}, vol.~61, Oct. 2016.
 
 \bibitem{doshivelez2017rigorous}
 \BIBentryALTinterwordspacing
@@ -147,11 +148,11 @@ B.~Kim, ``Interactive and interpretable machine learning models for human
 
 \bibitem{ribeiro2016trust}
 M.~Ribeiro, S.~Singh, and C.~Guestrin, ``“why should i trust you?”:
-  Explaining the predictions of any classifier,'' 02 2016, pp. 97--101.
+  Explaining the predictions of any classifier,'' Feb. 2016, pp. 97--101.
 
 \bibitem{burkart2021survey}
 N.~Burkart and M.~Huber, ``A survey on the explainability of supervised machine
-  learning,'' \emph{Journal of Artificial Intelligence Research}, vol.~70, 01
+  learning,'' \emph{Journal of Artificial Intelligence Research}, vol.~70, Jan.
   2021.
 
 \bibitem{chen2019judicial}
@@ -194,12 +195,13 @@ L.~van~der Maaten and G.~Hinton, ``Visualizing data using t-sne,''
 
 \bibitem{mahendran2014understanding}
 A.~Mahendran and A.~Vedaldi, ``Understanding deep image representations by
-  inverting them,'' 11 2014.
+  inverting them,'' in \emph{Proceedings of the IEEE conference on computer
+  vision and pattern recognition}, 2015, pp. 5188--5196.
 
 \bibitem{simonyan2013deep}
 K.~Simonyan, A.~Vedaldi, and A.~Zisserman, ``Deep inside convolutional
   networks: Visualising image classification models and saliency maps,''
-  \emph{preprint}, 12 2013.
+  \emph{arXiv preprint arXiv:1312.6034}, Dec. 2013.
 
 \bibitem{wang2016dueling}
 Z.~Wang, T.~Schaul, M.~Hessel, H.~Hasselt, M.~Lanctot, and N.~Freitas,
@@ -207,7 +209,7 @@ Z.~Wang, T.~Schaul, M.~Hessel, H.~Hasselt, M.~Lanctot, and N.~Freitas,
   \emph{Proceedings of The 33rd International Conference on Machine Learning},
   ser. Proceedings of Machine Learning Research, M.~F. Balcan and K.~Q.
   Weinberger, Eds., vol.~48.\hskip 1em plus 0.5em minus 0.4em\relax New York,
-  New York, USA: PMLR, 20--22 Jun 2016, pp. 1995--2003.
+  New York, USA: PMLR, Jun. 2016, pp. 1995--2003.
 
 \bibitem{ross2017right}
 A.~S. Ross, M.~C. Hughes, and F.~Doshi-Velez, ``Right for the right reasons:
@@ -250,11 +252,8 @@ R.~Caruana, H.~Kangarloo, J.~D. Dionisio, U.~Sinha, and D.~Johnson,
   0.4em\relax American Medical Informatics Association, 1999, p. 212.
 
 \bibitem{valiant2003threeproblems}
-\BIBentryALTinterwordspacing
-L.~G. Valiant, ``Three problems in computer science,'' \emph{J. ACM}, vol.~50,
-  no.~1, p. 96–99, Jan. 2003. [Online]. Available:
-  \url{https://doi.org/10.1145/602382.602410}
-\BIBentrySTDinterwordspacing
+L.~G. Valiant, ``Three problems in computer science,'' \emph{Journal of the ACM
+  (JACM)}, vol.~50, no.~1, pp. 96--99, 2003.
 
 \bibitem{richardson2006markov}
 M.~Richardson and P.~Domingos, ``Markov logic networks,'' \emph{Machine
