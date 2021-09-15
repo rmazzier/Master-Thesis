@@ -1,0 +1,24 @@
+% \ProvidesPackageRCS Padova
+
+\RequirePackage{ifthen}
+
+\newif\ifbeamerpadovanologos
+\beamerpadovanologostrue
+\DeclareOptionBeamer{nologos}{\beamerpadovanologosfalse}
+
+\DeclareOptionBeamer{compress}{\beamer@compresstrue}
+
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\useinnertheme{rectangles}
+\useoutertheme{Padova}
+\usecolortheme{Padova}
+\usefonttheme{Padova}
+
+\setbeamertemplate{navigation symbols}{}
+% \setbeamertemplate{blocks}[rounded][shadow=false]
+
+\mode
+<all>
