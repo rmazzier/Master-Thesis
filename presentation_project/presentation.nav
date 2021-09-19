@@ -9,11 +9,75 @@
 \headcommand {\beamer@framepages {3}{3}}
 \headcommand {\beamer@sectionpages {3}{3}}
 \headcommand {\beamer@subsectionpages {3}{3}}
-\headcommand {\sectionentry {2}{First section}{4}{First section}{0}}
+\headcommand {\sectionentry {2}{KENN}{4}{KENN}{0}}
 \headcommand {\slideentry {2}{0}{1}{4/4}{}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\beamer@partpages {1}{4}}
-\headcommand {\beamer@subsectionpages {4}{4}}
-\headcommand {\beamer@sectionpages {4}{4}}
-\headcommand {\beamer@documentpages {4}}
-\headcommand {\gdef \inserttotalframenumber {4}}
+\headcommand {\slideentry {2}{0}{2}{5/5}{}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {2}{0}{3}{6/6}{}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {2}{0}{4}{7/7}{}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\slideentry {2}{0}{5}{8/11}{}{0}}
+\headcommand {\beamer@framepages {8}{11}}
+\headcommand {\slideentry {2}{0}{6}{12/12}{}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {2}{0}{7}{13/13}{}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {2}{0}{8}{14/14}{}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {2}{0}{9}{15/16}{}{0}}
+\headcommand {\beamer@framepages {15}{16}}
+\headcommand {\slideentry {2}{0}{10}{17/18}{}{0}}
+\headcommand {\beamer@framepages {17}{18}}
+\headcommand {\beamer@sectionpages {4}{18}}
+\headcommand {\beamer@subsectionpages {4}{18}}
+\headcommand {\sectionentry {3}{Experiments on Collective Classification}{19}{Experiments on Collective Classification}{0}}
+\headcommand {\slideentry {3}{0}{1}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {3}{0}{2}{20/20}{}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {3}{0}{3}{21/21}{}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {3}{0}{4}{22/22}{}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@sectionpages {19}{22}}
+\headcommand {\beamer@subsectionpages {19}{22}}
+\headcommand {\sectionentry {4}{Explainability in KENN}{23}{Explainability in KENN}{0}}
+\headcommand {\slideentry {4}{0}{1}{23/23}{}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {4}{0}{2}{24/24}{}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {4}{0}{3}{25/25}{}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {4}{0}{4}{26/26}{}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\slideentry {4}{0}{5}{27/27}{}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {4}{0}{6}{28/28}{}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\slideentry {4}{0}{7}{29/29}{}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {4}{0}{8}{30/30}{}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\gdef \insertmainframenumber {25}}
+\headcommand {\partentry {\translate {Appendix}}{1}}
+\headcommand {\beamer@partpages {1}{30}}
+\headcommand {\beamer@sectionpages {23}{30}}
+\headcommand {\beamer@subsectionpages {23}{30}}
+\headcommand {\beamer@appendixpages {31}}
+\headcommand {\slideentry {4}{0}{9}{31/31}{}{1}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {4}{0}{10}{32/32}{}{1}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\slideentry {4}{0}{11}{33/33}{}{1}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\slideentry {4}{0}{12}{34/34}{}{1}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\slideentry {4}{0}{13}{35/35}{}{1}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\beamer@partpages {31}{35}}
+\headcommand {\beamer@subsectionpages {31}{35}}
+\headcommand {\beamer@sectionpages {31}{35}}
+\headcommand {\beamer@documentpages {35}}
+\headcommand {\gdef \inserttotalframenumber {25}}

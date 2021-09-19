@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.7.28)  15 SEP 2021 17:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.7.28)  19 SEP 2021 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -660,22 +660,22 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./presentation.aux)
 \openout1 = `presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -735,7 +735,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box75
-Package hyperref Info: Link coloring OFF on input line 11.
+Package hyperref Info: Link coloring OFF on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -748,56 +748,56 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count318
 )
-LaTeX Info: Redefining \ref on input line 11.
-LaTeX Info: Redefining \pageref on input line 11.
-LaTeX Info: Redefining \nameref on input line 11.
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
 
 (./presentation.out) (./presentation.out)
 \@outlinefile=\write5
 \openout5 = `presentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 11.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 22.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 11.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 22.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 11.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 11.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 11.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 11.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 22.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 11.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 11.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 11.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 22.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 11.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 11.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 11.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 22.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 11.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 11.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 22.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 11.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 22.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 11.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 11.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 11.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 11.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 11.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 11.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -830,20 +830,212 @@ g>] (./presentation.toc) [2
  <./unipd_logo_white.png> <./bgWave.pdf>] [3
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [4
+)
+<images/kenn_intuition.pdf, id=71, 356.29109pt x 116.35469pt>
+File: images/kenn_intuition.pdf Graphic file (type pdf)
+<use images/kenn_intuition.pdf>
+Package pdftex.def Info: images/kenn_intuition.pdf  used on input line 62.
+(pdftex.def)             Requested size: 291.92444pt x 95.33511pt.
+ [4
+
+ <./images/kenn_intuition.pdf>] [5
 
 ]
+<images/interpretation_intuition0.pdf, id=93, 300.1614pt x 180.675pt>
+File: images/interpretation_intuition0.pdf Graphic file (type pdf)
+<use images/interpretation_intuition0.pdf>
+Package pdftex.def Info: images/interpretation_intuition0.pdf  used on input li
+ne 101.
+(pdftex.def)             Requested size: 307.28987pt x 184.967pt.
+ [6
+
+ <./images/interpretation_intuition0.pdf>]
+<images/interpretation_intuition1.pdf, id=109, 301.125pt x 180.675pt>
+File: images/interpretation_intuition1.pdf Graphic file (type pdf)
+<use images/interpretation_intuition1.pdf>
+Package pdftex.def Info: images/interpretation_intuition1.pdf  used on input li
+ne 107.
+(pdftex.def)             Requested size: 307.28987pt x 184.39081pt.
+ [7
+
+ <./images/interpretation_intuition1.pdf>] [8
+
+] [9
+
+] [10
+
+] [11
+
+]
+<images/example_clause_boosting0.pdf, id=147, 277.035pt x 143.5764pt>
+File: images/example_clause_boosting0.pdf Graphic file (type pdf)
+<use images/example_clause_boosting0.pdf>
+Package pdftex.def Info: images/example_clause_boosting0.pdf  used on input lin
+e 141.
+(pdftex.def)             Requested size: 307.28987pt x 159.25775pt.
+ [12
+
+ <./images/example_clause_boosting0.pdf>]
+<images/tvalues_literals.pdf, id=162, 116.35469pt x 111.29579pt>
+File: images/tvalues_literals.pdf Graphic file (type pdf)
+<use images/tvalues_literals.pdf>
+Package pdftex.def Info: images/tvalues_literals.pdf  used on input line 147.
+(pdftex.def)             Requested size: 184.3758pt x 176.37524pt.
+ [13
+
+ <./images/tvalues_literals.pdf>] [14
+
+]
+<images/boost_options.pdf, id=179, 295.1025pt x 104.3097pt>
+File: images/boost_options.pdf Graphic file (type pdf)
+<use images/boost_options.pdf>
+Package pdftex.def Info: images/boost_options.pdf  used on input line 167.
+(pdftex.def)             Requested size: 307.28987pt x 108.61957pt.
+ [15
+
+ <./images/boost_options.pdf>]
+File: images/boost_options.pdf Graphic file (type pdf)
+<use images/boost_options.pdf>
+Package pdftex.def Info: images/boost_options.pdf  used on input line 167.
+(pdftex.def)             Requested size: 307.28987pt x 108.61957pt.
+ [16
+
+] [17
+
+] [18
+
+]
+<images/citeseer_setup_pres.pdf, id=205, 606.34526pt x 201.63329pt>
+File: images/citeseer_setup_pres.pdf Graphic file (type pdf)
+<use images/citeseer_setup_pres.pdf>
+Package pdftex.def Info: images/citeseer_setup_pres.pdf  used on input line 227
+.
+(pdftex.def)             Requested size: 307.28987pt x 102.1855pt.
+ [19
+
+ <./images/citeseer_setup_pres.pdf>]
+<images/ind_vs_trans.png, id=227, 1210.5225pt x 1302.8675pt>
+File: images/ind_vs_trans.png Graphic file (type png)
+<use images/ind_vs_trans.png>
+Package pdftex.def Info: images/ind_vs_trans.png  used on input line 233.
+(pdftex.def)             Requested size: 178.22868pt x 191.82338pt.
+ [20
+
+ <./images/ind_vs_trans.png>]
+<images/deltas_inductive.pdf, id=234, 650.43pt x 361.35pt>
+File: images/deltas_inductive.pdf Graphic file (type pdf)
+<use images/deltas_inductive.pdf>
+Package pdftex.def Info: images/deltas_inductive.pdf  used on input line 242.
+(pdftex.def)             Requested size: 307.28987pt x 170.72223pt.
+ [21
+
+ <./images/deltas_inductive.pdf>]
+<images/deltas_transductive.pdf, id=298, 650.43pt x 361.35pt>
+File: images/deltas_transductive.pdf Graphic file (type pdf)
+<use images/deltas_transductive.pdf>
+Package pdftex.def Info: images/deltas_transductive.pdf  used on input line 250
+.
+(pdftex.def)             Requested size: 307.28987pt x 170.72223pt.
+ [22
+
+ <./images/deltas_transductive.pdf>] [23
+
+]
+<images/trasparency_vs_posthoc.png, id=367, 2501.345pt x 400.49625pt>
+File: images/trasparency_vs_posthoc.png Graphic file (type png)
+<use images/trasparency_vs_posthoc.png>
+Package pdftex.def Info: images/trasparency_vs_posthoc.png  used on input line 
+273.
+(pdftex.def)             Requested size: 307.28987pt x 49.20024pt.
+ [24
+
+ <./images/trasparency_vs_posthoc.png>]
+<images/activation_maximization.png, id=374, 2541.495pt x 976.64874pt>
+File: images/activation_maximization.png Graphic file (type png)
+<use images/activation_maximization.png>
+Package pdftex.def Info: images/activation_maximization.png  used on input line
+ 282.
+(pdftex.def)             Requested size: 307.28987pt x 118.07204pt.
+ [25
+
+ <./images/activation_maximization.png>]
+<images/explanation_map_nn.png, id=383, 1292.83pt x 499.8675pt>
+File: images/explanation_map_nn.png Graphic file (type png)
+<use images/explanation_map_nn.png>
+Package pdftex.def Info: images/explanation_map_nn.png  used on input line 291.
+
+(pdftex.def)             Requested size: 245.83282pt x 95.04445pt.
+ [26
+
+ <./images/explanation_map_nn.png>] [27
+
+]
+[28
+
+] [29
+
+] [30
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\translate ' on input line 318.
+
+\c@framenumberappendix=\count319
+<images/CE_presentation.pdf, id=410, 515.04419pt x 367.3725pt>
+File: images/CE_presentation.pdf Graphic file (type pdf)
+<use images/CE_presentation.pdf>
+Package pdftex.def Info: images/CE_presentation.pdf  used on input line 324.
+(pdftex.def)             Requested size: 276.559pt x 197.26826pt.
+[31
+
+ <./images/CE_presentation.pdf>]
+<images/KE.pdf, id=434, 251.9814pt x 270.0489pt>
+File: images/KE.pdf Graphic file (type pdf)
+<use images/KE.pdf>
+Package pdftex.def Info: images/KE.pdf  used on input line 331.
+(pdftex.def)             Requested size: 169.01036pt x 181.13373pt.
+ [32
+
+ <./images/KE.pdf>]
+<images/kenn_relational_representation2.pdf, id=449, 583.21887pt x 341.35529pt>
+
+File: images/kenn_relational_representation2.pdf Graphic file (type pdf)
+<use images/kenn_relational_representation2.pdf>
+Package pdftex.def Info: images/kenn_relational_representation2.pdf  used on in
+put line 337.
+(pdftex.def)             Requested size: 276.559pt x 161.87459pt.
+ [33
+
+ <./images/kenn_relational_representation2.pdf>]
+<images/kenn_relational_global_chart.pdf, id=467, 1049.84212pt x 1096.095pt>
+File: images/kenn_relational_global_chart.pdf Graphic file (type pdf)
+<use images/kenn_relational_global_chart.pdf>
+Package pdftex.def Info: images/kenn_relational_global_chart.pdf  used on input
+ line 343.
+(pdftex.def)             Requested size: 199.73653pt x 208.52782pt.
+ [34
+
+ <./images/kenn_relational_global_chart.pdf>]
+<images/scatter_90.pdf, id=493, 490.85884pt x 378.46457pt>
+File: images/scatter_90.pdf Graphic file (type pdf)
+<use images/scatter_90.pdf>
+Package pdftex.def Info: images/scatter_90.pdf  used on input line 349.
+(pdftex.def)             Requested size: 230.46739pt x 177.69934pt.
+ [35
+
+ <./images/scatter_90.pdf>]
 \tf@nav=\write6
 \openout6 = `presentation.nav'.
 
@@ -853,34 +1045,38 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 53.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 53.
-
-(./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 53.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 53.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 361.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 361.
+ (./presentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 361.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 361.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 92483FEB1C2F56525657417B39734FFE;95.
+(rerunfilecheck)             Checksum: 73C953CE9CDCC0462F90B3DE8C80F41E;259.
  ) 
 Here is how much of TeX's memory you used:
- 17698 strings out of 483065
- 336946 string characters out of 5963550
- 579151 words of memory out of 5000000
- 32273 multiletter control sequences out of 15000+600000
- 540474 words of font info for 53 fonts, out of 8000000 for 9000
+ 17973 strings out of 483065
+ 342446 string characters out of 5963550
+ 580299 words of memory out of 5000000
+ 32464 multiletter control sequences out of 15000+600000
+ 541062 words of font info for 55 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 54i,12n,63p,779b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on presentation.pdf (4 pages, 195195 bytes).
+ 54i,12n,57p,779b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy8.pfb>
+Output written on presentation.pdf (35 pages, 6589594 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 79 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 604 PDF objects out of 1000 (max. 8388607)
+ 373 compressed objects within 4 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 193 words of extra memory for PDF output out of 10000 (max. 10000000)
 
