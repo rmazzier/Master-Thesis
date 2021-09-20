@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.7.28)  20 SEP 2021 19:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.7.28)  20 SEP 2021 21:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -894,65 +894,63 @@ ne 118.
 
  <./images/interpretation_intuition1.pdf>] [9
 
-] [10
-
 ]
-<images/citeseer_setup_pres.pdf, id=140, 606.34526pt x 201.63329pt>
-File: images/citeseer_setup_pres.pdf Graphic file (type pdf)
-<use images/citeseer_setup_pres.pdf>
-Package pdftex.def Info: images/citeseer_setup_pres.pdf  used on input line 245
-.
-(pdftex.def)             Requested size: 307.28987pt x 102.1855pt.
- [11
+<images/citeseer_setup_pres2.pdf, id=135, 546.12032pt x 201.63329pt>
+File: images/citeseer_setup_pres2.pdf Graphic file (type pdf)
+<use images/citeseer_setup_pres2.pdf>
+Package pdftex.def Info: images/citeseer_setup_pres2.pdf  used on input line 22
+2.
+(pdftex.def)             Requested size: 307.28987pt x 113.45844pt.
+ [10
 
- <./images/citeseer_setup_pres.pdf>]
-[12
+ <./images/citeseer_setup_pres2.pdf>]
+[11
+
+] [12
 
 ] [13
 
 ] [14
 
-] [15
-
 ]
-<images/deltas_inductive.pdf, id=184, 650.43pt x 361.35pt>
+<images/deltas_inductive.pdf, id=179, 650.43pt x 361.35pt>
 File: images/deltas_inductive.pdf Graphic file (type pdf)
 <use images/deltas_inductive.pdf>
-Package pdftex.def Info: images/deltas_inductive.pdf  used on input line 282.
+Package pdftex.def Info: images/deltas_inductive.pdf  used on input line 259.
 (pdftex.def)             Requested size: 276.559pt x 153.64615pt.
- [16
+ [15
 
  <./images/deltas_inductive.pdf>]
-<images/histograms_inductive.pdf, id=248, 867.24pt x 939.51pt>
+<images/histograms_inductive.pdf, id=243, 867.24pt x 939.51pt>
 File: images/histograms_inductive.pdf Graphic file (type pdf)
 <use images/histograms_inductive.pdf>
-Package pdftex.def Info: images/histograms_inductive.pdf  used on input line 28
-8.
+Package pdftex.def Info: images/histograms_inductive.pdf  used on input line 26
+5.
 (pdftex.def)             Requested size: 184.3758pt x 199.73999pt.
- [17
+ [16
 
  <./images/histograms_inductive.pdf>]
-<images/scatter_25.pdf, id=296, 490.85884pt x 378.46457pt>
+<images/scatter_25.pdf, id=291, 490.85884pt x 378.46457pt>
 File: images/scatter_25.pdf Graphic file (type pdf)
 <use images/scatter_25.pdf>
-Package pdftex.def Info: images/scatter_25.pdf  used on input line 298.
+Package pdftex.def Info: images/scatter_25.pdf  used on input line 277.
 (pdftex.def)             Requested size: 125.98996pt x 97.13953pt.
-<images/scatter_50.pdf, id=297, 490.85884pt x 378.46457pt>
+<images/scatter_50.pdf, id=292, 490.85884pt x 378.46457pt>
 File: images/scatter_50.pdf Graphic file (type pdf)
 <use images/scatter_50.pdf>
-Package pdftex.def Info: images/scatter_50.pdf  used on input line 298.
+Package pdftex.def Info: images/scatter_50.pdf  used on input line 277.
 (pdftex.def)             Requested size: 125.98996pt x 97.13953pt.
-<images/scatter_75.pdf, id=298, 490.85884pt x 378.46457pt>
+<images/scatter_75.pdf, id=293, 490.85884pt x 378.46457pt>
 File: images/scatter_75.pdf Graphic file (type pdf)
 <use images/scatter_75.pdf>
-Package pdftex.def Info: images/scatter_75.pdf  used on input line 298.
+Package pdftex.def Info: images/scatter_75.pdf  used on input line 277.
 (pdftex.def)             Requested size: 125.98996pt x 97.13953pt.
-<images/scatter_90.pdf, id=299, 490.85884pt x 378.46457pt>
+<images/scatter_90.pdf, id=294, 490.85884pt x 378.46457pt>
 File: images/scatter_90.pdf Graphic file (type pdf)
 <use images/scatter_90.pdf>
-Package pdftex.def Info: images/scatter_90.pdf  used on input line 298.
+Package pdftex.def Info: images/scatter_90.pdf  used on input line 277.
 (pdftex.def)             Requested size: 125.98996pt x 97.13953pt.
- [18
+ [17
 
  <./images/scatter_25.pdf> <./images/scatter_50.pdf
 
@@ -967,115 +965,182 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/scatter_75.pdf): PDF inclusion
 pdfTeX warning: /usr/bin/pdflatex (file ./images/scatter_90.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
 >]
-<images/trasparency_vs_posthoc.png, id=487, 2501.345pt x 400.49625pt>
+<images/trasparency_vs_posthoc.png, id=482, 2501.345pt x 400.49625pt>
 File: images/trasparency_vs_posthoc.png Graphic file (type png)
 <use images/trasparency_vs_posthoc.png>
 Package pdftex.def Info: images/trasparency_vs_posthoc.png  used on input line 
-330.
+309.
 (pdftex.def)             Requested size: 307.28987pt x 49.20024pt.
- [19
+ [18
 
- <./images/trasparency_vs_posthoc.png>] [20
+ <./images/trasparency_vs_posthoc.png>] [19
 
 ]
-<images/explainability_example1.pdf, id=500, 210.7875pt x 102.3825pt>
+<images/explainability_example1.pdf, id=495, 210.7875pt x 102.3825pt>
 File: images/explainability_example1.pdf Graphic file (type pdf)
 <use images/explainability_example1.pdf>
 Package pdftex.def Info: images/explainability_example1.pdf  used on input line
- 373.
+ 352.
 (pdftex.def)             Requested size: 276.559pt x 134.33139pt.
- [21
+ [20
 
  <./images/explainability_example1.pdf>]
 File: images/explainability_example1.pdf Graphic file (type pdf)
 <use images/explainability_example1.pdf>
 Package pdftex.def Info: images/explainability_example1.pdf  used on input line
- 373.
+ 352.
 (pdftex.def)             Requested size: 276.559pt x 134.33139pt.
- [22
+ [21
 
 ]
-File: images/explainability_example1.pdf Graphic file (type pdf)
-<use images/explainability_example1.pdf>
-Package pdftex.def Info: images/explainability_example1.pdf  used on input line
- 373.
-(pdftex.def)             Requested size: 276.559pt x 134.33139pt.
- [23
-
-]
-<images/explainability_example2.pdf, id=522, 277.035pt x 102.3825pt>
+<images/explainability_example2.pdf, id=512, 277.035pt x 102.3825pt>
 File: images/explainability_example2.pdf Graphic file (type pdf)
 <use images/explainability_example2.pdf>
 Package pdftex.def Info: images/explainability_example2.pdf  used on input line
- 382.
+ 361.
 (pdftex.def)             Requested size: 276.559pt x 102.20728pt.
- [24
+ [22
 
  <./images/explainability_example2.pdf>]
 File: images/explainability_example2.pdf Graphic file (type pdf)
 <use images/explainability_example2.pdf>
 Package pdftex.def Info: images/explainability_example2.pdf  used on input line
- 382.
+ 361.
 (pdftex.def)             Requested size: 276.559pt x 102.20728pt.
- [25
+ [23
+
+] [24
 
 ]
-[26
+[25
+
+] [26
 
 ] [27
 
-] [28
+]
+<images/ordering_metrics0.pdf, id=550, 399.41219pt x 28.1853pt>
+File: images/ordering_metrics0.pdf Graphic file (type pdf)
+<use images/ordering_metrics0.pdf>
+Package pdftex.def Info: images/ordering_metrics0.pdf  used on input line 387.
+(pdftex.def)             Requested size: 291.92444pt x 20.60045pt.
+<images/ordering_metrics1.pdf, id=551, 399.41219pt x 62.15219pt>
+File: images/ordering_metrics1.pdf Graphic file (type pdf)
+<use images/ordering_metrics1.pdf>
+Package pdftex.def Info: images/ordering_metrics1.pdf  used on input line 387.
+(pdftex.def)             Requested size: 291.92444pt x 45.42665pt.
+ [28
+
+ <./images/ordering_metrics0.pdf> <./images/ordering_metrics1.pdf>]
+File: images/ordering_metrics0.pdf Graphic file (type pdf)
+<use images/ordering_metrics0.pdf>
+Package pdftex.def Info: images/ordering_metrics0.pdf  used on input line 387.
+(pdftex.def)             Requested size: 291.92444pt x 20.60045pt.
+File: images/ordering_metrics1.pdf Graphic file (type pdf)
+<use images/ordering_metrics1.pdf>
+Package pdftex.def Info: images/ordering_metrics1.pdf  used on input line 387.
+(pdftex.def)             Requested size: 291.92444pt x 45.42665pt.
+ [29
+
+]
+File: images/ordering_metrics0.pdf Graphic file (type pdf)
+<use images/ordering_metrics0.pdf>
+Package pdftex.def Info: images/ordering_metrics0.pdf  used on input line 387.
+(pdftex.def)             Requested size: 291.92444pt x 20.60045pt.
+File: images/ordering_metrics1.pdf Graphic file (type pdf)
+<use images/ordering_metrics1.pdf>
+Package pdftex.def Info: images/ordering_metrics1.pdf  used on input line 387.
+(pdftex.def)             Requested size: 291.92444pt x 45.42665pt.
+ [30
+
+] [31
+
+] [32
+
+] [33
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 414.
+(hyperref)                removing `\translate ' on input line 418.
 
 \c@framenumberappendix=\count320
-<images/CE_presentation.pdf, id=555, 515.04419pt x 367.3725pt>
+<images/CE_presentation.pdf, id=598, 515.04419pt x 367.3725pt>
 File: images/CE_presentation.pdf Graphic file (type pdf)
 <use images/CE_presentation.pdf>
-Package pdftex.def Info: images/CE_presentation.pdf  used on input line 420.
+Package pdftex.def Info: images/CE_presentation.pdf  used on input line 424.
 (pdftex.def)             Requested size: 276.559pt x 197.26826pt.
-[29
+[34
 
  <./images/CE_presentation.pdf>]
-<images/KE.pdf, id=578, 251.9814pt x 270.0489pt>
+<images/KE.pdf, id=621, 251.9814pt x 270.0489pt>
 File: images/KE.pdf Graphic file (type pdf)
 <use images/KE.pdf>
-Package pdftex.def Info: images/KE.pdf  used on input line 427.
+Package pdftex.def Info: images/KE.pdf  used on input line 431.
 (pdftex.def)             Requested size: 169.01036pt x 181.13373pt.
- [30
+ [35
 
  <./images/KE.pdf>]
-<images/kenn_relational_representation2.pdf, id=593, 583.21887pt x 341.35529pt>
+<images/kenn_relational_representation2.pdf, id=636, 583.21887pt x 341.35529pt>
 
 File: images/kenn_relational_representation2.pdf Graphic file (type pdf)
 <use images/kenn_relational_representation2.pdf>
 Package pdftex.def Info: images/kenn_relational_representation2.pdf  used on in
-put line 433.
+put line 437.
 (pdftex.def)             Requested size: 276.559pt x 161.87459pt.
- [31
+ [36
 
  <./images/kenn_relational_representation2.pdf>]
-<images/kenn_relational_global_chart.pdf, id=612, 1049.84212pt x 1096.095pt>
+<images/kenn_relational_global_chart.pdf, id=655, 1049.84212pt x 1096.095pt>
 File: images/kenn_relational_global_chart.pdf Graphic file (type pdf)
 <use images/kenn_relational_global_chart.pdf>
 Package pdftex.def Info: images/kenn_relational_global_chart.pdf  used on input
- line 439.
+ line 443.
 (pdftex.def)             Requested size: 199.73653pt x 208.52782pt.
- [32
+ [37
 
  <./images/kenn_relational_global_chart.pdf>]
-<images/preac_deltas_example.pdf, id=638, 301.125pt x 250.0542pt>
+<images/preac_deltas_example.pdf, id=682, 301.125pt x 250.0542pt>
 File: images/preac_deltas_example.pdf Graphic file (type pdf)
 <use images/preac_deltas_example.pdf>
 Package pdftex.def Info: images/preac_deltas_example.pdf  used on input line 44
-5.
+9.
 (pdftex.def)             Requested size: 230.46739pt x 191.38622pt.
- [33
+ [38
 
  <./images/preac_deltas_example.pdf>]
+<images/example_clause_boosting0.pdf, id=694, 277.035pt x 143.5764pt>
+File: images/example_clause_boosting0.pdf Graphic file (type pdf)
+<use images/example_clause_boosting0.pdf>
+Package pdftex.def Info: images/example_clause_boosting0.pdf  used on input lin
+e 455.
+(pdftex.def)             Requested size: 307.28987pt x 159.25775pt.
+ [39
+
+ <./images/example_clause_boosting0.pdf>]
+<images/tvalues_literals.pdf, id=708, 116.35469pt x 111.29579pt>
+File: images/tvalues_literals.pdf Graphic file (type pdf)
+<use images/tvalues_literals.pdf>
+Package pdftex.def Info: images/tvalues_literals.pdf  used on input line 461.
+(pdftex.def)             Requested size: 184.3758pt x 176.37524pt.
+ [40
+
+ <./images/tvalues_literals.pdf>]
+<images/boost_options2.pdf, id=719, 108.405pt x 104.3097pt>
+File: images/boost_options2.pdf Graphic file (type pdf)
+<use images/boost_options2.pdf>
+Package pdftex.def Info: images/boost_options2.pdf  used on input line 472.
+(pdftex.def)             Requested size: 153.33546pt x 147.56053pt.
+ [41
+
+ <./images/boost_options2.pdf>]
+File: images/boost_options2.pdf Graphic file (type pdf)
+<use images/boost_options2.pdf>
+Package pdftex.def Info: images/boost_options2.pdf  used on input line 472.
+(pdftex.def)             Requested size: 153.33546pt x 147.56053pt.
+ [42
+
+]
 \tf@nav=\write6
 \openout6 = `presentation.nav'.
 
@@ -1085,19 +1150,19 @@ Package pdftex.def Info: images/preac_deltas_example.pdf  used on input line 44
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 457.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 457.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 484.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 484.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 457.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 457.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 484.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 484.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 73C953CE9CDCC0462F90B3DE8C80F41E;259.
  ) 
 Here is how much of TeX's memory you used:
- 18011 strings out of 483065
- 343023 string characters out of 5963550
+ 18069 strings out of 483065
+ 344318 string characters out of 5963550
  583243 words of memory out of 5000000
- 32495 multiletter control sequences out of 15000+600000
+ 32530 multiletter control sequences out of 15000+600000
  546328 words of font info for 75 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  54i,12n,57p,801b,539s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1112,12 +1177,12 @@ s/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1
 lic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
-b>
-Output written on presentation.pdf (33 pages, 909753 bytes).
+msy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m10.pfb>
+Output written on presentation.pdf (42 pages, 1007468 bytes).
 PDF statistics:
- 710 PDF objects out of 1000 (max. 8388607)
- 372 compressed objects within 4 object streams
- 72 named destinations out of 1000 (max. 500000)
- 203 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 801 PDF objects out of 1000 (max. 8388607)
+ 448 compressed objects within 5 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 228 words of extra memory for PDF output out of 10000 (max. 10000000)
 

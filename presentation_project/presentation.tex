@@ -31,9 +31,9 @@
 \begin{enumerate}
 	\item Introduction and motivations \vspace{12pt}
 	\item Knowledge Enhanced Neural Networks (KENN) \vspace{12pt}
-	\item \textcolor{unipd}{\textbf{Contributions:} Experimental results} \vspace{12pt}
+	\item \textcolor{unipd}{\textbf{Contributions:} Experiments on collective classification} \vspace{12pt}
 	\item \textcolor{unipd}{\textbf{Contributions:} Extracting explanations from KENN} \vspace{12pt}
-	\item Conclusions and future work
+	\item Conclusions
 \end{enumerate}
 	\end{frame}
 
@@ -54,7 +54,7 @@
 %			\pause6
 			\item They are \textbf{black boxes}:
 			\begin{itemize}
-				\item Decisions are not explainable, might lead to lack of trust in AI applications;
+				\item Predictions are not explainable, might lead to lack of trust in AI applications;
 				\item This motivates the research field of \textbf{Explainable AI (XAI)}.
 			\end{itemize}
 		\end{itemize}
@@ -145,44 +145,21 @@
 %	\end{exampleblock}
 %\end{frame}
 
-%\begin{frame}{Example: truth value of a clause}
-%	\begin{figure}
-%		\includegraphics[width=\linewidth]{images/example_clause_boosting0.pdf}
-%	\end{figure}
-%\end{frame}
-%
-%\begin{frame}{Example: truth value of a clause}
-%	\begin{figure}
-%		\includegraphics[width=0.6\linewidth]{images/tvalues_literals.pdf}
-%	\end{figure}
-%\end{frame}
+
 
 \begin{frame}{KENN: Intuition}
-	\begin{itemize}
-		\item Given the vector of predictions of the NN $y$ and given $c\in \mathcal{K}$, KENN computes a vector of changes $\delta^c$, such that the final vector of predictions $$y' = y +\delta^c$$
+
+Given the vector of predictions of the NN $y$, KENN computes the final vector of predictions as follows: $$y' = y +\sum_{c\in \mathcal{K}} w_c \cdot \delta^c$$
+		where,
 		\begin{itemize}
-			\item Improves the truth value of $c$;
-			\item Keeps the quantity $\|y'-y \|_2$ minimal.
-			\pause
+			\item Each $\delta^c$ improves the truth value of $c$, keeping $\|\delta^c\|_2$ minimal;
+				\item $w_c \in \mathbb{R}$ is the \textbf{clause weight}, a learnable parameter that quantifies the importance of clause $c$.
 		\end{itemize}
-	
-	\item KENN can learn the \textbf{clause weights}, which are learnable parameters that quantify the importance of each clause in the knowledge.
-	\end{itemize}
+
 	
 	
 \end{frame}
 
-%\begin{frame}{Increasing satisfaction of a single clause}
-%	\begin{figure}
-%		\includegraphics[width=0.499\linewidth]{images/boost_options2.pdf}
-%	\end{figure}
-%\pause
-%%	Given the vector of truth values of the literals $z_c$, this delta is coputed as follows:
-%	\begin{equation*}
-%	\delta_{s}^{w_{c}}\left(z_{c}\right)=w_{c} \cdot \operatorname{softmax}\left(z_{c}\right)
-%%	\label{eq:clause_enhancement}
-%	\end{equation*}
-%\end{frame}
 
 
 %\begin{frame}{Boosting Preactivations}
@@ -240,7 +217,7 @@
 	\end{itemize}
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{images/citeseer_setup_pres.pdf}
+	\includegraphics[width=\linewidth]{images/citeseer_setup_pres2.pdf}
 \end{figure}
 \end{frame}
 
@@ -281,7 +258,7 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Histograms}
+\begin{frame}{Results}
 	\begin{figure}
 		\includegraphics[width=0.6\linewidth]{images/histograms_inductive.pdf}
 	\end{figure}
@@ -291,8 +268,10 @@
 \begin{frame}{Clause Weights Learning}
 	\begin{figure}
 		\includegraphics[width=0.41\linewidth]{images/scatter_25.pdf}%
+		\hspace{5pt}
 		\includegraphics[width=0.41\linewidth]{images/scatter_50.pdf}
 		\includegraphics[width=0.41\linewidth]{images/scatter_75.pdf}%
+		\hspace{5pt}
 		\includegraphics[width=0.41\linewidth]{images/scatter_90.pdf}
 	\end{figure}
 \end{frame}
@@ -363,7 +342,7 @@ KENN can be considered a \textbf{partially transparent} model:
 %\end{frame}
 
 \begin{frame}{Local explanations from a single clause}
-	$$\operatorname{Dog}(a) \Rightarrow \operatorname{Animal}(a) \pause \Longleftrightarrow \neg \operatorname{Dog}(a) \vee \operatorname{Animal}(a) $$ \pause
+	$$\neg \operatorname{Dog}(a) \vee \operatorname{Animal}(a) $$ \pause
 	\begin{figure}
 		\includegraphics[width=0.9\linewidth]{images/explainability_example1.pdf}
 	\end{figure}
@@ -383,23 +362,48 @@ Since the NN was confident that $a$ is not an Animal, the truth value for $a$ be
 
 \begin{frame}{Assessing impact of more clauses}
 	\begin{itemize}
-		\item In real use cases, we might have hundreds or thousands of clauses or samples $\Rightarrow$ one by one examination for each sample is not feasible;
-	\end{itemize}
-	Given any subset of clauses $\mathcal{C} \in \mathcal{K}$, for each sample $x$ in the dataset we can compute custom evaluation metrics:
-	\begin{itemize}
-		\item \textbf{Improvement score}: $$I S(x, \mathcal{C})=\sum_{i=1}^{m} \delta_{i} \cdot l_{i}$$
-		\item \textbf{Disagreement vector}: 
-		$$D V(x, \mathcal{C})=\sum_{c \in \mathcal{C}}\left|\delta_{c}\right|-\left|\sum_{c \in \mathcal{C}} \delta_{c}\right|$$
+		\item In real use cases, we might have hundreds or thousands of clauses or samples $\Rightarrow$ one by one examination of each sample is not feasible; \pause
+		\item We need ways to assess how the knowledge is modifying the base NN predictions, from a macroscopic point of view. Given any $\mathcal{C} \subseteq \mathcal{K}$ we might want to know: \pause
+		\begin{itemize}
+			\item if, and where those clauses provided a positive or negative contribution;\pause
+			\item if and where there is any conflict between the formulas inside $\mathcal{C}$.
+		\end{itemize}
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Conclusion and future work}
+\begin{frame}{Evaluation metrics}
+\begin{block}{Improvement Score}
+	Given $\mathcal{C} \subseteq \mathcal{K}$, the improvement score quantifies the positive (or negative) contribution of $\mathcal{C}$ for sample $x$ and is defined as follows:
+	$$I S(x, \mathcal{C})=\sum_{i=1}^{m} \delta_{i} \cdot l_{i}.$$
+\end{block}
+
+\pause
+\begin{figure}
+	\includegraphics[width=0.95\linewidth]{images/ordering_metrics0.pdf}\pause
+	\vspace{10pt} 
+	\includegraphics[width=0.95\linewidth]{images/ordering_metrics1.pdf}
+\end{figure}
+	
+\end{frame}
+
+\begin{frame}{Evaluation metrics}
+	\begin{block}{Disagreement Score}
+		We first define the disagreement vector:
+		$$D V(x, \mathcal{C})=\sum_{c \in \mathcal{C}}\left|\delta_{c}\right|-\left|\sum_{c \in \mathcal{C}} \delta_{c}\right|.$$
+		
+		Starting from $DV(x,C)$ we can finally define the disagreement score for a specific subset of predicates $\hat{\mathcal{P}} \subseteq \mathcal{P}$:
+		$$D S(x, \mathcal{C})=\sum_{i\in \hat{\mathcal{P}}} D V(x, \mathcal{C})_{i}.$$
+	\end{block}
+
+
+\end{frame}
+
+\begin{frame}{Conclusions}
 	\begin{enumerate}
 		\item Experimental results show that KENN outperforms other NeSy methods for the collective classification task;
-		\item KENN is able to correctly learn the clause weights, based on how much the clause is satisfied in the training data;
+		\item Further experiments show a correlation between the clause weights and the satisfaction of the clause in the training data;
 		\item KENN is inherently a transparent NN layer: explanations can be easily extracted in a understandable and human readable form;
-		\item We propose two evaluation metrics for debugging purposes: improvement score and disagreement score;
-		\item Future Work: These explanations and metrics can be implemented inside a graphical interface. This could help researchers and practitioners using KENN.
+		\item We proposed two evaluation metrics which can be used for debugging purposes.
 	\end{enumerate}
 \end{frame}
 
@@ -442,6 +446,29 @@ Since the NN was confident that $a$ is not an Animal, the truth value for $a$ be
 	\begin{figure}
 		\includegraphics[width=0.75\linewidth]{images/preac_deltas_example.pdf}
 	\end{figure}
+\end{frame}
+
+\begin{frame}{Example: truth value of a clause}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{images/example_clause_boosting0.pdf}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Example: truth value of a clause}
+	\begin{figure}
+		\includegraphics[width=0.6\linewidth]{images/tvalues_literals.pdf}
+	\end{figure}
+\end{frame}
+\begin{frame}{Increasing satisfaction of a single clause}
+	\begin{figure}
+		\includegraphics[width=0.499\linewidth]{images/boost_options2.pdf}
+	\end{figure}
+\pause
+%	Given the vector of truth values of the literals $z_c$, this delta is coputed as follows:
+	\begin{equation*}
+	\delta_{s}^{w_{c}}\left(z_{c}\right)=w_{c} \cdot \operatorname{softmax}\left(z_{c}\right)
+%	\label{eq:clause_enhancement}
+	\end{equation*}
 \end{frame}
 
 
