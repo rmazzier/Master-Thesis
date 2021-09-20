@@ -1,4 +1,4 @@
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@sectionintoc {2}{KENN}{4}{0}{2}
-\beamer@sectionintoc {3}{Experiments on Collective Classification}{19}{0}{3}
-\beamer@sectionintoc {4}{Explainability in KENN}{23}{0}{4}
+\beamer@sectionintoc {2}{KENN}{5}{0}{2}
+\beamer@sectionintoc {3}{Experiments on Collective Classification}{11}{0}{3}
+\beamer@sectionintoc {4}{Explainability in KENN}{19}{0}{4}

@@ -1,4 +1,5 @@
 \documentclass{beamer}
+\usepackage{dirtytalk}
 
 \usetheme{Padova}
 %\setbeamercovered{transparent}
@@ -15,16 +16,25 @@
 
 \title{Towards Explainability in Knowledge Enhanced Neural Networks}
 \subtitle{Data Science Master Thesis}
-\author{Riccardo Mazzieri}
+\author{Riccardo Mazzieri \\ \vspace{10pt}
+\textbf{Supervisor}: Luciano Serafini\\
+\textbf{Co-Supervisor}: Alessandro Daniele \vspace{10pt}}
 \date{September 21, 2021}
 
-
+\definecolor{unipd}{rgb}{.7,.105,.109}
 \begin{document}
 
 	\maketitle
 
 	\begin{frame}{Outline}
-		\tableofcontents
+%		\tableofcontents
+\begin{enumerate}
+	\item Introduction and motivations \vspace{12pt}
+	\item Knowledge Enhanced Neural Networks (KENN) \vspace{12pt}
+	\item \textcolor{unipd}{\textbf{Contributions:} Experimental results} \vspace{12pt}
+	\item \textcolor{unipd}{\textbf{Contributions:} Extracting explanations from KENN} \vspace{12pt}
+	\item Conclusions and future work
+\end{enumerate}
 	\end{frame}
 
 
@@ -38,6 +48,7 @@
 			\begin{itemize}
 				\item With few data, learning is not possible, even for simple logical reasoning tasks;
 				\item This motivates \textbf{Neural Symbolic Integration (NeSy)}.
+				\pause
 %				research field that focuses on the integration of logic inside neural networks
 			\end{itemize}
 %			\pause6
@@ -53,7 +64,7 @@
 	\section{KENN}
 
 	\begin{frame}{Knowledge Enhanced Neural Networks}
-		KENN consists in a residual layer designed to improve the predictions of a base NN, by using logical prior knowledge, consisting in a set of FOL formulas $\mathcal{K}$.
+		KENN\footnote{Daniele, Alessandro, and Luciano Serafini. "Knowledge enhanced neural networks." Pacific Rim International Conference on Artificial Intelligence. Springer, Cham, 2019.\vspace{20pt}} consists in a residual layer designed to improve the predictions of a base NN, by using logical prior knowledge, consisting in a set of FOL formulas $\mathcal{K}$.
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.95\linewidth]{images/kenn_intuition.pdf}
@@ -106,20 +117,20 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Language Semantic}
-	 Note that truth values can be any real number in $[0,1]$\\ $  \Rightarrow$ We will follow the rules of \textbf{Fuzzy Logic}, an extension of Boolean Logic. Specifically, in Fuzzy logic:
-	\begin{itemize}
-		\pause
-		\item Truth value of a negated predicate is simply $\mathcal{I}(\neg A(x)) = 1 - \mathcal{I}(A(x))$
-		\pause
-		\item Truth value of a disjunction of literals is computed by means of a \textbf{$t$-conorm} function;
-		\pause
-		\item KENN uses the Gödel $t$-conorm, which is defined as:
-		\begin{equation*}
-		\perp_{\text{max}}(t) = \underset{i=1,\dots,m}{\operatorname{max}} t_i, \quad \forall t\in [0,1]^m.
-		\end{equation*}
-	\end{itemize}	
-\end{frame}
+%\begin{frame}{Language Semantic}
+%	 Note that truth values can be any real number in $[0,1]$\\ $  \Rightarrow$ We will follow the rules of \textbf{Fuzzy Logic}, an extension of Boolean Logic. Specifically, in Fuzzy logic:
+%	\begin{itemize}
+%		\pause
+%		\item Truth value of a negated predicate is simply $\mathcal{I}(\neg A(x)) = 1 - \mathcal{I}(A(x))$
+%		\pause
+%		\item Truth value of a disjunction of literals is computed by means of a \textbf{$t$-conorm} function;
+%		\pause
+%		\item KENN uses the Gödel $t$-conorm, which is defined as:
+%		\begin{equation*}
+%		\perp_{\text{max}}(t) = \underset{i=1,\dots,m}{\operatorname{max}} t_i, \quad \forall t\in [0,1]^m.
+%		\end{equation*}
+%	\end{itemize}	
+%\end{frame}
 
 %\begin{frame}{Example}
 %	\begin{exampleblock}{Example: truth value of a clause}
@@ -134,50 +145,57 @@
 %	\end{exampleblock}
 %\end{frame}
 
-\begin{frame}{Example: truth value of a clause}
-	\begin{figure}
-		\includegraphics[width=\linewidth]{images/example_clause_boosting0.pdf}
-	\end{figure}
-\end{frame}
+%\begin{frame}{Example: truth value of a clause}
+%	\begin{figure}
+%		\includegraphics[width=\linewidth]{images/example_clause_boosting0.pdf}
+%	\end{figure}
+%\end{frame}
+%
+%\begin{frame}{Example: truth value of a clause}
+%	\begin{figure}
+%		\includegraphics[width=0.6\linewidth]{images/tvalues_literals.pdf}
+%	\end{figure}
+%\end{frame}
 
-\begin{frame}{Example: truth value of a clause}
-	\begin{figure}
-		\includegraphics[width=0.6\linewidth]{images/tvalues_literals.pdf}
-	\end{figure}
-\end{frame}
-
-\begin{frame}{Increasing satisfaction of a single clause}
-	Given the vector of predictions of the NN $y$ and given $c\in \mathcal{K}$, KENN computes a vector of changes $\delta^c$, such that the final vector of predictions $y' = y +\delta^c$:
+\begin{frame}{KENN: Intuition}
 	\begin{itemize}
-		\item Improves the truth value of $c$,
-		\item Keeps the quantity $\|y'-y \|_2$ minimal.
+		\item Given the vector of predictions of the NN $y$ and given $c\in \mathcal{K}$, KENN computes a vector of changes $\delta^c$, such that the final vector of predictions $$y' = y +\delta^c$$
+		\begin{itemize}
+			\item Improves the truth value of $c$;
+			\item Keeps the quantity $\|y'-y \|_2$ minimal.
+			\pause
+		\end{itemize}
+	
+	\item KENN can learn the \textbf{clause weights}, which are learnable parameters that quantify the importance of each clause in the knowledge.
 	\end{itemize}
+	
+	
 \end{frame}
 
-\begin{frame}{Increasing satisfaction of a single clause}
-	\begin{figure}
-		\includegraphics[width=\linewidth]{images/boost_options.pdf}
-	\end{figure}
-\pause
-%	Given the vector of truth values of the literals $z_c$, this delta is coputed as follows:
-	\begin{equation*}
-	\delta_{s}^{w_{c}}\left(z_{c}\right)=w_{c} \cdot \operatorname{softmax}\left(z_{c}\right)
-%	\label{eq:clause_enhancement}
-	\end{equation*}
-\end{frame}
+%\begin{frame}{Increasing satisfaction of a single clause}
+%	\begin{figure}
+%		\includegraphics[width=0.499\linewidth]{images/boost_options2.pdf}
+%	\end{figure}
+%\pause
+%%	Given the vector of truth values of the literals $z_c$, this delta is coputed as follows:
+%	\begin{equation*}
+%	\delta_{s}^{w_{c}}\left(z_{c}\right)=w_{c} \cdot \operatorname{softmax}\left(z_{c}\right)
+%%	\label{eq:clause_enhancement}
+%	\end{equation*}
+%\end{frame}
 
 
-\begin{frame}{Boosting Preactivations}
-	In practice, inside KENN the delta vectors are applied to the \textbf{preactivations} from the NN:
-	\begin{equation*}
-	y'=\sigma(z + \delta^c).
-	\end{equation*}
-	\pause
-	Then, in order to increase the satisfaction of the entire knowledge, all the deltas are aggregated by being summed together. The final prediction will be:
-	\begin{equation*}
-	y^{\prime}=\sigma\left(z+\sum_{c \in \mathcal{K}} \delta^{c}\right).
-	\end{equation*}
-\end{frame}
+%\begin{frame}{Boosting Preactivations}
+%	In practice, inside KENN the delta vectors are applied to the \textbf{preactivations} from the NN:
+%	\begin{equation*}
+%	y'=\sigma(z + \delta^c).
+%	\end{equation*}
+%	\pause
+%	Then, in order to increase the satisfaction of the entire knowledge, all the deltas are aggregated by being summed together. The final prediction will be:
+%	\begin{equation*}
+%	y^{\prime}=\sigma\left(z+\sum_{c \in \mathcal{K}} \delta^{c}\right).
+%	\end{equation*}
+%\end{frame}
 
 
 %\begin{frame}{KENN for relational data}
@@ -218,7 +236,7 @@
 	\begin{itemize}
 		\item We tested KENN on a Collective Classification task;
 		\item The \textbf{Citeseer Dataset} was used: citation network with $4732$ citations (edges) between $3312$ papers (nodes);
-		\item The task is to predict the topic of each paper.
+		\item The task is to predict the topic of each paper (6 possible topics).
 	\end{itemize}
 
 \begin{figure}
@@ -226,40 +244,79 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}{Learning Paradigms}
-	\begin{figure}
-		\includegraphics[width=0.58\linewidth]{images/ind_vs_trans.png}
-	\end{figure}
+\begin{frame}{Comparison with previous literature}
+	\begin{itemize}
+		\item We also provide a comparison with two other NeSy models:
+		\begin{itemize}
+			\item \textbf{Semantic Based Regularization}\footnote{Diligenti, Michelangelo, Marco Gori, and Claudio Sacca. "Semantic-based regularization for learning and inference." Artificial Intelligence 244 (2017): 143-165.};
+			\item \textbf{Relational Neural Machines}\footnote{Marra, Giuseppe, et al. "Relational neural machines." arXiv preprint arXiv:2002.02193 (2020). \vspace{18pt}};
+		\end{itemize}
+	\pause
+	
+%		\vspace{10pt}
+		\item The same base NN and the same base knowledge are used.
+		\pause
+
+		\item The main evaluation metric is the \textbf{relative improvement} over the base NN accuracy;
+		\pause
+
+		\item Same experiments are performed over different sizes of the training set.
+	\end{itemize}
+	
+	
 \end{frame}
 
+%\begin{frame}{Learning Paradigms}
+%	\begin{figure}
+%		\includegraphics[width=0.58\linewidth]{images/ind_vs_trans.png}
+%	\end{figure}
+%\end{frame}
 
-\begin{frame}{Results Inductive Paradigm}
+
+\begin{frame}{Results}
 	\begin{figure}
 		\centering
-		\includegraphics[width=\linewidth]{images/deltas_inductive.pdf}
-		\caption{Relative improvements for the Inductive Paradigm}
+		\includegraphics[width=0.9\linewidth]{images/deltas_inductive.pdf}
+%		\caption{Relative improvements and comparison with the other methods.}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Results Transductive Paradigm}
+\begin{frame}{Histograms}
 	\begin{figure}
-		\centering
-		\includegraphics[width=\linewidth]{images/deltas_transductive.pdf}
-		\caption{Relative improvements for the Transductive Paradigm}
+		\includegraphics[width=0.6\linewidth]{images/histograms_inductive.pdf}
 	\end{figure}
 \end{frame}
+
+
+\begin{frame}{Clause Weights Learning}
+	\begin{figure}
+		\includegraphics[width=0.41\linewidth]{images/scatter_25.pdf}%
+		\includegraphics[width=0.41\linewidth]{images/scatter_50.pdf}
+		\includegraphics[width=0.41\linewidth]{images/scatter_75.pdf}%
+		\includegraphics[width=0.41\linewidth]{images/scatter_90.pdf}
+	\end{figure}
+\end{frame}
+
+
+%\begin{frame}{Results Transductive Paradigm}
+%	\begin{figure}
+%		\centering
+%		\includegraphics[width=\linewidth]{images/deltas_transductive.pdf}
+%		\caption{Relative improvements for the Transductive Paradigm}
+%	\end{figure}
+%\end{frame}
 
 \section{Explainability in KENN}
 
-\begin{frame}{Explainability}
-	\begin{definition}[Explainability]
-		We define explainability in the context of supervised ML
-		as the \textbf{generic process by which we extract any kind of explanation from a model}. This can
-		be done by exploiting the natural properties of the model (in which case, such a model can be
-		called explainable), or by devising techniques to extract explanations from any model.
-	\end{definition}
-
-\end{frame}
+%\begin{frame}{Explainability}
+%	\begin{definition}[Explainability]
+%		We define explainability in the context of supervised ML
+%		as the \textbf{generic process by which we extract any kind of explanation from a model}. This can
+%		be done by exploiting the natural properties of the model (in which case, such a model can be
+%		called explainable), or by devising techniques to extract explanations from any model.
+%	\end{definition}
+%
+%\end{frame}
 
 \begin{frame}{Explainability}
 	In XAI, two main paradigms for explainability are distinguished: 
@@ -272,23 +329,23 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Activation Maximization}
-	\begin{figure}
-		\includegraphics[width=\linewidth]{images/activation_maximization.png}
-	\end{figure}
-\begin{equation*}
-x_{i}^{*}=\max _{x} \log p\left(\omega_{i} \mid x\right)-\lambda\|x\|^{2}
-\end{equation*}
-\end{frame}
-
-\begin{frame}{Local Explanations: saliency maps}
-	\begin{figure}
-		\includegraphics[width=0.8\linewidth]{images/explanation_map_nn.png}
-	\end{figure}
-	\begin{equation*}
-	R(x)_{i}=\left(\frac{\partial f}{\partial x_{i}}\right)^{2}
-	\end{equation*}
-\end{frame}
+%\begin{frame}{Activation Maximization}
+%	\begin{figure}
+%		\includegraphics[width=\linewidth]{images/activation_maximization.png}
+%	\end{figure}
+%\begin{equation*}
+%x_{i}^{*}=\max _{x} \log p\left(\omega_{i} \mid x\right)-\lambda\|x\|^{2}
+%\end{equation*}
+%\end{frame}
+%
+%\begin{frame}{Local Explanations: saliency maps}
+%	\begin{figure}
+%		\includegraphics[width=0.8\linewidth]{images/explanation_map_nn.png}
+%	\end{figure}
+%	\begin{equation*}
+%	R(x)_{i}=\left(\frac{\partial f}{\partial x_{i}}\right)^{2}
+%	\end{equation*}
+%\end{frame}
 
 \begin{frame}{Explainability in KENN}
 KENN can be considered a \textbf{partially transparent} model:
@@ -299,12 +356,51 @@ KENN can be considered a \textbf{partially transparent} model:
 \end{itemize}
 \end{frame}
 
+%\begin{frame}{Local explanations from a single clause}
+%	\begin{figure}
+%		\includegraphics[width=\linewidth]{images/explainability_example0.pdf}
+%	\end{figure}
+%\end{frame}
+
 \begin{frame}{Local explanations from a single clause}
-	Esempio...
+	$$\operatorname{Dog}(a) \Rightarrow \operatorname{Animal}(a) \pause \Longleftrightarrow \neg \operatorname{Dog}(a) \vee \operatorname{Animal}(a) $$ \pause
+	\begin{figure}
+		\includegraphics[width=0.9\linewidth]{images/explainability_example1.pdf}
+	\end{figure}
+%\begin{equation*}
+%\delta^c = 1 \cdot \operatorname{softmax}(0.2,0.3)
+%\end{equation*}
+\end{frame}
+
+\begin{frame}{Local explanations from a single clause}
+	$$\operatorname{Dog}(a) \Rightarrow \operatorname{Animal}(a)$$
+	\begin{figure}
+		\includegraphics[width=0.9\linewidth]{images/explainability_example2.pdf}
+	\end{figure}
+\pause
+Since the NN was confident that $a$ is not an Animal, the truth value for $a$ being a dog should decrease.
 \end{frame}
 
 \begin{frame}{Assessing impact of more clauses}
-	Custom score.
+	\begin{itemize}
+		\item In real use cases, we might have hundreds or thousands of clauses or samples $\Rightarrow$ one by one examination for each sample is not feasible;
+	\end{itemize}
+	Given any subset of clauses $\mathcal{C} \in \mathcal{K}$, for each sample $x$ in the dataset we can compute custom evaluation metrics:
+	\begin{itemize}
+		\item \textbf{Improvement score}: $$I S(x, \mathcal{C})=\sum_{i=1}^{m} \delta_{i} \cdot l_{i}$$
+		\item \textbf{Disagreement vector}: 
+		$$D V(x, \mathcal{C})=\sum_{c \in \mathcal{C}}\left|\delta_{c}\right|-\left|\sum_{c \in \mathcal{C}} \delta_{c}\right|$$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusion and future work}
+	\begin{enumerate}
+		\item Experimental results show that KENN outperforms other NeSy methods for the collective classification task;
+		\item KENN is able to correctly learn the clause weights, based on how much the clause is satisfied in the training data;
+		\item KENN is inherently a transparent NN layer: explanations can be easily extracted in a understandable and human readable form;
+		\item We propose two evaluation metrics for debugging purposes: improvement score and disagreement score;
+		\item Future Work: These explanations and metrics can be implemented inside a graphical interface. This could help researchers and practitioners using KENN.
+	\end{enumerate}
 \end{frame}
 
 \definecolor{unipd}{rgb}{.7,.105,.109}
@@ -342,9 +438,9 @@ KENN can be considered a \textbf{partially transparent} model:
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Appendix: Clause Weights learning}
+\begin{frame}{Appendix: preactivations vs activations}
 	\begin{figure}
-		\includegraphics[width=0.75\linewidth]{images/scatter_90.pdf}
+		\includegraphics[width=0.75\linewidth]{images/preac_deltas_example.pdf}
 	\end{figure}
 \end{frame}
 

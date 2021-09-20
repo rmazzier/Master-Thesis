@@ -4,7 +4,9 @@
 % ==============================================================================
 \pgfdeclareimage[width=\paperwidth]{titleBackground}{bg}
 \pgfdeclareimage[width=\paperwidth]{pageBackground}{bgWave}
-\pgfdeclareimage[width=4cm]{logoUnipd}{unipd_logo}
+\pgfdeclareimage[width=3cm]{logoUnipd}{unipd_logo}
+\pgfdeclareimage[width=1.6cm]{logoFbk}{fbk_logo}
+\pgfdeclareimage[width=1.6cm]{logoDkm}{dkm_logo}
 \pgfdeclareimage[width=2cm]{logoUnipdWhite}{unipd_logo_white}
 
 
@@ -41,7 +43,9 @@
 \defbeamertemplate*{footline}{pd theme} {
 	\ifnum\c@framenumber=1
 		\ifbeamerpadovanologos
-			\pgftext[right,bottom,at=\pgfpoint{0.95\paperwidth}{.4cm}]{\pgfuseimage{logoUnipd}}
+			\pgftext[right,bottom,at=\pgfpoint{0.97\paperwidth}{.6cm}]{\pgfuseimage{logoUnipd}}
+			\pgftext[right,bottom,at=\pgfpoint{0.7\paperwidth}{.4cm}]{\pgfuseimage{logoFbk}}
+%			\pgftext[right,bottom,at=\pgfpoint{0.9\paperwidth}{2.4cm}]{\pgfuseimage{logoDkm}}
 		\fi
 	\else
 		\ifbeamerpadovanologos
