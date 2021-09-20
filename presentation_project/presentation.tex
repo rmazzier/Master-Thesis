@@ -150,9 +150,9 @@
 \begin{frame}{KENN: Intuition}
 
 Given the vector of predictions of the NN $y$, KENN computes the final vector of predictions as follows: $$y' = y +\sum_{c\in \mathcal{K}} w_c \cdot \delta^c$$
-		where,
+		where, for each $c \in \mathcal{C}$:
 		\begin{itemize}
-			\item Each $\delta^c$ improves the truth value of $c$, keeping $\|\delta^c\|_2$ minimal;
+			\item $\delta^c$ improves the truth value of $c$, keeping $\|\delta^c\|_2$ minimal;
 				\item $w_c \in \mathbb{R}$ is the \textbf{clause weight}, a learnable parameter that quantifies the importance of clause $c$.
 		\end{itemize}
 
@@ -352,7 +352,7 @@ KENN can be considered a \textbf{partially transparent} model:
 \end{frame}
 
 \begin{frame}{Local explanations from a single clause}
-	$$\operatorname{Dog}(a) \Rightarrow \operatorname{Animal}(a)$$
+	$$\neg \operatorname{Dog}(a) \vee \operatorname{Animal}(a) $$
 	\begin{figure}
 		\includegraphics[width=0.9\linewidth]{images/explainability_example2.pdf}
 	\end{figure}
@@ -392,7 +392,7 @@ Since the NN was confident that $a$ is not an Animal, the truth value for $a$ be
 		$$D V(x, \mathcal{C})=\sum_{c \in \mathcal{C}}\left|\delta_{c}\right|-\left|\sum_{c \in \mathcal{C}} \delta_{c}\right|.$$
 		
 		Starting from $DV(x,C)$ we can finally define the disagreement score for a specific subset of predicates $\hat{\mathcal{P}} \subseteq \mathcal{P}$:
-		$$D S(x, \mathcal{C})=\sum_{i\in \hat{\mathcal{P}}} D V(x, \mathcal{C})_{i}.$$
+		$$D S(x, \mathcal{C}, \hat{\mathcal{P}})=\sum_{i\in \hat{\mathcal{P}}} D V(x, \mathcal{C})_{i}.$$
 	\end{block}
 
 
